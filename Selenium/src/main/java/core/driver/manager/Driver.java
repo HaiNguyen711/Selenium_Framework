@@ -46,6 +46,7 @@ public class Driver extends BaseDriver {
 				break;
 			}
 			DriverManagement.addDriver(driver);
+			
 		} catch (Exception e) {
 			Logger.severe(e.getMessage());
 		}

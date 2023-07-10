@@ -12,7 +12,12 @@ public class Constant {
 	
 	public static final String HUB_URL = JsonHelper.getValue(Utilities.getProjectPath() + "\\src\\test\\resources\\grid\\node_config.json", "hub") + "/wd/hub";
 	
-	public static final String DATA_URL = Utilities.getProjectPath() + "\\src\\main\\java\\dataObjects\\Agoda\\data\\Data.json";
+	public static final String DATA_URL = Utilities.getProjectPath() + "\\src\\main\\java\\dataObjects\\Agoda\\data";
+	
+	public static final String USER_DATA = DATA_URL + "\\Users.json";
+	
+	public static final String VARIABLE_DATA = DATA_URL + "\\Data.json";
+	
 	public static final String NULL = "null";
 	
 	public static final int TIMEOUT = 30;

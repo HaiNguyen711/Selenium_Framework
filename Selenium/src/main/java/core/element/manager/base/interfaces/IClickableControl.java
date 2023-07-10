@@ -9,5 +9,11 @@ public interface IClickableControl {
 	void waitForClickable(long timeOut);
 	
 	boolean isClickable();
+	
+	void selectOptionByText(String option);
+	
+	void selectOptionByValue(String value);
+	
+	String[] getDropdownListOptions();
 
 }

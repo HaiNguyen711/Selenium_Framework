@@ -3,17 +3,14 @@ package tests.Agoda;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 
 import core.report.Log;
 import core.report.TestListener;
-import dataObjects.Agoda.ProductInfo;
 import dataObjects.Agoda.User;
 import dataObjects.Agoda.enums.UserName;
 import pageobject.Agoda.BasePage;
 import pageobject.Agoda.HomePage;
 import pageobject.Agoda.LoginPage;
-import pageobject.Agoda.MyAccountPage;
 import tests.BaseTest;
 import utils.helper.AssertHelper;
 import utils.helper.JsonHelper;
@@ -28,6 +25,16 @@ public class LoginTest extends BaseTest {
 	 */
 	@Test
 	public void TestCase01() {
+		
+		User user = new User().getUser(UserName.LOC);
+		
+		String semail = user.getEmail();
+        String sPassword = user.getPassword();
+        String sFirstName= user.getFirstName();
+        String sLastName = user.getLastName();
+        String sCountry = user.getCountry();
+        String sPhone= user.getPhone();
+		
 		
 	}
 

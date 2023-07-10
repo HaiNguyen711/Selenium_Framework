@@ -29,6 +29,6 @@ public class JsonHelper {
 	}
 	
 	public static String getValue(String key) {
-		return getValue(Constant.DATA_URL, key);
+		return getValue(Constant.VARIABLE_DATA, key);
 	}
 }
