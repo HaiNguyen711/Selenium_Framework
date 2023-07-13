@@ -12,10 +12,10 @@ import utils.constant.Constant;
 
 public class JsonHelper {
 	
-	public static String getValue(String filePath, String key) {
-		String value = "";
+	public static Object getValue(String filePath, String key) {
+		Object value = null;
 		try {
-			value = (String) getJsonObject(filePath).get(key);
+			value = getJsonObject(filePath).get(key);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -29,6 +29,6 @@ public class JsonHelper {
 	}
 	
 	public static String getValue(String key) {
-		return getValue(Constant.VARIABLE_DATA, key);
+		return (String)getValue(Constant.VARIABLE_DATA, key);
 	}
 }

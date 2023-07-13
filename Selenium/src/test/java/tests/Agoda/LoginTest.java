@@ -12,8 +12,10 @@ import pageobject.Agoda.BasePage;
 import pageobject.Agoda.HomePage;
 import pageobject.Agoda.LoginPage;
 import tests.BaseTest;
+import utils.constant.Constant;
 import utils.helper.AssertHelper;
 import utils.helper.JsonHelper;
+import utils.helper.UserHelper;
 import utils.helper.Utilities;
 
 @Listeners(TestListener.class)
@@ -26,7 +28,15 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void TestCase01() {
 		
-		User user = new User().getUser(UserName.LOC);
+		
+		
+//		String value = JsonHelper.getValue(Constant.USER_DATA,"user name");
+		
+		
+//		HomePage page = new HomePage();
+		
+		
+		User user = UserHelper.getUser("Tester1");
 		
 		String semail = user.getEmail();
         String sPassword = user.getPassword();
@@ -36,6 +46,10 @@ public class LoginTest extends BaseTest {
         String sPhone= user.getPhone();
 		
 		
+        
+        
+        
+        
 	}
 
 }
