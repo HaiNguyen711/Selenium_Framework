@@ -1,7 +1,6 @@
 package utils.helper;
 
 import org.json.simple.JSONObject;
-
 import dataObjects.Agoda.User;
 import utils.constant.Constant;
 
@@ -17,6 +16,7 @@ public class UserHelper {
 			user.setLastName((String) jo.get("lastName"));
 			user.setCountry((String) jo.get("country"));
 			user.setPhone((String) jo.get("phone"));
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

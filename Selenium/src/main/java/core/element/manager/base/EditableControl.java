@@ -8,8 +8,8 @@ import utils.constant.Constant;
 
 public class EditableControl extends ClickableControl implements IEditableControl {
 
-	public EditableControl(String locator) {
-		super(locator);
+	public EditableControl(String locator,String type) {
+		super(locator,type);
 		// TODO Auto-generated constructor stub
 	}
 	

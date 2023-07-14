@@ -20,14 +20,19 @@ import core.element.manager.wrapper.Element;
 import core.report.Log;
 import io.netty.handler.timeout.TimeoutException;
 import utils.constant.Constant;
+import utils.helper.PageHelper;
 
 public class BaseControl {
 	private By by;
 	Actions builder = new Actions(getDriver());
 	private String locator;
 
-	public BaseControl(String locator) {
-		by = By.xpath(locator);
+	public BaseControl(String locator,String type) {
+		by = PageHelper.getByLocator(type, locator);
+	}
+
+	public BaseControl() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public WebDriver getDriver() {
@@ -42,12 +47,12 @@ public class BaseControl {
 		return this.getDriver().findElements(by);
 	}
 
-	public static BaseControl getElement(String element, String string) {
-		return new BaseControl(String.format(element, string));
+	public static BaseControl getElement(String element, String string, String type) {
+		return new BaseControl(String.format(element, string),type);
 	}
 
-	public static BaseControl getElement(String element, String string1, String string2) {
-		return new BaseControl(String.format(element, string1, string2));
+	public static BaseControl getElement(String element, String string1, String string2,String type) {
+		return new BaseControl(String.format(element, string1, string2),type);
 	}
 	
 	public static int countElement(String element) {

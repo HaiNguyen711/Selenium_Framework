@@ -12,8 +12,8 @@ import utils.constant.Constant;
 
 public class DropdownList extends ClickableControl {
 
-	public DropdownList(String locator) {
-		super(locator);
+	public DropdownList(String locator,String type) {
+		super(locator,type);
 		// TODO Auto-generated constructor stub
 	}
 }

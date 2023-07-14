@@ -13,8 +13,8 @@ import utils.constant.Constant;
 
 public class Button extends ClickableControl {
 
-	public Button(String locator) {
-		super(locator);
+	public Button(String locator,String type) {
+		super(locator,type);
 		// TODO Auto-generated constructor stub
 	}
 }

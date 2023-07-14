@@ -16,8 +16,8 @@ import utils.constant.Constant;
 
 public class ClickableControl extends BaseControl implements IClickableControl  {
 
-	public ClickableControl(String locator) {
-		super(locator);
+	public ClickableControl(String locator,String type) {
+		super(locator,type);
 		// TODO Auto-generated constructor stub
 	}
 	

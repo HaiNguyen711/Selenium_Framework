@@ -17,18 +17,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.google.common.base.Function;
 
 import core.driver.manager.DriverManagement;
+import core.element.manager.base.BaseControl;
+import core.element.manager.base.ClickableControl;
 import core.report.Log;
 import io.netty.handler.timeout.TimeoutException;
 import utils.constant.Constant;
 
-public class Element {
+public class Element extends BaseControl{
 //	private By by;
 //	Actions builder = new Actions(getDriver());
 //	private String locator;
 //
-//	public Element(String locator) {
-//		by = By.xpath(locator);
-//	}
+	public Element() {
+	}
 //
 //	public WebDriver getDriver() {
 //		return DriverManagement.getDriver();

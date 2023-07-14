@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import org.json.simple.JSONObject;
+import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
@@ -22,6 +22,11 @@ public class JsonHelper {
 		return value;
 	}
 	
+	public static JSONArray getJsonArray(String filePath) throws FileNotFoundException, IOException, ParseException {
+		Object obj = new JSONParser().parse(new FileReader(filePath));
+		JSONArray jo = (JSONArray) obj;
+		return jo;
+	}
 	public static JSONObject getJsonObject(String filePath) throws FileNotFoundException, IOException, ParseException {
 		Object obj = new JSONParser().parse(new FileReader(filePath));
 		JSONObject jo = (JSONObject) obj;

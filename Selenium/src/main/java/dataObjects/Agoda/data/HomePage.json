@@ -1,0 +1,14 @@
+[
+	{
+	"name": "txtSearch",
+	"control type": "textbox",
+	"type": "xpath",
+	"value": "//input[@data-view-id='main_search_form_input']"
+	},
+	{
+	"name": "btnSearch",
+	"control type": "button",
+	"type": "xpath",
+	"value": "//img[@class='Search']/parent::label"
+	}
+]

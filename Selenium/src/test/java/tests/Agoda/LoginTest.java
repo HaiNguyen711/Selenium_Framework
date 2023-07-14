@@ -33,9 +33,8 @@ public class LoginTest extends BaseTest {
 //		String value = JsonHelper.getValue(Constant.USER_DATA,"user name");
 		
 		
-//		HomePage page = new HomePage();
-		
-		
+		HomePage page = new HomePage();
+		page.test();
 		User user = UserHelper.getUser("Tester1");
 		
 		String semail = user.getEmail();
@@ -44,12 +43,8 @@ public class LoginTest extends BaseTest {
         String sLastName = user.getLastName();
         String sCountry = user.getCountry();
         String sPhone= user.getPhone();
+//		
 		
-		
-        
-        
-        
-        
 	}
 
 }
