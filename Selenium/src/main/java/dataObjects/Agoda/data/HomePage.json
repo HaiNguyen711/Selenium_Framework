@@ -1,14 +1,16 @@
 [
 	{
-	"name": "txtSearch",
-	"control type": "textbox",
-	"type": "xpath",
-	"value": "//input[@data-view-id='main_search_form_input']"
+		"type": "xpath",
+		"value": {
+			"txtSearch": "//input[@data-view-id='main_search_form_input']",
+			"btnSearch": "//img[@class='Search']/parent::label"
+		}
 	},
 	{
-	"name": "btnSearch",
-	"control type": "button",
-	"type": "xpath",
-	"value": "//img[@class='Search']/parent::label"
+		"type": "css",
+		"value": {
+			"txtSearch": ".center {text-align: center;color: red;}",
+			"lblInput": "p {text-align: center;color: red;}"
+		}
 	}
 ]
