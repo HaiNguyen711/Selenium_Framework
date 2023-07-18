@@ -34,7 +34,6 @@ public class LoginTest extends BaseTest {
 		
 		
 		HomePage page = new HomePage();
-		page.test();
 		User user = UserHelper.getUser("Tester1");
 		
 		String semail = user.getEmail();
