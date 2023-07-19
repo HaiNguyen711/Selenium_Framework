@@ -88,6 +88,7 @@ local.properties
 *.tar.gz
 *.rar
 *.html
+*.jar
 *.png
 *.exe
 
