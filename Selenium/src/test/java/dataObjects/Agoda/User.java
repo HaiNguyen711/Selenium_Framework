@@ -1,8 +1,10 @@
 package dataObjects.Agoda;
 
-import dataObjects.Agoda.enums.UserName;
 import utils.constant.Constant;
 import utils.helper.JsonHelper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class User {
 
@@ -12,7 +14,7 @@ public class User {
 	private String lastName;
 	private String country;
 	private String phone;
-	
+
 	public User(String email, String password, String firstName, String lastName, String country, String phone) {
 		this.email = email;
 		this.password = password;
@@ -23,11 +25,9 @@ public class User {
 	}
 
 	public User() {
-		
+
 	}
-	
-	
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -76,34 +76,24 @@ public class User {
 		this.phone = phone;
 	}
 
-	public User getUser(UserName userName) {
+	public static User getUser(String userName) {
+
 		User user = new User();
-        String semail = null;
-        String sPassword = null;
-        String sFirstName= null;
-        String sLastName = null;
-        String sCountry = null;
-        String sPhone= null;
-		switch (userName) {
-		case LOC:
-			semail = JsonHelper.getValue(Constant.USER_DATA,"emailLoc");
-			sPassword = JsonHelper.getValue(Constant.USER_DATA,"passwordLoc");
-			sFirstName = JsonHelper.getValue(Constant.USER_DATA,"firstNameLoc");
-			sLastName = JsonHelper.getValue(Constant.USER_DATA,"lastNameLoc");
-			sCountry = JsonHelper.getValue(Constant.USER_DATA,"country");
-			sPhone = JsonHelper.getValue(Constant.USER_DATA,"phone");
-			break;
-		default:
-			break;
+		ObjectMapper objectMapper = new ObjectMapper();
+		String user_json = JsonHelper.getValue(Constant.USER_DATA, userName).toString();
+
+		// Deserialization into the `User` class
+		try {
+			user = objectMapper.readValue(user_json, User.class);
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
-		user.setEmail(semail);
-		user.setPassword(sPassword);
-		user.setFirstName(sFirstName);
-		user.setLastName(sLastName);
-		user.setCountry(sCountry);
-		user.setPhone(sPhone);
+
 		return user;
 	}
-	
+
 }
