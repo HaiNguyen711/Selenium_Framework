@@ -26,16 +26,13 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void TestCase01() {
 		
-		User user = new User().getUser(UserName.LOC);
+		HomePage homePage;
+		LoginPage loginPage ;
+		BasePage basePage = new BasePage();
 		
-		String semail = user.getEmail();
-        String sPassword = user.getPassword();
-        String sFirstName= user.getFirstName();
-        String sLastName = user.getLastName();
-        String sCountry = user.getCountry();
-        String sPhone= user.getPhone();
-		
-		
+		loginPage = basePage.navigateToLoginPage(); 
+		homePage = loginPage.login("logi_test01@gmail.com", "password");
+
 	}
 
 }
