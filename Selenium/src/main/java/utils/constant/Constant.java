@@ -9,6 +9,7 @@ import utils.helper.Utilities;
 
 public class Constant {
 	public static final String APPLESTORE_URL = "https://www.agoda.com/";
+//	public static final String APPLESTORE_URL = "https://www.facebook.com/";
 	
 	public static final String HUB_URL = JsonHelper.getValue(Utilities.getProjectPath() + "\\src\\test\\resources\\grid\\node_config.json", "hub") + "/wd/hub";
 	

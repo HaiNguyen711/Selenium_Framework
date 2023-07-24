@@ -12,6 +12,8 @@ import core.driver.manager.DriverManagement;
 import core.driver.manager.DriverType;
 import core.report.ExtentTestManager;
 import core.report.TestListener;
+import pageobject.Agoda.BasePage;
+import pageobject.Agoda.LoginPage;
 import utils.constant.Constant;
 
 public class BaseTest {
@@ -27,9 +29,9 @@ public class BaseTest {
 		DriverManagement.getDriver().manage().window().maximize();
 	}
 
-	@AfterMethod
-	public void afterMethod() {
-		System.out.println("Post-condition: Quit");
-		DriverManagement.getDriver().quit();
-	}
+//	@AfterMethod
+//	public void afterMethod() {
+//		System.out.println("Post-condition: Quit");
+//		DriverManagement.getDriver().quit();
+//	}
 }

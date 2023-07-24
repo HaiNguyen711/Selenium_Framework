@@ -1,19 +1,28 @@
 package core.element.manager.wrapper;
 
-import java.time.Duration;
-
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.By;
 
 import core.element.manager.base.ClickableControl;
-import core.report.Log;
-import io.netty.handler.timeout.TimeoutException;
-import utils.constant.Constant;
+import core.element.manager.base.type.ElementType;
 
 public class Button extends ClickableControl {
 
 	public Button(String locator) {
+		super(locator);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Button(ElementType by, String value, String[] string) {
+		super(by, value, string);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Button(ElementType by, String value) {
+		super(by, value);
+		// TODO Auto-generated constructor stub
+	}
+
+	public Button(By locator) {
 		super(locator);
 		// TODO Auto-generated constructor stub
 	}
