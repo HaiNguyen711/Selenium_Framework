@@ -15,7 +15,7 @@ public class JsonHelper {
 	public static String getValue(String filePath, String key) {
 		String value = "";
 		try {
-			value = (String) getJsonObject(filePath).get(key);
+			value = getJsonObject(filePath).get(key).toString();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

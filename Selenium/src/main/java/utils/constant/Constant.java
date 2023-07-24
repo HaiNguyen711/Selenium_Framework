@@ -13,7 +13,7 @@ public class Constant {
 	
 	public static final String HUB_URL = JsonHelper.getValue(Utilities.getProjectPath() + "\\src\\test\\resources\\grid\\node_config.json", "hub") + "/wd/hub";
 	
-	public static final String DATA_URL = Utilities.getProjectPath() + "\\src\\test\\java\\resources\\data\\";
+	public static final String DATA_URL = Utilities.getProjectPath() + "\\src\\test\\resources\\data";
 	
 	public static final String USER_DATA = DATA_URL + "\\Users.json";
 	

@@ -5,6 +5,7 @@ import utils.helper.JsonHelper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.simple.JSONObject;
 
 public class User {
 
@@ -80,8 +81,8 @@ public class User {
 
 		User user = new User();
 		ObjectMapper objectMapper = new ObjectMapper();
-		String user_json = JsonHelper.getValue(Constant.USER_DATA, userName).toString();
-
+		String user_json = JsonHelper.getValue(Constant.USER_DATA, userName);
+		
 		// Deserialization into the `User` class
 		try {
 			user = objectMapper.readValue(user_json, User.class);
