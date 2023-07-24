@@ -18,6 +18,7 @@ public class Constant {
 	public static final String USER_DATA = DATA_URL + "\\Users.json";
 	
 	public static final String VARIABLE_DATA = DATA_URL + "\\Data.json";
+	public static final String LOCATOR_FOLDER_PATH = Utilities.getProjectPath() + "\\src\\test\\resources\\Locator\\Agoda\\";
 	
 	public static final String NULL = "null";
 	

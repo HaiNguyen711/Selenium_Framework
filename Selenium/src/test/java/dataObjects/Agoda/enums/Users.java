@@ -1,12 +1,12 @@
 package dataObjects.Agoda.enums;
 
-public enum UserName {
+public enum Users {
 	
-	LOC("LocLy");
+	TESTER1("Tester1"), TESTER2("Tester2");
 	
 	private final String text;
 	
-	UserName(String text) {
+	Users(String text) {
 		this.text = text;
 	}
 	

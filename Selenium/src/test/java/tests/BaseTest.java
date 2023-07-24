@@ -29,9 +29,9 @@ public class BaseTest {
 		DriverManagement.getDriver().manage().window().maximize();
 	}
 
-//	@AfterMethod
-//	public void afterMethod() {
-//		System.out.println("Post-condition: Quit");
-//		DriverManagement.getDriver().quit();
-//	}
+	@AfterMethod
+	public void afterMethod() {
+		System.out.println("Post-condition: Quit");
+		DriverManagement.getDriver().quit();
+	}
 }
