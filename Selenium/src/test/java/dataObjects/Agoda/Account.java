@@ -5,9 +5,12 @@ import utils.helper.JsonHelper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import dataObjects.Agoda.enums.Users;
+
 import org.json.simple.JSONObject;
 
-public class User {
+public class Account {
 
 	private String email;
 	private String password;
@@ -15,18 +18,17 @@ public class User {
 	private String lastName;
 	private String country;
 	private String phone;
-
-	public User(String email, String password, String firstName, String lastName, String country, String phone) {
+	
+	public Account() {
+		
+	}
+	public Account(String email, String password, String firstName, String lastName, String country, String phone) {
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.country = country;
 		this.phone = phone;
-	}
-
-	public User() {
-
 	}
 
 	public String getEmail() {
@@ -76,25 +78,4 @@ public class User {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-
-	public static User getUser(String userName) {
-
-		User user = new User();
-		ObjectMapper objectMapper = new ObjectMapper();
-		String user_json = JsonHelper.getValue(Constant.USER_DATA, userName);
-		
-		// Deserialization into the `User` class
-		try {
-			user = objectMapper.readValue(user_json, User.class);
-		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		return user;
-	}
-
 }
