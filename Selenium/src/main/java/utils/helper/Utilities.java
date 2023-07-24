@@ -88,6 +88,16 @@ public class Utilities {
 		return path;
 	}
 
+	/**
+	 * Capture the screenshot
+	 *
+	 * @return the output type for a screenshot
+	 */
+	public static byte[] takeScreenShot() {
+		TakesScreenshot scrShot = ((TakesScreenshot) DriverManagement.getDriver());
+		return (byte[]) (scrShot.getScreenshotAs(OutputType.BYTES));
+	}
+
 	public static String[] sortArrayAscending(String[] list) {
 		Arrays.sort(list);
 		return list;

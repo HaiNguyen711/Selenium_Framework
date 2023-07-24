@@ -34,8 +34,7 @@ public class LoginTest extends BaseTest {
         String sLastName = user.getLastName();
         String sCountry = user.getCountry();
         String sPhone= user.getPhone();
-		
-		
+
 	}
 
 }
