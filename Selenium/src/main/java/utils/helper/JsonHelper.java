@@ -22,6 +22,10 @@ import com.google.gson.JsonSyntaxException;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonReader;
+
 import utils.constant.Constant;
 
 /**
@@ -346,5 +350,31 @@ public class JsonHelper {
 		}
 		return value;
 	}
+<<<<<<< HEAD
 
+=======
+	
+	public static JSONObject getJsonObject(String filePath) throws FileNotFoundException, IOException, ParseException {
+		Object obj = new JSONParser().parse(new FileReader(filePath));
+		JSONObject jo = (JSONObject) obj;
+		return jo;
+	}
+	
+	public static String getValue(String key) {
+		return getValue(Constant.VARIABLE_DATA, key);
+	}
+	
+	public static JsonObject getJsonToObject(String filePath) throws Exception{
+		try {
+			JsonObject obj = new JsonObject();
+			Gson gson = new Gson();
+			JsonReader reader = new JsonReader(new FileReader(filePath));
+			obj = gson.fromJson(reader, JsonObject.class);
+			return obj;
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		}
+	}
+>>>>>>> a151b4d311013f4b9e0b9d0af2287906d7b8d755
 }

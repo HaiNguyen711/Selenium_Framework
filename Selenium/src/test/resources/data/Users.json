@@ -1,8 +1,18 @@
 {
-	  "emailLoc": "lytanloc141@gmail.com",
-	  "passwordLoc": "1234567890",
-	  "firstNameLoc": "Ly",
-	  "lastNameLoc": "Tan Loc",
-	  "country": "Vietnam",
-	  "phone": "0702993167"
+	 "Tester1": {
+	  	"email": "lytanloc141@gmail.com",
+	  	"password": "password",
+	  	"firstName": "Ly",
+	  	"lastName": "Tan Loc",
+	  	"country": "Vietnam",
+	  	"phone": "0702993167"
+	  },
+	  "Tester2": {
+	  	"email": "tranquyet233@gmail.com",
+	  	"password": "1234567890",
+	  	"firstName": "Nguyen",
+	  	"lastName": "Tran Quyet",
+	  	"country": "Vietnam",
+	  	"phone": "0702993167"
+	  }
 }

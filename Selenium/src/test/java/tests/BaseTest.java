@@ -12,6 +12,8 @@ import org.testng.annotations.Parameters;
 
 import core.report.ExtentTestManager;
 import core.report.TestListener;
+import pageobject.Agoda.BasePage;
+import pageobject.Agoda.LoginPage;
 import utils.constant.Constant;
 
 public class BaseTest {

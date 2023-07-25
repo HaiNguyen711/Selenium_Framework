@@ -6,12 +6,13 @@ import org.testng.annotations.Test;
 
 import core.report.Log;
 import core.report.TestListener;
-import dataObjects.Agoda.User;
-import dataObjects.Agoda.enums.UserName;
+import dataObjects.Agoda.Account;
+import dataObjects.Agoda.enums.Users;
 import pageobject.Agoda.BasePage;
 import pageobject.Agoda.HomePage;
 import pageobject.Agoda.LoginPage;
 import tests.BaseTest;
+import utils.helper.AccountHepler;
 import utils.helper.AssertHelper;
 import utils.helper.JsonHelper;
 import utils.helper.Utilities;
@@ -26,16 +27,14 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void TestCase01() {
 		
-		User user = new User().getUser(UserName.LOC);
+		HomePage homePage;
+		LoginPage loginPage ;
+		BasePage basePage = new BasePage();
 		
-		String semail = user.getEmail();
-        String sPassword = user.getPassword();
-        String sFirstName= user.getFirstName();
-        String sLastName = user.getLastName();
-        String sCountry = user.getCountry();
-        String sPhone= user.getPhone();
-		
-		
+		loginPage = basePage.navigateToLoginPage(); 
+//		homePage = loginPage.login("logi_test01@gmail.com", "password");
+		Account acc = AccountHepler.getUser(Users.TESTER1);
+
 	}
 
 }

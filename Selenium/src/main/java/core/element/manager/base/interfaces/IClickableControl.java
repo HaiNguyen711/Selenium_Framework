@@ -2,18 +2,23 @@ package core.element.manager.base.interfaces;
 
 public interface IClickableControl {
 	
+	/**
+	 * Click on the element
+	 */
 	void click();
+
+	/**
+	 * Double-click on the Element
+	 */
+	void doubleClick();
 	
-	void waitForClickable();
-	
-	void waitForClickable(long timeOut);
-	
-	boolean isClickable();
-	
+	/**
+	 * Select on the element by text
+	 */
 	void selectOptionByText(String option);
 	
+	/**
+	 * Select on the element by value
+	 */
 	void selectOptionByValue(String value);
-	
-	String[] getDropdownListOptions();
-
 }
