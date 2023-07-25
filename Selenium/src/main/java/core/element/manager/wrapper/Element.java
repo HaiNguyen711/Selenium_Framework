@@ -1,26 +1,5 @@
 package core.element.manager.wrapper;
 
-import java.time.Duration;
-import java.util.List;
-import java.util.NoSuchElementException;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.google.common.base.Function;
-
-import core.driver.manager.DriverManagement;
-import core.report.Log;
-import io.netty.handler.timeout.TimeoutException;
-import utils.constant.Constant;
-
 public class Element {
 //	private By by;
 //	Actions builder = new Actions(getDriver());

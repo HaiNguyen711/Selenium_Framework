@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import core.driver.manager.manage.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -15,8 +16,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
 
-import core.driver.manager.DriverManagement;
-import core.element.manager.wrapper.Element;
 import core.report.Log;
 import io.netty.handler.timeout.TimeoutException;
 import utils.constant.Constant;
@@ -31,7 +30,7 @@ public class BaseControl {
 	}
 
 	public WebDriver getDriver() {
-		return DriverManagement.getDriver();
+		return DriverManager.getDriver();
 	}
 
 	public WebElement getElement() {
@@ -51,7 +50,7 @@ public class BaseControl {
 	}
 	
 	public static int countElement(String element) {
-		List<WebElement> elements = DriverManagement.getDriver().findElements(By.xpath(element));
+		List<WebElement> elements = DriverManager.getDriver().findElements(By.xpath(element));
 		return elements.size();
 	}
 	
