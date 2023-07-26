@@ -4,7 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f945ef3f-7c5d-487d-a6d3-c0af3882e0a6" name="Changes" comment="update core" />
+    <list default="true" id="f945ef3f-7c5d-487d-a6d3-c0af3882e0a6" name="Changes" comment="update core">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/allure-results/629c9450-64bd-461d-bb8f-3ba5899eac7d-container.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IBaseControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IGetElementableControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/ISideActionableControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IValidateControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IWaitableControl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/type/ElementType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/CheckBox.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Link.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/RadioButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Tab.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/utils/helper/AccountHepler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/base/BaseControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/BaseControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/base/ClickableControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/ClickableControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/base/EditableControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/EditableControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IClickableControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IClickableControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IEditableControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/base/interfaces/IEditableControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Button.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/ComboBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/ComboBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/DropdownList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/DropdownList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Element.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Element.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Label.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/Label.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/TextBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/element/manager/wrapper/TextBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/report/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/report/TestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/constant/Constant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/constant/Constant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/helper/JsonHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/helper/JsonHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/helper/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/helper/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dataObjects/Agoda/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataObjects/Agoda/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dataObjects/Agoda/enums/UserName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dataObjects/Agoda/enums/Users.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject/Agoda/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobject/Agoda/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pageobject/Agoda/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pageobject/Agoda/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/Agoda/LoginTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/Agoda/LoginTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/data/Users.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/data/Users.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690266898697</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update core">
+      <option name="closed" value="true" />
+      <created>1690267776650</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1690267776650</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -116,7 +162,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="update_driver" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>

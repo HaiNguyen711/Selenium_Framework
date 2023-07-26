@@ -14,6 +14,9 @@ import com.aventstack.extentreports.Status;
 
 import junit.framework.AssertionFailedError;
 import utils.helper.Utilities;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
+
 
 public class TestListener implements ITestListener {
 
@@ -43,6 +46,11 @@ public class TestListener implements ITestListener {
 				"*** TEST EXECUTION COMPLETE - PASSED: " + result.getMethod().getMethodName());
 	}
 
+	@Attachment(value = "Screenshot of {0}", type = "image/png")
+	public byte[] saveScreenshot(String name) {
+		return Utilities.takeScreenShot();
+	}
+
 	public void onTestFailure(ITestResult result) {
 
 		if (result.getThrowable() instanceof AssertionFailedError) {
@@ -53,6 +61,7 @@ public class TestListener implements ITestListener {
 			String screenshotFileName = UUID.randomUUID().toString();
 			String screenshotFilePath = "";
 			try {
+				saveScreenshot(result.getName());
 				screenshotFilePath = Utilities.takeScreenShot(screenshotFileName,
 						ExtentReportManager.getScreenshotFolder());
 			} catch (Exception e1) {
@@ -69,6 +78,8 @@ public class TestListener implements ITestListener {
 						+ result.getMethod().getMethodName() + " - " + result.getThrowable().getMessage());
 				Log.info("An exception occured while taking screenshot " + e.getCause());
 			}
+			Allure.attachment("*** TEST EXECUTION COMPLETE - FAILED: "
+					+ result.getMethod().getMethodName() + " - " + result.getThrowable().getMessage(), screenshotFilePath);
 		}
 	}
 
