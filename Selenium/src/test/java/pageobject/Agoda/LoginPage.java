@@ -1,6 +1,6 @@
 package pageobject.Agoda;
 
-import core.driver.manager.BaseDriver;
+import core.driver.manager.manage.Driver;
 import core.element.manager.base.type.ElementType;
 import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.Label;
@@ -19,11 +19,11 @@ public class LoginPage extends BasePage {
 	}
 	public HomePage login(String sEmail, String sPassword) {
 		
-		new BaseDriver().getDriver().switchTo().frame(0);
+		new Driver().getDriver().switchTo().frame(0);
 		txtEmail.enter(sEmail);
 		txtPassword.enter(sPassword);
 		btnLogin.click();
-		new BaseDriver().getDriver().switchTo().defaultContent();
+		new Driver().getDriver().switchTo().defaultContent();
 		return new HomePage();
 	}
 

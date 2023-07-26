@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.logging.Logger;
 
+import core.driver.manager.manage.DriverManager;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,8 +12,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
 
-import core.driver.manager.DriverManagement;
-import core.element.manager.base.BaseControl;
 import utils.constant.Constant;
 
 public interface IWaitableControl extends IGetElementableControl {
@@ -30,7 +29,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForPresent(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
@@ -54,7 +53,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForNotPresent(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
@@ -106,7 +105,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForClickable(long timeOut) {
 		try {
-			new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut))
+			new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut))
 					.until(ExpectedConditions.elementToBeClickable(getElement()));
 		} catch (Exception error) {
 			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
@@ -121,7 +120,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForEnabled(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
@@ -155,7 +154,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForDisabled(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
@@ -189,7 +188,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForDisplayed(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
@@ -214,7 +213,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForNotDisplayed(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
@@ -257,7 +256,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForSelected(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
@@ -282,7 +281,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForNotSelected(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManagement.getDriver(), Duration.ofSeconds(timeOut));
+			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
 			wait.until(new Function<WebDriver, Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					try {
