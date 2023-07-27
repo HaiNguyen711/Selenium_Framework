@@ -1,0 +1,18 @@
+version: '3'
+services:
+  selenium-hub:
+    image: selenium/hub:3.141.59-20210226
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome:3.141.59-20210226
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+    volumes:
+      - ./testng-suite:/app/testng-suite  # Mount the directory containing your TestNG suite
+
+  # Add more containers here for other browsers, if needed (e.g., Firefox, etc.).

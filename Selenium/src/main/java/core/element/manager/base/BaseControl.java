@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.logging.Logger;
 
+import core.driver.manager.manage.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -16,10 +17,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.google.common.base.Function;
-
-import core.driver.manager.DriverManagement;
-import core.element.manager.base.interfaces.IBaseControl;
 import core.element.manager.base.interfaces.ISideActionableControl;
 import core.element.manager.base.interfaces.IValidateControl;
 import core.element.manager.base.interfaces.IWaitableControl;
@@ -39,7 +36,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	private static final Logger logger = Constant.createLogger(BaseControl.class.getName());
 	
 	public WebDriver getDriver() {
-		return DriverManagement.getDriver();
+		return DriverManager.getDriver();
 	}
 	
 	/**
@@ -90,7 +87,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		
 	
 	public static int countElement(String element) {
-		List<WebElement> elements = DriverManagement.getDriver().findElements(By.xpath(element));
+		List<WebElement> elements = DriverManager.getDriver().findElements(By.xpath(element));
 		return elements.size();
 	}
 	
