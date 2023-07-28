@@ -14,6 +14,7 @@ import pageobject.Agoda.LoginPage;
 import tests.BaseTest;
 import utils.helper.AccountHepler;
 import utils.helper.AssertHelper;
+import utils.helper.Environment;
 import utils.helper.JsonHelper;
 import utils.helper.Utilities;
 
@@ -27,13 +28,16 @@ public class LoginTest extends BaseTest {
 	@Test
 	public void TestCase01() {
 		
-		HomePage homePage;
-		LoginPage loginPage ;
+		
+		Environment environment = new Environment();
 		BasePage basePage = new BasePage();
+		LoginPage loginPage ;
+		HomePage homePage;
 		
 		loginPage = basePage.navigateToLoginPage(); 
-//		homePage = loginPage.login("logi_test01@gmail.com", "password");
 		Account acc = AccountHepler.getUser(Users.TESTER1);
+		homePage = loginPage.login(acc);
+		System.out.print(environment.getValue("email"));
 
 	}
 

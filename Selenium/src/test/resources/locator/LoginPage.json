@@ -1,0 +1,7 @@
+{
+    "windows": {
+        "txtEmail": "//input[@id='email']",
+        "txtPassword": "//input[@id='password']",
+        "btnLogin": "//button[@data-cy='signin-button']"
+    }
+}
