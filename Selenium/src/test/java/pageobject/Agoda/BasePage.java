@@ -2,19 +2,19 @@ package pageobject.Agoda;
 
 import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.TextBox;
+import dataObjects.Agoda.enums.ControlType;
+import utils.constant.Constant;
+import utils.helper.LocatorHelper;
 
 public class BasePage {
 	
-	Button btnSignIn = new Button("//button[@data-element-name='sign-in-button']");
-	TextBox txt = new TextBox("//input[@id=\"textInput\"]");
+	LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, BasePage.class);
+	
+	Button btnSignIn = locator.getLocator(ControlType.BUTTON, "btnSignIn");
 	
 	public LoginPage navigateToLoginPage() {
 		btnSignIn.click();
 		return new LoginPage();
-	}
-	
-	public void enter(String value) {
-		txt.enter(value);
 	}
 	
 }

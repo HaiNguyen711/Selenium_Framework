@@ -1,0 +1,5 @@
+{
+    "windows": {
+        "btnSignIn": "//button[@data-element-name='sign-in-button']"
+    }
+}
