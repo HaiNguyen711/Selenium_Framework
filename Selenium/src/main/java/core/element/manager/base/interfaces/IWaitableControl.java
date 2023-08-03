@@ -2,9 +2,10 @@ package core.element.manager.base.interfaces;
 
 import java.time.Duration;
 import java.util.NoSuchElementException;
-import java.util.logging.Logger;
 
 import core.driver.manager.manage.DriverManager;
+import core.report.Log;
+
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,12 +16,6 @@ import com.google.common.base.Function;
 import utils.constant.Constant;
 
 public interface IWaitableControl extends IGetElementableControl {
-
-
-	/**
-	 * Contains log of the element used
-	 */
-	public static final Logger logger = Constant.createLogger(IWaitableControl.class.getName());
 	
 	/**
 	 * Wait for element is presented in DOM
@@ -41,7 +36,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -65,7 +60,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -108,7 +103,7 @@ public interface IWaitableControl extends IGetElementableControl {
 			new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut))
 					.until(ExpectedConditions.elementToBeClickable(getElement()));
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -133,7 +128,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -167,7 +162,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -201,7 +196,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -226,7 +221,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -269,7 +264,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
@@ -294,7 +289,7 @@ public interface IWaitableControl extends IGetElementableControl {
 				}
 			});
 		} catch (Exception error) {
-			logger.severe(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
+			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
 		}
 	}
