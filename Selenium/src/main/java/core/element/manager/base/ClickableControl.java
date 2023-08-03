@@ -1,29 +1,15 @@
 package core.element.manager.base;
 
-import java.time.Duration;
-import java.util.List;
-import java.util.logging.Logger;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import core.element.manager.base.interfaces.IClickableControl;
 import core.element.manager.base.type.ElementType;
 import core.report.Log;
-import io.netty.handler.timeout.TimeoutException;
 import utils.constant.Constant;
 
 public class ClickableControl extends BaseControl implements IClickableControl  {
-	
-	/**
-	 * Contains log of the element used
-	 */
-	private static final Logger logger = Constant.createLogger(ClickableControl.class.getName());
-
 
 	public ClickableControl(String locator) {
 		super(locator);
@@ -54,7 +40,7 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 	 */
 	@Override
 	public void click() {
-		logger.info(String.format("Click to %s", getLocator().toString()));
+		Log.info(String.format("Click to %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.LONG_TIMEOUT) {
 			i++;
@@ -65,9 +51,9 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.LONG_TIMEOUT)
 					throw staleEx;
-				logger.severe(String.format("Try to scroll to control %s again", getLocator().toString()));
+				Log.error(String.format("Try to scroll to control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				throw e;
 			}
 		}
@@ -78,7 +64,7 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 	 */
 	@Override
 	public void selectOptionByText(String option) {
-		logger.info(String.format("Get Options on %s", getLocator().toString()));
+		Log.info(String.format("Get Options on %s", getLocator().toString()));
 		Select selectByText = new Select(this.getElement());
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
@@ -90,9 +76,9 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					throw staleEx;
-				logger.severe(String.format("Try to Select on control %s again", getLocator().toString()));
+				Log.error(String.format("Try to Select on control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				throw e;
 			}
 		}
@@ -103,7 +89,7 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 	 */
 	@Override
 	public void selectOptionByValue(String value) {
-		logger.info(String.format("Get Options on %s", getLocator().toString()));
+		Log.info(String.format("Get Options on %s", getLocator().toString()));
 		Select selectByText = new Select(this.getElement());
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
@@ -115,9 +101,9 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					throw staleEx;
-				logger.severe(String.format("Try to Select on control %s again", getLocator().toString()));
+				Log.error(String.format("Try to Select on control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				throw e;
 			}
 		}
@@ -128,7 +114,7 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 	 */
 	@Override
 	public void doubleClick() {
-		logger.info(String.format("Double-click on %s", getLocator().toString()));
+		Log.info(String.format("Double-click on %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -143,9 +129,9 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					throw staleEx;
-				logger.severe(String.format("Try to doubleClick control %s again", getLocator().toString()));
+				Log.error(String.format("Try to doubleClick control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(
+				Log.error(
 						String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				throw e;
 			}

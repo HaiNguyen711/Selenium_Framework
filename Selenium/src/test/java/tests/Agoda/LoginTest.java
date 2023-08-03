@@ -1,11 +1,10 @@
 package tests.Agoda;
 
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import core.report.Log;
-import core.report.TestListener;
+import core.report.AllureListener;
 import dataObjects.Agoda.Account;
 import dataObjects.Agoda.enums.Users;
 import pageobject.Agoda.BasePage;
@@ -15,10 +14,8 @@ import tests.BaseTest;
 import utils.helper.AccountHepler;
 import utils.helper.AssertHelper;
 import utils.helper.Environment;
-import utils.helper.JsonHelper;
-import utils.helper.Utilities;
 
-@Listeners(TestListener.class)
+@Listeners(AllureListener.class)
 public class LoginTest extends BaseTest {
 	
 	/**
@@ -40,5 +37,20 @@ public class LoginTest extends BaseTest {
 		System.out.print(environment.getValue("email"));
 
 	}
-
+	
+	@Test
+	public void TestCase02() {
+		HomePage homePage;
+		LoginPage loginPage ;
+		BasePage basePage = new BasePage();
+		
+		Log.STEP("1.Navigate to login page");
+		loginPage = basePage.navigateToLoginPage();
+		
+		Log.STEP("2.Login");
+		Account acc = AccountHepler.getUser(Users.TESTER1);
+		homePage = loginPage.login(acc);
+		
+		AssertHelper.assertTrue(false, null);
+	}
 }
