@@ -37,6 +37,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	
 	public WebDriver getDriver() {
 		return DriverManager.getDriver();
+		
 	}
 	
 	/**
@@ -173,6 +174,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
 			try {
+				this.waitForPresent(Constant.SHORT_TIMEOUT);
 				return getElement().getCssValue(propertyName);
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
@@ -201,6 +203,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
 			try {
+				this.waitForPresent(Constant.SHORT_TIMEOUT);
 				return getElement().getAttribute(attributeName);
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
@@ -227,6 +230,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
 			try {
+				this.waitForPresent(Constant.SHORT_TIMEOUT);
 				return getElement().getText();
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
@@ -325,6 +329,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
+			this.waitForPresent(Constant.SHORT_TIMEOUT);
 			List<WebElement> listOfElement = this.getElements();
 			List<String> textLst = new ArrayList<String>();
 			try {
@@ -356,6 +361,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
 			try {
+				this.waitForPresent(Constant.SHORT_TIMEOUT);
 				return getElement().getAttribute("value");
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
@@ -435,7 +441,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	public boolean isDisplayed(int timeOutInSeconds) {
 		try {
 			Log.info(String.format("Check if control %s is displayed", getLocator().toString()));
-			this.waitForDisabled(timeOutInSeconds);
+			this.waitForDisplayed(timeOutInSeconds);
 			return true;
 		} catch (TimeoutException timeOutEx) {
 			return false;
@@ -517,7 +523,6 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(Constant.TIMEOUT));
 		try {
 			wait.until(ExpectedConditions.elementToBeClickable(getElement()));
-			this.getElement().click();
 		} catch (TimeoutException e) {
 			isClickable = false;
 			logger.severe("[isNotDisplayed]: Getting timeout {}" + e.getLocalizedMessage());
