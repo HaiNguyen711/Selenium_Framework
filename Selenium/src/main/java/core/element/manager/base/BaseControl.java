@@ -3,8 +3,6 @@ package core.element.manager.base;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.logging.Logger;
 
 import core.driver.manager.manage.DriverManager;
 import org.openqa.selenium.By;
@@ -29,11 +27,6 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	private By by;
 	Actions builder = new Actions(getDriver());
 	private String locator;
-
-	/**
-	 * Contains log of the element used
-	 */
-	private static final Logger logger = Constant.createLogger(BaseControl.class.getName());
 	
 	public WebDriver getDriver() {
 		return DriverManager.getDriver();
@@ -149,7 +142,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 				eleXpath = byValue;
 			}
 		} catch (Exception e) {
-			logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+			Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 			throw e;
 		}
 
@@ -169,7 +162,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public String getCssValue(String propertyName) {
-		logger.info(String.format("Get Css value '%s' of %s", propertyName, getLocator().toString()));
+		Log.info(String.format("Get Css value '%s' of %s", propertyName, getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -179,10 +172,10 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					return null;
-				logger.severe(String.format("Try to get CSS value '%s' from control %s again", propertyName,
+				Log.error(String.format("Try to get CSS value '%s' from control %s again", propertyName,
 						getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				return null;
 			}
 		}
@@ -198,7 +191,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public String getAttribute(String attributeName) {
-		logger.info(String.format("Get Attribute value '%s' of %s", attributeName, getLocator().toString()));
+		Log.info(String.format("Get Attribute value '%s' of %s", attributeName, getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -208,10 +201,10 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					return null;
-				logger.severe(String.format("Try to get Attribute '%s' from control %s again", attributeName,
+				Log.error(String.format("Try to get Attribute '%s' from control %s again", attributeName,
 						getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				return null;
 			}
 		}
@@ -225,7 +218,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public String getText() {
-		logger.info(String.format("Get Text of %s", getLocator().toString()));
+		Log.info(String.format("Get Text of %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -235,9 +228,9 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					return null;
-				logger.severe(String.format("Try to get Text from control %s again", getLocator().toString()));
+				Log.error(String.format("Try to get Text from control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				return null;
 			}
 		}
@@ -249,7 +242,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public void hover() {
-		logger.info(String.format("Hover on %s", getLocator().toString()));
+		Log.info(String.format("Hover on %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -261,9 +254,9 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					throw staleEx;
-				logger.severe(String.format("Try to hover on control %s again", getLocator().toString()));
+				Log.error(String.format("Try to hover on control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				throw e;
 			}
 		}
@@ -274,7 +267,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public void scrollIntoView() {
-		logger.info(String.format("Scroll to %s", getLocator().toString()));
+		Log.info(String.format("Scroll to %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -286,9 +279,9 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					throw staleEx;
-				logger.severe(String.format("Try to scroll to control %s again", getLocator().toString()));
+				Log.error(String.format("Try to scroll to control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				throw e;
 			}
 		}
@@ -299,7 +292,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public void moveToElement() {
-		logger.info(String.format("Hover on %s", getLocator().toString()));
+		Log.info(String.format("Hover on %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -310,9 +303,9 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					throw staleEx;
-				logger.severe(String.format("Try to hover on control %s again", getLocator().toString()));
+				Log.error(String.format("Try to hover on control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				throw e;
 			}
 		}
@@ -325,7 +318,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public List<String> getAllTexts() {
-		logger.info(String.format("Get Text of %s", getLocator().toString()));
+		Log.info(String.format("Get Text of %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -333,16 +326,16 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			List<WebElement> listOfElement = this.getElements();
 			List<String> textLst = new ArrayList<String>();
 			try {
-				logger.info(String.format("Get all name of elements %s", getLocator().toString()));
+				Log.info(String.format("Get all name of elements %s", getLocator().toString()));
 				for (int y = 0; i < listOfElement.size(); y++) {
 					textLst.add(listOfElement.get(i).getText());
 				}
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					return null;
-				logger.severe(String.format("Try to get Text from control %s again", getLocator().toString()));
+				Log.error(String.format("Try to get Text from control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				return null;
 			}
 		}
@@ -356,7 +349,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public String getValue() {
-		logger.info(String.format("Get Text of %s", getLocator().toString()));
+		Log.info(String.format("Get Text of %s", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -366,9 +359,9 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					return null;
-				logger.severe(String.format("Try to get Value from control %s again", getLocator().toString()));
+				Log.error(String.format("Try to get Value from control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				return null;
 			}
 		}
@@ -460,7 +453,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public boolean isEnabled(int timeOutInSeconds) {
-		logger.info(String.format("Check if control %s is enabled", getLocator().toString()));
+		Log.info(String.format("Check if control %s is enabled", getLocator().toString()));
 		int i = 0;
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
@@ -470,9 +463,9 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			} catch (StaleElementReferenceException staleEx) {
 				if (i == Constant.SHORT_TIMEOUT)
 					return false;
-				logger.severe(String.format("Try to get value from control %s again", getLocator().toString()));
+				Log.error(String.format("Try to get value from control %s again", getLocator().toString()));
 			} catch (Exception e) {
-				logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 				return false;
 			}
 		}
@@ -499,7 +492,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public boolean isSelected(int timeOutInSeconds) {
-		logger.info(
+		Log.info(
 				String.format("Check Selected status of %s in %s seconds", getLocator().toString(), timeOutInSeconds));
 		try {
 			this.waitForSelected(timeOutInSeconds);
@@ -507,7 +500,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		} catch (TimeoutException timeOutEx) {
 			return false;
 		} catch (Exception e) {
-			logger.severe(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+			Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
 			return false;
 		}
 	}
@@ -525,7 +518,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 			wait.until(ExpectedConditions.elementToBeClickable(getElement()));
 		} catch (TimeoutException e) {
 			isClickable = false;
-			logger.severe("[isNotDisplayed]: Getting timeout {}" + e.getLocalizedMessage());
+			Log.error("[isNotDisplayed]: Getting timeout {}" + e.getLocalizedMessage());
 		} catch (Exception e) {
 			isClickable = false;
 		}

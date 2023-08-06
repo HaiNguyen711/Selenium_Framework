@@ -10,10 +10,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
+import core.report.AllureListener;
 import core.report.ExtentTestManager;
-import core.report.TestListener;
-import pageobject.Agoda.BasePage;
-import pageobject.Agoda.LoginPage;
 import utils.constant.Constant;
 
 public class BaseTest {
@@ -22,7 +20,7 @@ public class BaseTest {
 	@BeforeMethod(alwaysRun = true)
 	public void beforeMethod(@Optional("chrome.local") String driverConfig, @Optional("Windows") String platform,
 							 ITestContext context, Method method) throws Throwable {
-		ExtentTestManager.startTest(method.getName(), TestListener.testSuite.get(context.getName()));
+		ExtentTestManager.startTest(method.getName(), AllureListener.testSuite.get(context.getName()));
 		DriverManager.loadDriverProperty(Constant.DRIVER_SETTING_FILE, platform, driverConfig);
 		DriverManager.initDriver();
 		Driver.maximizeBrowser();
