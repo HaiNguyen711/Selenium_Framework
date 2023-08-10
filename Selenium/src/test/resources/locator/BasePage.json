@@ -1,6 +1,8 @@
 {
     "windows": {
-        "dynSibarItemXpath": "//app-sidebar//div[contains(text(),'%s')]",
-        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button"
+        "dynSibarItemXpath": "//app-sidebar//div[@ng-reflect-router-link='/%s']",
+        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
+        "btnLogout": "//div[text()='Logout']",
+        "lnkLogo": "//div[@class='col logo-1']"
     }
 }

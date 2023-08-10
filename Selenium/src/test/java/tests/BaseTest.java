@@ -12,6 +12,7 @@ import org.testng.annotations.Parameters;
 
 import core.report.AllureListener;
 import core.report.ExtentTestManager;
+import pageobject.VoucherParadise.LoginPage;
 import utils.constant.Constant;
 
 public class BaseTest {
@@ -25,6 +26,8 @@ public class BaseTest {
 		DriverManager.initDriver();
 		Driver.maximizeBrowser();
 		Driver.navigate(Constant.VOUCHER_PARADISE_URL);
+		LoginPage loginPage = new LoginPage();
+		loginPage.waitForLoginPageIsDisplayed();
 	}
 
 	@AfterMethod

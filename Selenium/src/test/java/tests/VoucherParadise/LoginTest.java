@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import core.report.Log;
 import core.report.AllureListener;
 import dataObjects.Account;
+import dataObjects.enums.SideBar;
 import pageobject.VoucherParadise.*;
 import tests.BaseTest;
 import utils.helper.AccountHepler;
@@ -36,10 +37,11 @@ public class LoginTest extends BaseTest {
 		Log.STEP("3.Click on LogIn button");
 		Account acc = AccountHepler.getUser("Admin");
 		homePage = loginPage.login(acc);
-		assertHelper.assertEquals(homePage.getHomePageTitle(),sWelcomTitle, "Login successfully");
-		Log.STEP("4.Logout");
 		
+		Log.verify("Login successfully");
+		assertHelper.assertEquals(homePage.getHomePageTitle(),sWelcomTitle, "Login successfully");
+		
+		Log.STEP("4.Logout");
 		loginPage = homePage.logout();
 	}
-
 }

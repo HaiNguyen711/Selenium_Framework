@@ -20,7 +20,7 @@ public class Constant {
 	
 	public static final int TIMEOUT = 30;
 	
-	public static final int SHORT_TIMEOUT = 5;
+	public static final int SHORT_TIMEOUT = 10;
 	
 	public static final int LONG_TIMEOUT = 60;
 	

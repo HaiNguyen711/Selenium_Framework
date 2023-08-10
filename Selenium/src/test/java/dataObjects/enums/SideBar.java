@@ -2,7 +2,7 @@ package dataObjects.enums;
 
 public enum SideBar {
 
-	USERINFOR("Hi,"), PARTNERS("Partners"), ACCOUNTS("Accounts"), LOGOUT("Logout");
+	USERINFO("user-info"), PARTNERS("partners"), ACCOUNTS("accounts");
 	
 	private final String text;
 	
