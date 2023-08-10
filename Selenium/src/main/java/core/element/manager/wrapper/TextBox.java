@@ -26,4 +26,12 @@ public class TextBox extends EditableControl {
 		super(locator);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public TextBox(String element, String string) {
+		super(element, string);
+	}
+	
+	public TextBox(String element, String[] string) {
+		super(element, string);
+	}
 }

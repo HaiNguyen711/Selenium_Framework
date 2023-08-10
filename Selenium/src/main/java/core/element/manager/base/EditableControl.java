@@ -30,6 +30,14 @@ public class EditableControl extends ClickableControl implements IEditableContro
 		// TODO Auto-generated constructor stub
 	}
 	
+	public EditableControl(String element, String string) {
+		super(element, string);
+	}
+	
+	public EditableControl(String element, String[] string) {
+		super(element, string);
+	}
+	
 	/**
 	 * ==============================================================================================
 	 */

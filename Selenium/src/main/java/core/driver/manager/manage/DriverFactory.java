@@ -44,7 +44,7 @@ public class DriverFactory {
 	 *                 Mode,...)
 	 * @return a new instance of driver
 	 */
-	public static BaseDriver newInstance(DriverProperty property) {
+	public static synchronized BaseDriver newInstance(DriverProperty property) {
 		String classFullName = String.format(DRIVER_CLASS_FULLNAME, property.getDriverType());
 		String methodName = String.format(METHOD_NAME, property.getMode());
 

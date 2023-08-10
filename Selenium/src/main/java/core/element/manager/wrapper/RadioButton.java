@@ -27,4 +27,11 @@ public class RadioButton extends ClickableControl {
 		// TODO Auto-generated constructor stub
 	}
 
+	public RadioButton(String element, String string) {
+		super(element, string);
+	}
+	
+	public RadioButton(String element, String[] string) {
+		super(element, string);
+	}
 }

@@ -18,5 +18,25 @@
     "driverExecutable": "src/test/resources/grid/driver/geckodriver.exe",
     "pageTimeOut": 60,
     "elementTimeOut": 0
+  },
+  "chrome.remote": {
+    "mode": "Remote",
+    "platform": "Linux",
+    "isHeadless": false,
+    "driverType": "Chrome",
+    "remoteUrl": "http://3.15.140.248:4444",
+    "driverExecutable": "src/test/resources/grid/driver/chromedriver.exe",
+    "pageTimeOut": 60,
+    "elementTimeOut": 0
+  },
+  "firefox.remote": {
+    "mode": "Remote",
+    "platform": "Linux",
+    "isHeadless": false,
+    "driverType": "Firefox",
+    "remoteUrl": "http://3.15.140.248:4444",
+    "driverExecutable": "src/test/resources/grid/driver/geckodriver.exe",
+    "pageTimeOut": 60,
+    "elementTimeOut": 0
   }
 }

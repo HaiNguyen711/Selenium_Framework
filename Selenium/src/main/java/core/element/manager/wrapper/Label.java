@@ -26,4 +26,12 @@ public class Label extends ClickableControl {
 		super(locator);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Label(String element, String string) {
+		super(element, string);
+	}
+	
+	public Label(String element, String[] string) {
+		super(element, string);
+	}
 }

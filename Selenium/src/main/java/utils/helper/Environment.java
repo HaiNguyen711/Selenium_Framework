@@ -13,7 +13,7 @@ public class Environment {
 	 * 
 	 * @return json file path
 	 */
-	public String getPath() {
+	public static String getPath() {
 		System.out.print(Paths.get(Constant.VARIABLE_DATA, DriverManager.getDriverProperty().getPlatform().toString().toLowerCase() + ".json"));
 		return Paths.get(Constant.VARIABLE_DATA, DriverManager.getDriverProperty().getPlatform().toString().toLowerCase() + ".json").normalize().toString();
 		
@@ -25,7 +25,7 @@ public class Environment {
 	 * @param value: variable of value in json file
 	 * @return value from data
 	 */
-	public String getValue(String value) {
+	public static String getValue(String value) {
 		
 		// Get locator from platform-driver key
 		return JsonHelper.getValue(getPath(), value);

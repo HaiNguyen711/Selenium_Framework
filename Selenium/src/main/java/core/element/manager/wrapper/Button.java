@@ -26,4 +26,12 @@ public class Button extends ClickableControl {
 		super(locator);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Button(String element, String string) {
+		super(element, string);
+	}
+	
+	public Button(String element, String[] string) {
+		super(element, string);
+	}
 }
