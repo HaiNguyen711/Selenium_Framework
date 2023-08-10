@@ -1,7 +1,5 @@
 {
     "windows": {
-        "divTitle": "//div[@class='page-title']",
-        "txtPassword": "//input[@id='password']",
-        "btnLogin": "//button[@class='btn-login btn btn-primary']"
+        "divTitle": "//div[@class='page-title']"
     }
 }

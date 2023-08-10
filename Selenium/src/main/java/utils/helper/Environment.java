@@ -25,10 +25,11 @@ public class Environment {
 	 * @param value: variable of value in json file
 	 * @return value from data
 	 */
-	public static String getValue(String value) {
+	public String getValue(String value) {
 		
 		// Get locator from platform-driver key
-		return JsonHelper.getValue(getPath(), value);
+		JsonObject data = JsonHelper.getJsonObject(getPath());
+		return data.get(value).getAsString();
 	}
 
 }

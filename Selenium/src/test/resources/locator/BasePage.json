@@ -1,5 +1,6 @@
 {
     "windows": {
-        "btnSignIn": "//button[@data-element-name='sign-in-button']"
+        "dynSibarItemXpath": "//app-sidebar//div[contains(text(),'%s')]",
+        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button"
     }
 }
