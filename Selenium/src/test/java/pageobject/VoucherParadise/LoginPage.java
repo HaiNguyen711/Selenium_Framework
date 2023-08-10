@@ -1,6 +1,5 @@
 package pageobject.VoucherParadise;
 
-import core.driver.manager.manage.Driver;
 import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.TextBox;
 import dataObjects.Account;
