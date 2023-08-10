@@ -1,6 +1,6 @@
 {
     "windows": {
-        "txtEmail": "//input[@id='email']",
+        "divTitle": "//div[@class='page-title']",
         "txtPassword": "//input[@id='password']",
         "btnLogin": "//button[@class='btn-login btn btn-primary']"
     }

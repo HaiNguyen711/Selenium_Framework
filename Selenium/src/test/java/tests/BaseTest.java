@@ -24,7 +24,7 @@ public class BaseTest {
 		DriverManager.loadDriverProperty(Constant.DRIVER_SETTING_FILE, platform, driverConfig);
 		DriverManager.initDriver();
 		Driver.maximizeBrowser();
-		Driver.navigate(Constant.APPLESTORE_URL);
+		Driver.navigate(Constant.VOUCHER_PARADISE_URL);
 	}
 
 	@AfterMethod

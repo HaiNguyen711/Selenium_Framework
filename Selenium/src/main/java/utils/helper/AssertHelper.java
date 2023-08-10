@@ -35,7 +35,7 @@ public class AssertHelper {
         }
     }
     
-    public void assertEquals(Object actualValue, Object expectedValue, String message) {
+    public static void assertEquals(Object actualValue, Object expectedValue, String message) {
         try {
             Assert.assertEquals(actualValue, expectedValue, message);
             Log.info("Verification passed: " + message);
@@ -49,7 +49,7 @@ public class AssertHelper {
         }
     }
 
-    public void assertNotEquals(Object actualValue, Object expectedValue, String message) {
+    public static void assertNotEquals(Object actualValue, Object expectedValue, String message) {
         try {
             Assert.assertNotEquals(actualValue, expectedValue, message);
             Log.info("Verification passed: " + message);

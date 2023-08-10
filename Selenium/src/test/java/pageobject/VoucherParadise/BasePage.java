@@ -1,8 +1,8 @@
-package pageobject.Agoda;
+package pageobject.VoucherParadise;
 
 import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.TextBox;
-import dataObjects.Agoda.enums.ControlType;
+import dataObjects.enums.ControlType;
 import utils.constant.Constant;
 import utils.helper.LocatorHelper;
 

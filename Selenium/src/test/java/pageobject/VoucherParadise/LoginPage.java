@@ -1,10 +1,10 @@
-package pageobject.Agoda;
+package pageobject.VoucherParadise;
 
 import core.driver.manager.manage.Driver;
 import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.TextBox;
-import dataObjects.Agoda.Account;
-import dataObjects.Agoda.enums.ControlType;
+import dataObjects.Account;
+import dataObjects.enums.ControlType;
 import utils.constant.Constant;
 import utils.helper.LocatorHelper;
 
@@ -19,11 +19,9 @@ public class LoginPage extends BasePage {
 
 	public HomePage login(Account account) {
 		
-		new Driver().getDriver().switchTo().frame(0);
 		txtEmail.enter(account.getEmail());
 		txtPassword.enter(account.getPassword());
 		btnLogin.click();
-		new Driver().getDriver().switchTo().defaultContent();
 		return new HomePage();
 	}
 

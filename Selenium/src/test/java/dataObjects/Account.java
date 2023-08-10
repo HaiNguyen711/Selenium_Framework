@@ -1,4 +1,4 @@
-package dataObjects.Agoda;
+package dataObjects;
 
 import utils.constant.Constant;
 import utils.helper.JsonHelper;
@@ -6,7 +6,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import dataObjects.Agoda.enums.Users;
+import dataObjects.enums.Users;
 
 import org.json.simple.JSONObject;
 

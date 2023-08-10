@@ -14,5 +14,13 @@
 	  	"lastName": "Tran Quyet",
 	  	"country": "Vietnam",
 	  	"phone": "0702993167"
+	  },
+	  "Admin": {
+	  	"email": "admin@seleniumtest.com",
+	  	"password": "password",
+	  	"firstName": "Admin",
+	  	"lastName": "Test",
+	  	"country": "Vietnam",
+	  	"phone": "0123456789"
 	  }
 }
