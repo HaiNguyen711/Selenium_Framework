@@ -6,7 +6,8 @@ import utils.constant.Constant;
 import utils.helper.LocatorHelper;
 
 public class HomePage extends BasePage {
-LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, HomePage.class);
+
+	LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, HomePage.class);
 	
 	Label lblTitle = locator.getLocator(ControlType.LABEL, "divTitle");
 	

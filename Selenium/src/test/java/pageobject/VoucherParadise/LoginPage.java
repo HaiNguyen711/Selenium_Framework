@@ -1,6 +1,7 @@
 package pageobject.VoucherParadise;
 
 import core.element.manager.wrapper.Button;
+import core.element.manager.wrapper.Label;
 import core.element.manager.wrapper.TextBox;
 import dataObjects.Account;
 import dataObjects.enums.ControlType;
@@ -14,6 +15,7 @@ public class LoginPage extends BasePage {
 	TextBox txtEmail = locator.getLocator(ControlType.TEXTBOX, "txtEmail");
 	TextBox txtPassword = locator.getLocator(ControlType.TEXTBOX, "txtPassword");
 	Button btnLogin = locator.getLocator(ControlType.BUTTON, "btnLogin");
+	Label lblLogin = locator.getLocator(ControlType.LABEL, "lblLogin");
 	
 
 	public HomePage login(Account account) {
@@ -22,6 +24,11 @@ public class LoginPage extends BasePage {
 		txtPassword.enter(account.getPassword());
 		btnLogin.click();
 		return new HomePage();
+	}
+	
+	public LoginPage waitForLoginPageIsDisplayed() {
+		lblLogin.waitForVisibility();
+		return this;
 	}
 
 }
