@@ -3,14 +3,15 @@
 <suite name="Suite" parallel="methods" thread-count="2">
 	<!-- Supported browser names: Chrome; Firefox -->
 	<listeners>
-		<listener class-name="core.report.TestListener"></listener>
+		<listener class-name="core.report.AllureListener"></listener>
 	</listeners>
-	
-	<test name="Test">
+
+	<test name="Chrome">
 		<parameter name="driverConfig" value="chrome.local" />
 		<parameter name="platform" value="windows" />
 		<classes>
-			 <class name="tests.Agoda.LoginTest"></class>
+			<class name="tests.Agoda.LoginTest"></class>
 		</classes>
 	</test>
+
 </suite>
