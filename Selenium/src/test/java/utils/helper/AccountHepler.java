@@ -4,18 +4,23 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import dataObjects.Agoda.Account;
-import dataObjects.Agoda.enums.Users;
+import dataObjects.Account;
+import dataObjects.enums.Users;
 import utils.constant.Constant;
 
 public class AccountHepler {
 
 	public static Account getUser(Users user) {
 
+		return getUser(user.getText());
+	}
+
+	public static Account getUser(String userName) {
+
 		Account account = new Account();
 		ObjectMapper objectMapper = new ObjectMapper();
-		String user_json = JsonHelper.getValue(Constant.USER_DATA, user.getText());
-		
+		String user_json = JsonHelper.getValue(Constant.USER_DATA, userName);
+
 		// Deserialization into the `User` class
 		try {
 			account = objectMapper.readValue(user_json, Account.class);

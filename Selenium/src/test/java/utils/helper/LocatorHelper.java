@@ -18,7 +18,7 @@ import core.element.manager.wrapper.Link;
 import core.element.manager.wrapper.RadioButton;
 import core.element.manager.wrapper.Tab;
 import core.element.manager.wrapper.TextBox;
-import dataObjects.Agoda.enums.ControlType;
+import dataObjects.enums.ControlType;
 import utils.constant.Constant;
 
 public class LocatorHelper {

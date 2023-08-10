@@ -1,4 +1,4 @@
-package dataObjects.Agoda.enums;
+package dataObjects.enums;
 
 public enum Users {
 	
