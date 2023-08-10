@@ -115,5 +115,6 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 test-output/
+allure-results/
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,eclipse,java

@@ -31,6 +31,16 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 		// TODO Auto-generated constructor stub
 	}
 	
+	public ClickableControl(String element, String string) {
+		super(element, string);
+		
+	}
+	
+	public ClickableControl(String element, String[] string) {
+		super(element, string);
+		
+	}
+	
 	/**
 	 * ==============================================================================================
 	 */

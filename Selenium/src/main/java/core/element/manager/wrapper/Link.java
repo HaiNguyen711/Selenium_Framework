@@ -26,4 +26,12 @@ public class Link extends ClickableControl {
 		super(locator);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Link(String element, String string) {
+		super(element, string);
+	}
+	
+	public Link(String element, String[] string) {
+		super(element, string);
+	}
 }

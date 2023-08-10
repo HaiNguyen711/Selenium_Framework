@@ -27,4 +27,11 @@ public class ComboBox extends EditableControl {
 		// TODO Auto-generated constructor stub
 	}
 
+	public ComboBox(String element, String string) {
+		super(element, string);
+	}
+	
+	public ComboBox(String element, String[] string) {
+		super(element, string);
+	}
 }

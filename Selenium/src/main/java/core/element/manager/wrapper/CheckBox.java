@@ -26,5 +26,13 @@ public class CheckBox extends ClickableControl {
 		super(locator);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public CheckBox(String element, String string) {
+		super(element, string);
+	}
+	
+	public CheckBox(String element, String[] string) {
+		super(element, string);
+	}
 
 }

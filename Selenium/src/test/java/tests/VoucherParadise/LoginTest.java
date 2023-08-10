@@ -19,7 +19,8 @@ public class LoginTest extends BaseTest {
 	 */
 	@Test
 	public void TestCase01() {
-
+		
+		AssertHelper assertHelper = new AssertHelper();
 		LoginPage loginPage = new LoginPage();
 		HomePage homePage;
 		
@@ -28,7 +29,7 @@ public class LoginTest extends BaseTest {
 		Account acc = AccountHepler.getUser("Admin");
 		homePage = loginPage.login(acc);
 		
-		AssertHelper.assertEquals("Welcome to Voucher Paradise", homePage.getHomePageTitle(), null);
+		assertHelper.assertEquals("Welcome to Voucher Paradise", homePage.getHomePageTitle(), null);
 	}
 
 }

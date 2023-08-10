@@ -72,6 +72,14 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		this.by = getByLocator(by, String.format(value, string));
 	}
 	
+	public BaseControl(String element, String... string) {
+		this.by = getByLocator(ElementType.XPATH, String.format(element, string));
+	}
+	
+	public BaseControl(String element, String string) {
+		this.by = getByLocator(ElementType.XPATH, String.format(element, string));
+	}
+	
 	
 
 	public static BaseControl getElement(String element, String... string) {

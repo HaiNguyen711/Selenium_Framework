@@ -25,4 +25,12 @@ public class Tab extends ClickableControl {
 		super(locator);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public Tab(String element, String string) {
+		super(element, string);
+	}
+	
+	public Tab(String element, String[] string) {
+		super(element, string);
+	}
 }

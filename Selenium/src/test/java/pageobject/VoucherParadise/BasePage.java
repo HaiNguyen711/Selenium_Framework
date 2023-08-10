@@ -16,5 +16,4 @@ public class BasePage {
 		btnSignIn.click();
 		return new LoginPage();
 	}
-	
 }
