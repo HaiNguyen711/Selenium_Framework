@@ -7,14 +7,14 @@ public interface IEditableControl extends IClickableControl {
 	 * 
 	 * @param value - value need enter
 	 */
-	 void enter(CharSequence... value);
+	 void enter(String value);
 	
 	 /**
 	 * Enter value in element
 	 * 
 	 * @param value - value need enter
 	 */
-	 void type(CharSequence... value);
+	 void type(String value);
 	 
 	 /**
 	  * clear text value for an element
