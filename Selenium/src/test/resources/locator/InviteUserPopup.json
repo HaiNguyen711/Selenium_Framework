@@ -1,0 +1,9 @@
+{
+    "windows": {
+        "txtInfo": "//input[@formcontrolname='%s']",
+        "lbltitle": "//div[contains(text(),'%s')]",
+        "btnProfile": "//div[@class='btn-upload-file']",
+        "btnCancel": "//button[contains(@class,'btn btn-cancel')]",
+        "btnSave": "//button[contains(.,'Save')]"
+    }
+}

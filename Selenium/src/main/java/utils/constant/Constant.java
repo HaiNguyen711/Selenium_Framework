@@ -15,6 +15,7 @@ public class Constant {
 	public static final String USER_DATA = DATA_URL + "\\data\\user\\Users.json";
 	public static final String VARIABLE_DATA = DATA_URL + "\\data\\environment\\";
 	public static final String LOCATOR_PATH = DATA_URL + "\\locator\\";
+	public static final String IMAGE_DATA = DATA_URL + "\\data\\images";
 	
 	public static final String NULL = "null";
 	
