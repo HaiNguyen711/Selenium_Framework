@@ -1,5 +1,8 @@
 {
 	"phone": "0702993167",
 	"email": "tranquyet233@gmail.com",
-	"welcomTitle": "Welcome to Voucher Paradise"
+	"welcomTitle": "Welcome to Voucher Paradise",
+	"invalidPassword": "password12",
+	"notificationMessage": "Login fail",
+	"notificationDescription": "Login credentials not valid"
 }
