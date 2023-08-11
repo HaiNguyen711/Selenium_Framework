@@ -15,7 +15,7 @@ public class AssertHelper extends Assertion {
 	 */
 	@Override
 	public void onAssertSuccess(IAssert<?> assertCommand) {
-		Log.passedAssertion("Verification Passed");
+		Log.passedAssertion(assertCommand.getMessage());
 	}
 
 	/**
@@ -24,7 +24,7 @@ public class AssertHelper extends Assertion {
 	 */
 	@Override
 	public void onAssertFailure(IAssert<?> assertCommand, AssertionError ex) {
-		String _mess = "Verification Failed";
+		String _mess = assertCommand.getMessage();
 		for (StackTraceElement ste : ex.getStackTrace()) {
 			if (!ste.toString().toLowerCase().contains("assert")) {
 				_mess += " Line# " + ste.getLineNumber() + " - " + ex.getMessage();

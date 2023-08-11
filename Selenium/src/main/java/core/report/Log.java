@@ -63,15 +63,19 @@ public class Log {
     }
     
     public static void passedAssertion(String message) {
+    	String messageLog = message;
 		message = "<b style=\"color: blue;word-break:break-word;\"><i style=\"color: #00af00\">Verification passed: " + message
 				+ " </i></b>";
 		Reporter.log(message);
+		Reporter.log(Utilities.getDateNow("MM.dd.yyyy - HH:mm:ss") + " - Verification passed: " + messageLog, true);
 		ExtentTestManager.getTest().log(Status.PASS, message);
 	}
 
 	public static void failedAssertion(String message) {
+		String messageLog = message;
 		message = "<b style=\"color: blue;word-break:break-word;\"><i style=\"color: red\">Verification failed: " + message + " </i></b>";
 		Reporter.log(message);
+		Reporter.log(Utilities.getDateNow("MM.dd.yyyy - HH:mm:ss") + " - Verification failed: " + messageLog, true);
 		ExtentTestManager.getTest().log(Status.FAIL, message);
 	}
 	

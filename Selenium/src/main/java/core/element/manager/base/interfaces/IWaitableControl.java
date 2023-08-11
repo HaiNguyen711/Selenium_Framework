@@ -6,8 +6,10 @@ import java.util.NoSuchElementException;
 import core.driver.manager.manage.DriverManager;
 import core.report.Log;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -48,21 +50,12 @@ public interface IWaitableControl extends IGetElementableControl {
 	 */
 	public default void waitForNotPresent(int timeOut) {
 		try {
-			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
-			wait.until(new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					try {
-						getElement();
-					} catch (NoSuchElementException e) {
-						return true;
-					}
-					return false;
-				}
-			});
-		} catch (Exception error) {
-			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
-					error.getMessage()));
-		}
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
+            wait.until(driver -> getElements().isEmpty());
+        } catch (Exception e) {
+            Log.error(String.format("waitForElementNotPresent: Has error with control '%s': %s",
+                    getLocator().toString(), e.getMessage()));
+        }
 	}
 
 	/**
@@ -80,7 +73,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 * @param timeOut - wait for default time out
 	 */
 	public default void waitForNotPresent() {
-		this.waitForNotPresent(Constant.LONG_TIMEOUT);
+		this.waitForNotPresent(Constant.SHORT_TIMEOUT);
 	}
 	
 	/**
@@ -116,17 +109,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	public default void waitForEnabled(int timeOut) {
 		try {
 			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
-			wait.until(new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					try {
-						return  getElement().isDisplayed() && getElement().isEnabled();
-					} catch (NoSuchElementException e) {
-						return false;
-					} catch (StaleElementReferenceException e) {
-						return false;
-					}
-				}
-			});
+			wait.until((drive) -> this.getElement().isEnabled());
 		} catch (Exception error) {
 			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
@@ -139,7 +122,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 * @param timeOut - wait for default time out
 	 */
 	public default void waitForEnabled() {
-		this.waitForEnabled(Constant.LONG_TIMEOUT);
+		this.waitForEnabled(Constant.SHORT_TIMEOUT);
 	}
 	
 	/**
@@ -150,17 +133,11 @@ public interface IWaitableControl extends IGetElementableControl {
 	public default void waitForDisabled(int timeOut) {
 		try {
 			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
-			wait.until(new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					try {
-						return  !(getElement().isDisplayed() && getElement().isEnabled());
-					} catch (NoSuchElementException e) {
-						return false;
-					} catch (StaleElementReferenceException e) {
-						return false;
-					}
-				}
-			});
+			wait.until(driver -> {
+                if (getElements().size() == 0)
+                    return true;
+                return !getElement().isEnabled();
+            });
 		} catch (Exception error) {
 			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
 					error.getMessage()));
@@ -173,7 +150,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 * @param timeOut - wait for default time out
 	 */
 	public default void waitForDisabled() {
-		this.waitForDisabled(Constant.LONG_TIMEOUT);
+		this.waitForDisabled(Constant.SHORT_TIMEOUT);
 	}
 	
 	/**
@@ -184,21 +161,11 @@ public interface IWaitableControl extends IGetElementableControl {
 	public default void waitForDisplayed(int timeOut) {
 		try {
 			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
-			wait.until(new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					try {
-						return getElement().isDisplayed();
-					} catch (NoSuchElementException e) {
-						return false;
-					} catch (StaleElementReferenceException e) {
-						return false;
-					}
-				}
-			});
-		} catch (Exception error) {
-			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
-					error.getMessage()));
-		}
+			wait.until(ExpectedConditions.presenceOfElementLocated(getLocator()));
+        } catch (Exception e) {
+            Log.error(String.format("WaitForDisplay: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage()));
+        }
 	}
 	
 	/**
@@ -232,7 +199,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 * @param timeOut - wait for default time out
 	 */
 	public default void waitForDisplayed() {
-		waitForDisplayed(Constant.LONG_TIMEOUT);
+		waitForDisplayed(Constant.SHORT_TIMEOUT);
 	}
 	
 	/**
@@ -241,7 +208,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 * @param timeOut - wait for default time out
 	 */
 	public default void waitForNotDisplayed() {
-		waitForNotDisplayed(Constant.LONG_TIMEOUT);
+		waitForNotDisplayed(Constant.SHORT_TIMEOUT);
 	}
 	
 	/**
@@ -252,21 +219,11 @@ public interface IWaitableControl extends IGetElementableControl {
 	public default void waitForSelected(int timeOut) {
 		try {
 			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
-			wait.until(new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					try {
-						return getElement().isSelected();
-					} catch (NoSuchElementException e) {
-						return true;
-					} catch (StaleElementReferenceException e) {
-						return true;
-					}
-				}
-			});
-		} catch (Exception error) {
-			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
-					error.getMessage()));
-		}
+			wait.until(ExpectedConditions.elementToBeSelected(getLocator()));
+        } catch (Exception e) {
+            Log.error(String.format("waitForNotSelected: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage()));
+        }
 	}
 	
 	/**
@@ -277,21 +234,12 @@ public interface IWaitableControl extends IGetElementableControl {
 	public default void waitForNotSelected(int timeOut) {
 		try {
 			WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOut));
-			wait.until(new Function<WebDriver, Boolean>() {
-				public Boolean apply(WebDriver driver) {
-					try {
-						return !(getElement().isSelected());
-					} catch (NoSuchElementException e) {
-						return true;
-					} catch (StaleElementReferenceException e) {
-						return true;
-					}
-				}
-			});
-		} catch (Exception error) {
-			Log.error(String.format("Has error when wait for element '%s': %s", getLocator().toString(),
-					error.getMessage()));
-		}
+			wait.until((driver) -> !getElement().isSelected());
+        } catch (Exception e) {
+            Log.error(String.format("waitForNotSelected: Has error with control '%s': %s", getLocator().toString(),
+                    String.format("Expected condition failed: waiting for condition to be valid: element to not be selected" +
+                            " (tried for %s second(s) with 500 milliseconds interval", timeOut)));
+        }
 	}
 	
 	/**
@@ -300,7 +248,7 @@ public interface IWaitableControl extends IGetElementableControl {
 	 * @param timeOut - wait for default time out
 	 */
 	public default void waitForSelected() {
-		waitForNotSelected(Constant.LONG_TIMEOUT);
+		waitForNotSelected(Constant.SHORT_TIMEOUT);
 	}
 	
 	/**
@@ -309,6 +257,21 @@ public interface IWaitableControl extends IGetElementableControl {
 	 * @param timeOut - wait for default time out
 	 */
 	public default void waitForNotSelected() {
-		waitForNotSelected(Constant.LONG_TIMEOUT);
+		waitForNotSelected(Constant.SHORT_TIMEOUT);
 	}
+	
+	public default void waitForVisibility() {
+        waitForVisibility(Constant.SHORT_TIMEOUT);
+    }
+
+    public default void waitForVisibility(int timeOutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOutInSeconds));
+
+            wait.until(ExpectedConditions.visibilityOfElementLocated(getLocator()));
+        } catch (Exception e) {
+            Log.error(String.format("waitForVisibility: Has error with control '%s': %s", getLocator().toString(),
+                    e.getMessage()));
+        }
+    }
 }
