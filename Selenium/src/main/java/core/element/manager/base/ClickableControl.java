@@ -55,7 +55,7 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 		while (i < Constant.LONG_TIMEOUT) {
 			i++;
 			try {
-				this.waitForClickable();
+				this.waitForVisibility();
 				getElement().click();
 				return;
 			} catch (StaleElementReferenceException staleEx) {
@@ -80,7 +80,7 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
 			try {
-				this.waitForNotPresent(Constant.TIMEOUT);
+				this.waitForVisibility();
 				selectByText.selectByVisibleText(option);
 				return;
 			} catch (StaleElementReferenceException staleEx) {
@@ -105,7 +105,7 @@ public class ClickableControl extends BaseControl implements IClickableControl  
 		while (i < Constant.SHORT_TIMEOUT) {
 			i++;
 			try {
-				this.waitForNotPresent(Constant.SHORT_TIMEOUT);
+				this.waitForVisibility();
 				selectByText.selectByValue(value);
 				return;
 			} catch (StaleElementReferenceException staleEx) {

@@ -3,6 +3,7 @@
         "dynSibarItemXpath": "//app-sidebar//div[@ng-reflect-router-link='/%s']",
         "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
         "btnLogout": "//div[text()='Logout']",
-        "lnkLogo": "//div[@class='col logo-1']"
+        "lnkLogo": "//div[@class='col logo-1']",
+        "lblLogoutComfirm": "//span[text()='Do you want to logout?']"
     }
 }

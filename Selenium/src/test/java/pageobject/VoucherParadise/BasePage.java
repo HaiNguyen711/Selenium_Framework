@@ -1,6 +1,7 @@
 package pageobject.VoucherParadise;
 
 import core.element.manager.wrapper.Button;
+import core.element.manager.wrapper.Label;
 import core.element.manager.wrapper.Link;
 import dataObjects.enums.ControlType;
 import dataObjects.enums.SideBar;
@@ -14,6 +15,7 @@ public class BasePage {
 	private final Button btnConfirmationYes = locator.getLocator(ControlType.BUTTON, "btnConfirmationYes");
 	private final Link lnkLogo = locator.getLocator(ControlType.LINK, "lnkLogo");
 	private final Button btnLogout = locator.getLocator(ControlType.BUTTON, "btnLogout");
+	private final Label lblLogoutComfirm = locator.getLocator(ControlType.LABEL, "lblLogoutComfirm");
 
 	public <T extends BasePage> T openTab(SideBar sideBar) {
 		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", sideBar.getText());
@@ -32,6 +34,7 @@ public class BasePage {
 
 	public LoginPage logout() {
 		btnLogout.click();
+		lblLogoutComfirm.waitForVisibility();
 		btnConfirmationYes.click();
 		return new LoginPage();
 	}

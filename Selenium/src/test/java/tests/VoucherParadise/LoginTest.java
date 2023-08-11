@@ -7,6 +7,7 @@ import core.report.Log;
 import core.report.AllureListener;
 import dataObjects.Account;
 import dataObjects.enums.SideBar;
+import dataObjects.enums.Users;
 import pageobject.VoucherParadise.*;
 import tests.BaseTest;
 import utils.helper.AccountHepler;
@@ -35,7 +36,7 @@ public class LoginTest extends BaseTest {
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
 		Log.STEP("3.Click on LogIn button");
-		Account acc = AccountHepler.getUser("Admin");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
 		
 		Log.verify("Login successfully");
