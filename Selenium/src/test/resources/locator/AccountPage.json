@@ -1,6 +1,10 @@
 {
     "windows": {
         "slRole": "//select[@class='select-user-role']",
-        "lblTitle": "//h2[.='%s Accounts']"
+        "lblTitle": "//h2[.='%s Accounts']",
+        "btnInviteUser": "//button[.='Invite User']",
+        "lblName": "//div[contains(@class,'card-title') and contains(text(),'%s')]",
+        "lblUsername": "//div[contains(@class,'card-username') and contains(text(),'%s')]",
+        "lblphone": "//div[contains(@class,'card-text') and contains(text(),'%s')]"
     }
 }

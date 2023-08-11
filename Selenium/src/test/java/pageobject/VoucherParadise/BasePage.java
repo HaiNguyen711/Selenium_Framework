@@ -1,6 +1,7 @@
 package pageobject.VoucherParadise;
 
 import core.element.manager.wrapper.Button;
+import core.element.manager.wrapper.ComboBox;
 import core.element.manager.wrapper.Label;
 import core.element.manager.wrapper.Link;
 import dataObjects.enums.ControlType;
@@ -16,6 +17,11 @@ public class BasePage {
 	private final Link lnkLogo = locator.getLocator(ControlType.LINK, "lnkLogo");
 	private final Button btnLogout = locator.getLocator(ControlType.BUTTON, "btnLogout");
 	private final Label lblLogoutComfirm = locator.getLocator(ControlType.LABEL, "lblLogoutComfirm");
+	private final Button btnLastPage = locator.getLocator(ControlType.BUTTON, "btnLastPage");
+	private final ComboBox slPerPage = locator.getLocator(ControlType.COMBOBOX, "slPerPage");
+	private final Label lblErrorMessage = locator.getLocator(ControlType.LABEL, "lblErrorMessage");
+	private final Label lblErrorMessageImage = locator.getLocator(ControlType.LABEL, "lblErrorMessageImage");
+	private final Label lblErrorMessageFirstLastName = locator.getLocator(ControlType.LABEL, "lblErrorMessageFirstLastName");
 
 	public <T extends BasePage> T openTab(SideBar sideBar) {
 		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", sideBar.getText());
@@ -34,7 +40,7 @@ public class BasePage {
 
 	public LoginPage logout() {
 		btnLogout.click();
-		lblLogoutComfirm.waitForVisibility();
+		btnConfirmationYes.waitForVisibility();
 		btnConfirmationYes.click();
 		return new LoginPage();
 	}
@@ -42,6 +48,36 @@ public class BasePage {
 	public HomePage clickSiteLogo() {
 		lnkLogo.click();
 		return new HomePage();
+	}
+	
+	public BasePage goTolastPage() {
+		btnLastPage.waitForEnabled();
+		btnLastPage.click();
+		return this;
+	}
+	
+	public BasePage selectItemsPerPage(String sValue) {
+		Label lblPerPageItem = locator.getLocator(ControlType.LABEL, "lblPerPageItem", sValue);
+		slPerPage.click();
+		lblPerPageItem.waitForVisibility();
+		lblPerPageItem.waitForClickable();
+		lblPerPageItem.click();
+		return this;
+	}
+	
+	public String getErrorMessage() {
+		lblErrorMessage.waitForVisibility();
+		return lblErrorMessage.getText();
+	}
+	
+	public String getErrorMessageImage() {
+		lblErrorMessageImage.waitForVisibility();
+		return lblErrorMessageImage.getText();
+	}
+	
+	public String getErrorMessageFirstLastName() {
+		lblErrorMessageFirstLastName.waitForVisibility();
+		return lblErrorMessageFirstLastName.getText();
 	}
 	
 }
