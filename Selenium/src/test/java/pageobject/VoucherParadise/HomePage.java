@@ -11,7 +11,11 @@ public class HomePage extends BasePage {
 	
 	private final Label lblTitle = locator.getLocator(ControlType.LABEL, "divTitle");
 	
-public String getHomePageTitle() {
+	public String getHomePageTitle() {
 		return lblTitle.getText();
+	}
+	
+	public void waitForLoad() {
+		lblTitle.waitForVisibility();
 	}
 }

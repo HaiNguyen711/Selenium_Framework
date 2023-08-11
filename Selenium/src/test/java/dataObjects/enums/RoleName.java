@@ -1,17 +1,15 @@
 package dataObjects.enums;
 
-public enum Users {
-	
-	ADMIN01("Admin01"), ADMIN("Admin");
+public enum RoleName {
+	ADMIN("Admin"), PARTNER("Partner"), MEMBER("Member");
 	
 	private final String text;
 	
-	Users(String text) {
+	RoleName(String text) {
 		this.text = text;
 	}
 	
 	public String getText() {
 		return text;
 	}
-
 }

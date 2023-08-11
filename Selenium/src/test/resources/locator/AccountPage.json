@@ -1,0 +1,6 @@
+{
+    "windows": {
+        "slRole": "//select[@class='select-user-role']",
+        "lblTitle": "//h2[.='%s Accounts']"
+    }
+}
