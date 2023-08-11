@@ -16,18 +16,16 @@ public class Account {
 	private String password;
 	private String firstName;
 	private String lastName;
-	private String country;
 	private String phone;
 	
 	public Account() {
 		
 	}
-	public Account(String email, String password, String firstName, String lastName, String country, String phone) {
+	public Account(String email, String password, String firstName, String lastName, String phone) {
 		this.email = email;
 		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.country = country;
 		this.phone = phone;
 	}
 
@@ -61,14 +59,6 @@ public class Account {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public String getCountry() {
-		return country;
-	}
-
-	public void setCountry(String country) {
-		this.country = country;
 	}
 
 	public String getPhone() {

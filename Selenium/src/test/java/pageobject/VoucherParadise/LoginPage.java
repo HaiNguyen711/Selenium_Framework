@@ -12,10 +12,10 @@ public class LoginPage extends BasePage {
 	
 	LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, LoginPage.class);
 	
-	TextBox txtEmail = locator.getLocator(ControlType.TEXTBOX, "txtEmail");
-	TextBox txtPassword = locator.getLocator(ControlType.TEXTBOX, "txtPassword");
-	Button btnLogin = locator.getLocator(ControlType.BUTTON, "btnLogin");
-	Label lblLogin = locator.getLocator(ControlType.LABEL, "lblLogin");
+	private final TextBox txtEmail = locator.getLocator(ControlType.TEXTBOX, "txtEmail");
+	private final TextBox txtPassword = locator.getLocator(ControlType.TEXTBOX, "txtPassword");
+	private final Button btnLogin = locator.getLocator(ControlType.BUTTON, "btnLogin");
+	private final Label lblLogin = locator.getLocator(ControlType.LABEL, "lblLogin");
 	
 
 	public HomePage login(Account account) {

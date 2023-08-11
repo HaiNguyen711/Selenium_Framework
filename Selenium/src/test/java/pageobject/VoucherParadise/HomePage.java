@@ -9,7 +9,7 @@ public class HomePage extends BasePage {
 
 	LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, HomePage.class);
 	
-	Label lblTitle = locator.getLocator(ControlType.LABEL, "divTitle");
+	private final Label lblTitle = locator.getLocator(ControlType.LABEL, "divTitle");
 	
 public String getHomePageTitle() {
 		return lblTitle.getText();
