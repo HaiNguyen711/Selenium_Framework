@@ -11,9 +11,9 @@ public class BasePage {
 
 	LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, BasePage.class);
 
-	Button btnConfirmationYes = locator.getLocator(ControlType.BUTTON, "btnConfirmationYes");
-	Link lnkLogo = locator.getLocator(ControlType.LINK, "lnkLogo");
-	Button btnLogout = locator.getLocator(ControlType.BUTTON, "btnLogout");
+	private final Button btnConfirmationYes = locator.getLocator(ControlType.BUTTON, "btnConfirmationYes");
+	private final Link lnkLogo = locator.getLocator(ControlType.LINK, "lnkLogo");
+	private final Button btnLogout = locator.getLocator(ControlType.BUTTON, "btnLogout");
 
 	public <T extends BasePage> T openTab(SideBar sideBar) {
 		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", sideBar.getText());
