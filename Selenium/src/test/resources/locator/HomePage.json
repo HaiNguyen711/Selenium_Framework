@@ -1,5 +1,9 @@
 {
     "windows": {
         "divTitle": "//div[@class='page-title']"
+    },
+    
+    "linux":{
+    	"divTitle": "//div[@class='page-title']"
     }
 }

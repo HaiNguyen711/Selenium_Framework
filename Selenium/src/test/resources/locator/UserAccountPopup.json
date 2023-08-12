@@ -2,8 +2,20 @@
     "windows": {
         "txtInfo": "//input[@formcontrolname='%s']",
         "lbltitle": "//div[contains(text(),'%s')]",
-        "btnProfile": "//div[@class='btn-upload-file']",
+        "btnProfile": "//input[@id='profileImg']",
         "btnCancel": "//button[contains(@class,'btn btn-cancel')]",
-        "btnSave": "//button[contains(.,'Save')]"
+        "btnSave": "//button[contains(.,'Save')]",
+        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
+        "btnDelete": "//img[@mattooltip='Delete Account']"
+    },
+    
+    "linux":{
+    	"txtInfo": "//input[@formcontrolname='%s']",
+        "lbltitle": "//div[contains(text(),'%s')]",
+        "btnProfile": "//input[@id='profileImg']",
+        "btnCancel": "//button[contains(@class,'btn btn-cancel')]",
+        "btnSave": "//button[contains(.,'Save')]",
+        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
+        "btnDelete": "//img[@mattooltip='Delete Account']"
     }
 }

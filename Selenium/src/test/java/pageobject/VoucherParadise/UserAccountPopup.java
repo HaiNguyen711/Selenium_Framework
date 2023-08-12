@@ -15,7 +15,9 @@ public class UserAccountPopup extends BasePage {
 	
 	private final Button btnSave = locator.getLocator(ControlType.BUTTON, "btnSave");
 	private final Button btnCancel = locator.getLocator(ControlType.BUTTON, "btnCancel");
-	private final Button btnProfile = locator.getLocator(ControlType.BUTTON, "btnProfile");
+	private final Button InputProfileImage = locator.getLocator(ControlType.BUTTON, "btnProfile");
+	private final Button btnConfirmationYes = locator.getLocator(ControlType.BUTTON, "btnConfirmationYes");
+	private final Button btnDelete = locator.getLocator(ControlType.BUTTON, "btnDelete");
 			
 	public TextBox getXpathFillInfo(String svalue) {
 		return locator.getLocator(ControlType.TEXTBOX, "txtInfo", svalue);
@@ -69,7 +71,6 @@ public class UserAccountPopup extends BasePage {
 		getXpathFillInfo(UserInfor.LASTNAME.getText()).enter(sLastName);
 		getXpathFillInfo(UserInfor.USERNAME.getText()).enter(sUserName);
 		getXpathFillInfo(UserInfor.PHONE.getText()).enter(phone);
-		btnProfile.click();
 		uploadImage(filePath);
 		return this;
 	}
@@ -80,18 +81,26 @@ public class UserAccountPopup extends BasePage {
 		return new AccountPage();
 	}
 	
-	public UserAccountPopup clickAddImage() {
-		btnProfile.click();
-		return this;
-	}
-	
 	public UserAccountPopup uploadImage(String filePath) {
-		Utilities.uploadFile(filePath);
+		Utilities.uploadFile(InputProfileImage.getElement(),filePath);
+		
 		return this;
 	}
 	
 	public boolean isEnabledUsername() {
 		getXpathFillInfo(UserInfor.USERNAME.getText()).waitForDisabled();
 		return getXpathFillInfo(UserInfor.USERNAME.getText()).isEnabled();
+	}
+	
+	public AccountPage clickDeleteButton() {
+		btnDelete.waitForVisibility();
+		btnDelete.click();
+		btnConfirmationYes.waitForVisibility();
+		btnConfirmationYes.click();
+		return new AccountPage();
+	}
+	
+	public boolean isDisplayedDeleteButon() {
+		return btnDelete.isDisplayed();
 	}
 }

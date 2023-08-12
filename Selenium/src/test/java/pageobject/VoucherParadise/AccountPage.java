@@ -56,8 +56,6 @@ public class AccountPage extends BasePage {
 	public AccountPage moveMouseToCartWithUserName(String sUsername) {
 		getXpathUserNameInCart(sUsername).scrollIntoView();
 		getXpathUserNameInCart(sUsername).waitForPositionNotChange();
-		getXpathUserNameInCart(sUsername).waitForVisibility();
-		getXpathUserNameInCart(sUsername).waitForClickable();
 		getXpathUserNameInCart(sUsername).moveToElement();
 		return this;
 	}
@@ -65,8 +63,11 @@ public class AccountPage extends BasePage {
 	public UserAccountPopup clickEditButton(String sUsername) {
 		Button btnEdit = locator.getLocator(ControlType.BUTTON, "btnEdit",sUsername);
 		btnEdit.waitForVisibility();
-		btnEdit.waitForClickable();
 		btnEdit.click();
 		return new UserAccountPopup();
+	}
+	
+	public void waitForCartisNotPresent(String sName) {
+		locator.getLocator(ControlType.LABEL, "lblName", sName).waitForNotPresent();
 	}
 }

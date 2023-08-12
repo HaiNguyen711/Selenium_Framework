@@ -40,7 +40,7 @@ public class BasePage {
 
 	public LoginPage logout() {
 		btnLogout.click();
-		btnConfirmationYes.waitForVisibility();
+		btnConfirmationYes.waitForPresent();
 		btnConfirmationYes.click();
 		return new LoginPage();
 	}
@@ -68,7 +68,6 @@ public class BasePage {
 	}
 	
 	public String getErrorMessage() {
-		lblErrorMessage.waitForVisibility();
 		return lblErrorMessage.getText();
 	}
 	
