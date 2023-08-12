@@ -47,7 +47,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		
 		Log.verify("Account page is displayed");
@@ -79,11 +79,11 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4.Select Admin role");
 		accountPage.SelectRole(RoleName.ADMIN);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.verify("Admin accounts page is displayed");
 		assertHelper.assertTrue(accountPage.isDisplayed(RoleName.ADMIN),"Admin accounts page is displayed");
@@ -117,7 +117,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -159,7 +159,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -168,7 +168,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("6. Click on Save button");
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		accountPage.goTolastPage();
 		
 		Log.verify("Newly created admin account is displayed");
@@ -215,7 +215,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -259,7 +259,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -303,7 +303,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -343,7 +343,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -383,7 +383,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -423,7 +423,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -463,7 +463,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -502,7 +502,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -542,7 +542,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		inviteUserPopup = accountPage.clickInviteUser();
@@ -581,7 +581,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -629,7 +629,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -637,11 +637,10 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("5. Enter valid data in all require fields");
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("6. Move mouse to newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		
@@ -699,7 +698,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
@@ -707,11 +706,10 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("5. Enter valid data in all require fields");
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("6. Move mouse to newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		
@@ -753,17 +751,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -810,17 +807,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -867,17 +863,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -926,17 +921,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -986,17 +980,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -1046,17 +1039,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -1106,17 +1098,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -1160,17 +1151,16 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");
 		accountPage.goTolastPage();
-		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.moveMouseToCartWithUserName(sUsername);
 		userAccountPopup = accountPage.clickEditButton(sUsername);
 		userAccountPopup.waitForPopupLoad(sUpdateAdminTitle);
@@ -1219,7 +1209,7 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();

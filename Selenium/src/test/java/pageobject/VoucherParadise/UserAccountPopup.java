@@ -44,7 +44,6 @@ public class UserAccountPopup extends BasePage {
 	
 	public AccountPage clickSaveButton() {
 		btnSave.waitForEnabled();
-		btnSave.waitForClickable();
 		btnSave.click();
 		return new AccountPage();
 	}
