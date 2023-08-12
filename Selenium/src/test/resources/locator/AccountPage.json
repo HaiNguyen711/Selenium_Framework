@@ -5,6 +5,7 @@
         "btnInviteUser": "//button[.='Invite User']",
         "lblName": "//div[contains(@class,'card-title') and contains(text(),'%s')]",
         "lblUsername": "//div[contains(@class,'card-username') and contains(text(),'%s')]",
-        "lblphone": "//div[contains(@class,'card-text') and contains(text(),'%s')]"
+        "lblphone": "//div[contains(@class,'card-text') and contains(text(),'%s')]",
+        "btnEdit": "//div[contains(text(),'%s')]/ancestor::div[@class='user-detail']//i[@class='fas fa-edit']"
     }
 }

@@ -9,9 +9,9 @@ import utils.constant.Constant;
 import utils.helper.LocatorHelper;
 import utils.helper.Utilities;
 
-public class InviteUserPopup extends BasePage {
+public class UserAccountPopup extends BasePage {
 
-	LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, InviteUserPopup.class);
+	LocatorHelper locator = new LocatorHelper(Constant.LOCATOR_PATH, UserAccountPopup.class);
 	
 	private final Button btnSave = locator.getLocator(ControlType.BUTTON, "btnSave");
 	private final Button btnCancel = locator.getLocator(ControlType.BUTTON, "btnCancel");
@@ -29,8 +29,14 @@ public class InviteUserPopup extends BasePage {
 		locator.getLocator(ControlType.LABEL, "lbltitle", sTitle).waitForVisibility();
 	}
 	
-	public InviteUserPopup fillInfo(String sFillName,String sValue) {
+	public UserAccountPopup fillInfo(String sFillName,CharSequence... sValue) {
 		getXpathFillInfo(sFillName).enter(sValue);
+		return this;
+	}
+	
+	public UserAccountPopup clearInfo(String sFillName) {
+		
+		getXpathFillInfo(sFillName).clear();
 		return this;
 	}
 	
@@ -54,10 +60,11 @@ public class InviteUserPopup extends BasePage {
 	}
 	
 	public boolean isDisabledSaveButton() {
+		btnSave.waitForDisabled();
 		return !btnSave.isEnabled();
 	}
 	
-	public InviteUserPopup fillAllinfoAdminPopup(String sFirstName, String sLastName, String sUserName, String phone, String filePath) {
+	public UserAccountPopup fillAllinfoAdminPopup(String sFirstName, String sLastName, String sUserName, String phone, String filePath) {
 		getXpathFillInfo(UserInfor.FIRSTNAME.getText()).enter(sFirstName);
 		getXpathFillInfo(UserInfor.LASTNAME.getText()).enter(sLastName);
 		getXpathFillInfo(UserInfor.USERNAME.getText()).enter(sUserName);
@@ -73,13 +80,18 @@ public class InviteUserPopup extends BasePage {
 		return new AccountPage();
 	}
 	
-	public InviteUserPopup clickAddImage() {
+	public UserAccountPopup clickAddImage() {
 		btnProfile.click();
 		return this;
 	}
 	
-	public InviteUserPopup uploadImage(String filePath) {
+	public UserAccountPopup uploadImage(String filePath) {
 		Utilities.uploadFile(filePath);
 		return this;
+	}
+	
+	public boolean isEnabledUsername() {
+		getXpathFillInfo(UserInfor.USERNAME.getText()).waitForDisabled();
+		return getXpathFillInfo(UserInfor.USERNAME.getText()).isEnabled();
 	}
 }
