@@ -25,7 +25,6 @@ public class BasePage {
 	private final Label lblErrorMessageImage = locator.getLocator(ControlType.LABEL, "lblErrorMessageImage");
 	private final Label lblErrorMessageFirstLastName = locator.getLocator(ControlType.LABEL, "lblErrorMessageFirstLastName");
 	private final TextBox txtSearch = locator.getLocator(ControlType.TEXTBOX, "txtSearch");
-	private final Label lblPagin = locator.getLocator(ControlType.LABEL, "lblPagin");
 	
 	public <T extends BasePage> T openTab(SideBar sideBar) {
 		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", sideBar.getText());
@@ -94,10 +93,6 @@ public class BasePage {
 	public BasePage reFreshPage() {
 		Utilities.refresh();
 		return this;
-	}
-	
-	public void waitForLoad() {
-		lblPagin.waitForVisibility();
 	}
 	
 }

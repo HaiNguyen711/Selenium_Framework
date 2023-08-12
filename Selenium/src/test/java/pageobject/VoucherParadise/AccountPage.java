@@ -14,6 +14,7 @@ public class AccountPage extends BasePage {
 	
 	private final ComboBox slRole = locator.getLocator(ControlType.COMBOBOX, "slRole");
 	private final Button btnInviteUser = locator.getLocator(ControlType.BUTTON, "btnInviteUser");
+	private final Label lblPagin = locator.getLocator(ControlType.LABEL, "lblPagin");
 	
 	public AccountPage SelectRole(RoleName role) {
 		slRole.selectWithoutSearch(role.getText());
@@ -22,10 +23,6 @@ public class AccountPage extends BasePage {
 	
 	public Label getXpathTitleRoleAccount(RoleName role) {
 		return locator.getLocator(ControlType.LABEL, "lblTitle", role.getText());
-	}
-	
-	public void waitForLoad(RoleName role) { 
-		getXpathTitleRoleAccount(role).waitForVisibility();
 	}
 	
 	public boolean isDisplayed(RoleName role) {
@@ -69,5 +66,9 @@ public class AccountPage extends BasePage {
 	
 	public void waitForCartisNotPresent(String sName) {
 		locator.getLocator(ControlType.LABEL, "lblName", sName).waitForNotPresent();
+	}
+	
+	public void waitForLoad() {
+		lblPagin.waitForVisibility();
 	}
 }

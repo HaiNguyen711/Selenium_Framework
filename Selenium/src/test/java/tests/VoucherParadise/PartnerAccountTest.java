@@ -43,11 +43,11 @@ public class PartnerAccountTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4.Select Partner role");
 		accountPage.SelectRole(RoleName.PARTNER);
-		accountPage.waitForLoad(RoleName.PARTNER);
+		accountPage.waitForLoad();
 		
 		Log.verify("Partner accounts page is displayed");
 		assertHelper.assertTrue(accountPage.isDisplayed(RoleName.PARTNER),"Partner accounts page is displayed");
@@ -80,9 +80,9 @@ public class PartnerAccountTest extends BaseTest {
 		
 		Log.STEP("3. Go to Accounts page > Partner accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		accountPage.SelectRole(RoleName.PARTNER);
-		accountPage.waitForLoad(RoleName.PARTNER);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();
