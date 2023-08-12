@@ -12,7 +12,7 @@ import utils.helper.Utilities;
 public class ExtentReportManager {
 
 	private static ExtentReports extent;
-	private static String reportFileName = "Test-Automation-Report "
+	private static String reportFileName = "Test-Automation-Report-" + Utilities.getDateNow("hh-mm-ss_mmddyy")
 	+ ".html";
 	private static String fileSeperator = System.getProperty("file.separator");
 	private static String reportFilepath = System.getProperty("user.dir") + fileSeperator + "TestReport";
