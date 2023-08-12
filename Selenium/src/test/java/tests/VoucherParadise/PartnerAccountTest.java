@@ -11,7 +11,7 @@ import dataObjects.enums.SideBar;
 import dataObjects.enums.Users;
 import pageobject.VoucherParadise.AccountPage;
 import pageobject.VoucherParadise.HomePage;
-import pageobject.VoucherParadise.InviteUserPopup;
+import pageobject.VoucherParadise.UserAccountPopup;
 import pageobject.VoucherParadise.LoginPage;
 import tests.BaseTest;
 import utils.helper.AccountHepler;
@@ -70,7 +70,7 @@ public class PartnerAccountTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -85,11 +85,11 @@ public class PartnerAccountTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.PARTNER);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
-		inviteUserPopup.waitForPopupLoad(sNewPartnerPopupTitle);
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewPartnerPopupTitle);
 		
 		Log.verify("Invite new partner popup is displayed");
-		assertHelper.assertTrue(inviteUserPopup.isDisplayedPopup(sNewPartnerPopupTitle),"Invite new partner popup is displayed");
+		assertHelper.assertTrue(userAccountPopup.isDisplayedPopup(sNewPartnerPopupTitle),"Invite new partner popup is displayed");
 		
 	}
 }

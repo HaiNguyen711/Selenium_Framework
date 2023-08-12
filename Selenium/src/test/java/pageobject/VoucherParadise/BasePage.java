@@ -52,7 +52,9 @@ public class BasePage {
 	
 	public BasePage goTolastPage() {
 		btnLastPage.waitForEnabled();
-		btnLastPage.click();
+		while(btnLastPage.isEnabled()) {
+			btnLastPage.click();
+		}
 		return this;
 	}
 	

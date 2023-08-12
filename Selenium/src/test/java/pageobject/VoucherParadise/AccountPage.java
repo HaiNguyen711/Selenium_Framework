@@ -32,9 +32,9 @@ public class AccountPage extends BasePage {
 		return getXpathTitleRoleAccount(role).isDisplayed();
 	}
 	
-	public InviteUserPopup clickInviteUser() {
+	public UserAccountPopup clickInviteUser() {
 		btnInviteUser.click();
-		return new InviteUserPopup();
+		return new UserAccountPopup();
 	}
 	
 	public boolean isDisplayedNameInCart(String sName) {
@@ -45,9 +45,28 @@ public class AccountPage extends BasePage {
 		return locator.getLocator(ControlType.LABEL, "lblphone", sPhone).isDisplayed();
 	}
 	
+	public Label getXpathUserNameInCart(String sUsername) {
+		return locator.getLocator(ControlType.LABEL, "lblUsername", sUsername);
+	}
+	
 	public boolean isDisplayedUsernameInCart(String sUsername) {
-		return locator.getLocator(ControlType.LABEL, "lblUsername", sUsername).isDisplayed();
+		return getXpathUserNameInCart(sUsername).isDisplayed();
 	}
 
+	public AccountPage moveMouseToCartWithUserName(String sUsername) {
+		getXpathUserNameInCart(sUsername).scrollIntoView();
+		getXpathUserNameInCart(sUsername).waitForPositionNotChange();
+		getXpathUserNameInCart(sUsername).waitForVisibility();
+		getXpathUserNameInCart(sUsername).waitForClickable();
+		getXpathUserNameInCart(sUsername).moveToElement();
+		return this;
+	}
 	
+	public UserAccountPopup clickEditButton(String sUsername) {
+		Button btnEdit = locator.getLocator(ControlType.BUTTON, "btnEdit",sUsername);
+		btnEdit.waitForVisibility();
+		btnEdit.waitForClickable();
+		btnEdit.click();
+		return new UserAccountPopup();
+	}
 }

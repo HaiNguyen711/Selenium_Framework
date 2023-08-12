@@ -1,5 +1,6 @@
 package tests.VoucherParadise;
 
+import org.openqa.selenium.Keys;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -12,7 +13,7 @@ import dataObjects.enums.UserInfor;
 import dataObjects.enums.Users;
 import pageobject.VoucherParadise.AccountPage;
 import pageobject.VoucherParadise.HomePage;
-import pageobject.VoucherParadise.InviteUserPopup;
+import pageobject.VoucherParadise.UserAccountPopup;
 import pageobject.VoucherParadise.LoginPage;
 import pageobject.VoucherParadise.PartnersPage;
 import tests.BaseTest;
@@ -105,7 +106,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -118,11 +119,11 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
 		
 		Log.verify("Invite new admin popup is displayed");
-		assertHelper.assertTrue(inviteUserPopup.isDisplayedPopup(sNewAdminPopupTitle),"Invite new admin popup is displayed");
+		assertHelper.assertTrue(userAccountPopup.isDisplayedPopup(sNewAdminPopupTitle),"Invite new admin popup is displayed");
 		
 	}
 	
@@ -147,7 +148,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -160,12 +161,12 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter valid data in all require fields");
 		Log.STEP("6. Click on Save button");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		accountPage = inviteUserPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
 		accountPage.waitForLoad(RoleName.ADMIN);
 		accountPage.goTolastPage();
 		
@@ -198,7 +199,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -211,15 +212,15 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter valid data in all require fields");
 		Log.STEP("6. Click on Save button");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.fillAllinfoAdminPopup(sFirstName, sLastName, sUsername, phone, filePath);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.fillAllinfoAdminPopup(sFirstName, sLastName, sUsername, phone, filePath);
 		
 		Log.verify("Save button enabled");
-		assertHelper.assertTrue(inviteUserPopup.isEnabledSaveButton(),"Save button enabled");
+		assertHelper.assertTrue(userAccountPopup.isEnabledSaveButton(),"Save button enabled");
 		
 	}
 	
@@ -242,7 +243,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -255,18 +256,18 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter valid data in all require fields");
 		Log.STEP("6. Click on Save button");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.fillInfo(UserInfor.FIRSTNAME.getText(), sFirstName);
-		inviteUserPopup.fillInfo(UserInfor.LASTNAME.getText(), sLastName);
-		inviteUserPopup.fillInfo(UserInfor.USERNAME.getText(), sUsername);
-		inviteUserPopup.fillInfo(UserInfor.PHONE.getText(), phone);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), sFirstName);
+		userAccountPopup.fillInfo(UserInfor.LASTNAME.getText(), sLastName);
+		userAccountPopup.fillInfo(UserInfor.USERNAME.getText(), sUsername);
+		userAccountPopup.fillInfo(UserInfor.PHONE.getText(), phone);
 		
 		Log.verify("save button still disabled");
-		assertHelper.assertTrue(inviteUserPopup.isDisabledSaveButton(),"save button still disabled");
+		assertHelper.assertTrue(userAccountPopup.isDisabledSaveButton(),"save button still disabled");
 		
 	}
 	
@@ -286,7 +287,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -299,14 +300,14 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter username invalid format");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.fillInfo(UserInfor.USERNAME.getText(), sUsername);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.fillInfo(UserInfor.USERNAME.getText(), sUsername);
 		
 		Log.verify("message appear: Username invalid format");
-		assertHelper.assertEquals(inviteUserPopup.getErrorMessage(),sErrorMessage, "message appear: Username invalid format");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessage(),sErrorMessage, "message appear: Username invalid format");
 	}
 	
 	/**
@@ -326,7 +327,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -339,15 +340,15 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter username invalid format");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.clickAddImage();
-		inviteUserPopup.uploadImage(filePath);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.clickAddImage();
+		userAccountPopup.uploadImage(filePath);
 		
 		Log.verify("message appear: File upload support .png/.jpg");
-		assertHelper.assertEquals(inviteUserPopup.getErrorMessageImage(),sErrorMessage, "File upload support .png/.jpg");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageImage(),sErrorMessage, "File upload support .png/.jpg");
 	}
 	
 	/**
@@ -367,7 +368,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -380,15 +381,15 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter username invalid format");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.clickAddImage();
-		inviteUserPopup.uploadImage(filePath);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.clickAddImage();
+		userAccountPopup.uploadImage(filePath);
 		
 		Log.verify("message appear: Image's dimensions should be 1500x1500");
-		assertHelper.assertEquals(inviteUserPopup.getErrorMessageImage(),sErrorMessage, "Image's dimensions should be 1500x1500");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageImage(),sErrorMessage, "Image's dimensions should be 1500x1500");
 	}
 	
 	/**
@@ -408,7 +409,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -421,16 +422,16 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter Phone invalid format");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.fillInfo(UserInfor.PHONE.getText(), phone);
-		inviteUserPopup.fillInfo(UserInfor.FIRSTNAME.getText(), sFirstName);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.fillInfo(UserInfor.PHONE.getText(), phone);
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), sFirstName);
 		
 		
 		Log.verify("message appear: Phone invalid format");
-		assertHelper.assertEquals(inviteUserPopup.getErrorMessage(),sErrorMessage, "message appear: Phone invalid format");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessage(),sErrorMessage, "message appear: Phone invalid format");
 	}
 	
 	/**
@@ -448,7 +449,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -461,15 +462,15 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter firstname is blank");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.fillInfo(UserInfor.FIRSTNAME.getText(), "");
-		inviteUserPopup.fillInfo(UserInfor.LASTNAME.getText(), "");
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), "");
+		userAccountPopup.fillInfo(UserInfor.LASTNAME.getText(), "");
 		
 		Log.verify("message appear: First name is required");
-		assertHelper.assertEquals(inviteUserPopup.getErrorMessageFirstLastName(),sErrorMessage, "First name is required");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageFirstLastName(),sErrorMessage, "First name is required");
 	}
 	
 	/**
@@ -487,7 +488,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -500,16 +501,16 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter firstname is blank");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.fillInfo(UserInfor.LASTNAME.getText(), "");
-		inviteUserPopup.fillInfo(UserInfor.FIRSTNAME.getText(), "");
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.fillInfo(UserInfor.LASTNAME.getText(), "");
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), "");
 		
 		
 		Log.verify("message appear: Last name is required");
-		assertHelper.assertEquals(inviteUserPopup.getErrorMessageFirstLastName(),sErrorMessage, "Last name is required");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageFirstLastName(),sErrorMessage, "Last name is required");
 	}
 	
 	/**
@@ -527,7 +528,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup inviteUserPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -566,7 +567,7 @@ public class AdminAccountsTest extends BaseTest {
 		LoginPage loginPage = new LoginPage();
 		AccountPage accountPage;
 		HomePage homePage;
-		InviteUserPopup inviteUserPopup;
+		UserAccountPopup userAccountPopup;
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -579,18 +580,348 @@ public class AdminAccountsTest extends BaseTest {
 		accountPage.waitForLoad(RoleName.ADMIN);
 		
 		Log.STEP("4. Click on Invite User button");
-		inviteUserPopup = accountPage.clickInviteUser();
+		userAccountPopup = accountPage.clickInviteUser();
 		
 		Log.STEP("5. Enter Phone invalid format");
-		inviteUserPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		inviteUserPopup.fillInfo(UserInfor.PHONE.getText(), "");
-		inviteUserPopup.fillInfo(UserInfor.FIRSTNAME.getText(), "");
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		userAccountPopup.fillInfo(UserInfor.PHONE.getText(), "");
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), "");
 		
 		
 		Log.verify("message appear: Phone is required");
-		assertHelper.assertEquals(inviteUserPopup.getErrorMessage(),sErrorMessage, "message appear: Phone is required");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessage(),sErrorMessage, "message appear: Phone is required");
 	}
 	
 	
+	/**
+	 * Test id: AC06
+	 *   Verify that admin is able to update admin account.
+	 * 
+	 */
+	@Test
+	public void AC06() {
+		
+		Environment environment = new Environment();
+		String sNewAdminPopupTitle = environment.getValue("newAdminPopupTitle");
+		String sFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sLastName = StringHelper.getRandomString(5);
+		String sUsername = sFirstName + "@vp.com";
+		String phone = StringHelper.getRandomNumberToString(10);
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		String sNewFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sNewLastName = StringHelper.getRandomString(5);
+		String newPhone = StringHelper.getRandomNumberToString(10);
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoad();
+		
+		Log.STEP("3. Go to Accounts page > Admin accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("4. Click on Invite User button");
+		userAccountPopup = accountPage.clickInviteUser();
+		
+		Log.STEP("5. Enter valid data in all require fields");
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("6. Move mouse to newly created admin user. Click on Edit button");
+		accountPage.goTolastPage();
+		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		
+		Log.STEP("7. Edit data in some require fields");
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), sNewFirstName);
+		userAccountPopup.fillInfo(UserInfor.LASTNAME.getText(), sNewLastName);
+		userAccountPopup.fillInfo(UserInfor.PHONE.getText(), newPhone);
+		
+		Log.STEP("8.Click on Save button");
+		accountPage = userAccountPopup.clickSaveButton();
+		
+		Log.verify("Admin user data is updated");
+		assertHelper.assertTrue(accountPage.isDisplayedNameInCart(sFirstName+" "+sLastName),"Admin user data is updated");
+		assertHelper.assertTrue(accountPage.isDisplayedPhoneInCart(phone),"Admin user data is updated");
+		
+		Log.STEP("7.Logout");
+		loginPage = homePage.logout();
+	} 
+	
+	/**
+	 * Test id: OT12
+	 *   Verify that admin is not update username.
+	 * 
+	 */
+	@Test
+	public void OT12() {
+		
+		Environment environment = new Environment();
+		String sNewAdminPopupTitle = environment.getValue("newAdminPopupTitle");
+		String sFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sLastName = StringHelper.getRandomString(5);
+		String sUsername = sFirstName + "@vp.com";
+		String phone = StringHelper.getRandomNumberToString(10);
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		String sNewFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sNewLastName = StringHelper.getRandomString(5);
+		String newPhone = StringHelper.getRandomNumberToString(10);
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoad();
+		
+		Log.STEP("3. Go to Accounts page > Admin accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("4. Click on Invite User button");
+		userAccountPopup = accountPage.clickInviteUser();
+		
+		Log.STEP("5. Enter valid data in all require fields");
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("6. Move mouse to newly created admin user. Click on Edit button");
+		accountPage.goTolastPage();
+		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		
+		Log.verify("username is disabled");
+		assertHelper.assertFalse(userAccountPopup.isEnabledUsername(), "username is disabled");
+	}
+	
+	/**
+	 * Test id: AC07
+	 *   Verify that admin is unable to update admin account by entering the empty First Name.
+	 * 
+	 */
+	@Test
+	public void AC07() {
+		
+		Environment environment = new Environment();
+		String sNewAdminPopupTitle = environment.getValue("newAdminPopupTitle");
+		String sFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sLastName = StringHelper.getRandomString(5);
+		String sUsername = sFirstName + "@vp.com";
+		String phone = StringHelper.getRandomNumberToString(10);
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoad();
+		
+		Log.STEP("3. Go to Accounts page > Admin accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("4. Invite new admin user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("5. Select newly created admin user. Click on Edit button");
+		accountPage.goTolastPage();
+		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		
+		
+		Log.STEP("6. Edit Fiirst Name is blank");
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), " ",Keys.BACK_SPACE);
+		
+		Log.verify("Save Button is Disabled");
+		assertHelper.assertTrue(userAccountPopup.isDisabledSaveButton(),"Save Button is Disabled");
+	}
+	
+	/**
+	 * Test id: AC08
+	 *   Verify that admin is unable to update admin account by entering the empty Last Name.
+	 * 
+	 */
+	@Test
+	public void AC08() {
+		
+		Environment environment = new Environment();
+		String sNewAdminPopupTitle = environment.getValue("newAdminPopupTitle");
+		String sFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sLastName = StringHelper.getRandomString(5);
+		String sUsername = sFirstName + "@vp.com";
+		String phone = StringHelper.getRandomNumberToString(10);
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoad();
+		
+		Log.STEP("3. Go to Accounts page > Admin accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("4. Invite new admin user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("5. Select newly created admin user. Click on Edit button");
+		accountPage.goTolastPage();
+		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		
+		
+		Log.STEP("6. Edit Last Name is blank");
+		userAccountPopup.fillInfo(UserInfor.LASTNAME.getText(), " ",Keys.BACK_SPACE);
+		
+		Log.verify("Save Button is Disabled");
+		assertHelper.assertTrue(userAccountPopup.isDisabledSaveButton(),"Save Button is Disabled");
+	}
+	
+	/**
+	 * Test id: OT13
+	 *   Verify that admin is unable to update admin account by entering the empty phone.
+	 * 
+	 */
+	@Test
+	public void OT13() {
+		
+		Environment environment = new Environment();
+		String sNewAdminPopupTitle = environment.getValue("newAdminPopupTitle");
+		String sFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sLastName = StringHelper.getRandomString(5);
+		String sUsername = sFirstName + "@vp.com";
+		String phone = StringHelper.getRandomNumberToString(10);
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoad();
+		
+		Log.STEP("3. Go to Accounts page > Admin accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("4. Invite new admin user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("5. Select newly created admin user. Click on Edit button");
+		accountPage.goTolastPage();
+		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		
+		
+		Log.STEP("6. Edit phone is blank");
+		userAccountPopup.fillInfo(UserInfor.PHONE.getText(), " ",Keys.BACK_SPACE);
+		
+		Log.verify("Save Button is Disabled");
+		assertHelper.assertTrue(userAccountPopup.isDisabledSaveButton(),"Save Button is Disabled");
+	}
+	
+	/**
+	 * Test id: OT14
+	 *   Verify that admin is unable to update admin account by entering the invalid format phone
+	 * 
+	 */
+	@Test
+	public void OT14() {
+		
+		Environment environment = new Environment();
+		String sNewAdminPopupTitle = environment.getValue("newAdminPopupTitle");
+		String sFirstName = "Ad" + StringHelper.getRandomString(5);
+		String sLastName = StringHelper.getRandomString(5);
+		String sUsername = sFirstName + "@vp.com";
+		String phone = StringHelper.getRandomNumberToString(10);
+		String sNewPhone = StringHelper.getRandomNumberToString(11);
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoad();
+		
+		Log.STEP("3. Go to Accounts page > Admin accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("4. Invite new admin user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("5. Select newly created admin user. Click on Edit button");
+		accountPage.goTolastPage();
+		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		
+		
+		Log.STEP("6. Edit phone invalid format");
+		userAccountPopup.fillInfo(UserInfor.PHONE.getText(), sNewPhone);
+		
+		Log.verify("Save Button is Disabled");
+		assertHelper.assertTrue(userAccountPopup.isDisabledSaveButton(),"Save Button is Disabled");
+	}
 	
 }

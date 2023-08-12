@@ -274,4 +274,43 @@ public interface IWaitableControl extends IGetElementableControl {
                     e.getMessage()));
         }
     }
+    
+    /**
+     * Function    :   waitForPositionNotChange
+     * Description :    wait for position of element is not changed (it helpful for waiting animation if stopped)
+     *
+     * @throws Exception
+     * @param: timeOutInSeconds
+     */
+    public default void waitForPositionNotChange(int timeOutInSeconds) {
+        try {
+            WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(timeOutInSeconds));
+            wait.until(webDriver -> {
+                if (getElement() != null) {
+                    WebElement element = getElement();
+                    if (element.getLocation() != null) {
+                        Point pOld = element.getLocation();
+                        Point pNew = element.getLocation();
+                        return pOld.equals(pNew);
+                    }
+                }
+                return false;
+            });
+        } catch (Exception e) {
+        	Log.error(String.format("waitForPositionNotChange: Has error with control '%s': %s",
+                    getLocator().toString(), e.getMessage()));
+        }
+
+    }
+    
+    /**
+     * Function    :   waitForPositionNotChange
+     * Description :    wait for position of element is not changed (it helpful for waiting animation if stopped)
+     *
+     * @throws Exception
+     */
+    public default void waitForPositionNotChange() {
+    	waitForPositionNotChange(Constant.SHORT_TIMEOUT);
+
+    }
 }

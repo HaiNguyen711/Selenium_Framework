@@ -47,7 +47,7 @@ public class EditableControl extends ClickableControl implements IEditableContro
 	 * @param value - value need enter
 	 */
 	@Override
-	public void enter(String value) {
+	public void enter(CharSequence... value) {
 		clear();
 		type(value);
 	}
@@ -58,8 +58,8 @@ public class EditableControl extends ClickableControl implements IEditableContro
 	 * @param value - value need enter
 	 */
 	@Override
-	public void type(String value) {
-		Log.info(String.format("Enter %s to %s", value ,getLocator().toString()));
+	public void type(CharSequence... value) {
+		Log.info(String.format("Enter %s to %s", value.toString() ,getLocator().toString()));
 		int i = 0;
 		while (i < Constant.LONG_TIMEOUT) {
 			i++;
