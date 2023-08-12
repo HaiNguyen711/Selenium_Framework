@@ -53,7 +53,7 @@ public class PartnerAccountTest extends BaseTest {
 		assertHelper.assertTrue(accountPage.isDisplayed(RoleName.PARTNER),"Partner accounts page is displayed");
 		
 		Log.STEP("4.Logout");
-		loginPage = homePage.logout();
+		loginPage = accountPage.logout();
 	}
 	
 	/**

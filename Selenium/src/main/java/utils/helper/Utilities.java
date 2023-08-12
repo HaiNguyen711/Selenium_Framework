@@ -12,8 +12,10 @@ import java.util.logging.Logger;
 
 import core.driver.manager.manage.DriverManager;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 
 import utils.constant.Constant;
 
@@ -84,19 +86,21 @@ public class Utilities {
 	 * 
 	 * @param fileLocation - file path
 	 */
-	public static void uploadFile(String fileLocation) {
-		try {
-			setClipboardData(fileLocation);
-			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-		} catch (Exception exp) {
-			exp.printStackTrace();
-		}
+	public static void uploadFile(WebElement element ,String fileLocation) {
+//		try {
+//			setClipboardData(fileLocation);
+//			Robot robot = new Robot();
+//			robot.keyPress(KeyEvent.VK_CONTROL);
+//			robot.keyPress(KeyEvent.VK_V);
+//			robot.keyRelease(KeyEvent.VK_V);
+//			robot.keyRelease(KeyEvent.VK_CONTROL);
+//			robot.keyPress(KeyEvent.VK_ENTER);
+//			robot.keyRelease(KeyEvent.VK_ENTER);
+//		} catch (Exception exp) {
+//			exp.printStackTrace();
+//		}
+		
+		element.sendKeys(fileLocation);
 	}
 
 	public static String getDateNow(String format) {

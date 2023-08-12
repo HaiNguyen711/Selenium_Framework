@@ -52,7 +52,7 @@ public class MemberAccountTest extends BaseTest {
 		assertHelper.assertTrue(accountPage.isDisplayed(RoleName.MEMBER),"Member accounts page is displayed");
 		
 		Log.STEP("4.Logout");
-		loginPage = homePage.logout();
+		loginPage = accountPage.logout();
 	}
 	
 	/**

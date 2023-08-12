@@ -27,7 +27,7 @@ public class LoginPage extends BasePage {
 	}
 	
 	public LoginPage waitForLoginPageIsDisplayed() {
-		lblLogin.waitForVisibility();
+		lblLogin.waitForVisibility(Constant.LONG_TIMEOUT);
 		return this;
 	}
 
