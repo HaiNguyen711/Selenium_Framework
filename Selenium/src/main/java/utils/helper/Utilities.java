@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
@@ -102,6 +103,11 @@ public class Utilities {
 		SimpleDateFormat formatter = new SimpleDateFormat(format);
 		Date date = new Date();
 		return formatter.format(date);
+	}
+	
+	public static String getDateNow() {
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		return Long.toString(timestamp.getTime());
 	}
 
 }
