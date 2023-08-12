@@ -15,12 +15,17 @@ public class StringHelper {
 	 private final static String NUMERIC_STRING = "0123456789";
 	 
  	public static String getRandomString(int len) {
+ 		len = len - 13;
         StringBuilder builder = new StringBuilder();
         while (len-- != 0) {
             int character = (int) (Math.random() * ALPHA_NUMERIC_STRING.length());
             builder.append(ALPHA_NUMERIC_STRING.charAt(character));
         }
-        return builder.toString();
+        return builder.toString() + Utilities.getDateNow();
+    }
+ 	
+ 	public static String getRandomString() {
+        return Utilities.getDateNow();
     }
  	
  	public static String getRandomNumberToString(int len) {
