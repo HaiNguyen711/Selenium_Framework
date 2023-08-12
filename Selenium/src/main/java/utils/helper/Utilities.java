@@ -10,6 +10,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
+import core.driver.manager.manage.Driver;
 import core.driver.manager.manage.DriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
@@ -112,6 +113,10 @@ public class Utilities {
 	public static String getDateNow() {
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 		return Long.toString(timestamp.getTime());
+	}
+	
+	public static void refresh() {
+		DriverManager.getDriver().navigate().refresh();
 	}
 
 }

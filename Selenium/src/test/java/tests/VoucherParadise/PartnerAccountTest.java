@@ -39,7 +39,7 @@ public class PartnerAccountTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -76,7 +76,7 @@ public class PartnerAccountTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Partner accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);

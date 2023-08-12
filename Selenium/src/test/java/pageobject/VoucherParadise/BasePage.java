@@ -4,10 +4,12 @@ import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.ComboBox;
 import core.element.manager.wrapper.Label;
 import core.element.manager.wrapper.Link;
+import core.element.manager.wrapper.TextBox;
 import dataObjects.enums.ControlType;
 import dataObjects.enums.SideBar;
 import utils.constant.Constant;
 import utils.helper.LocatorHelper;
+import utils.helper.Utilities;
 
 public class BasePage {
 
@@ -22,7 +24,9 @@ public class BasePage {
 	private final Label lblErrorMessage = locator.getLocator(ControlType.LABEL, "lblErrorMessage");
 	private final Label lblErrorMessageImage = locator.getLocator(ControlType.LABEL, "lblErrorMessageImage");
 	private final Label lblErrorMessageFirstLastName = locator.getLocator(ControlType.LABEL, "lblErrorMessageFirstLastName");
-
+	private final TextBox txtSearch = locator.getLocator(ControlType.TEXTBOX, "txtSearch");
+	private final Label lblPagin = locator.getLocator(ControlType.LABEL, "lblPagin");
+	
 	public <T extends BasePage> T openTab(SideBar sideBar) {
 		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", sideBar.getText());
 		lnkSidebarItem.click();
@@ -79,6 +83,21 @@ public class BasePage {
 	public String getErrorMessageFirstLastName() {
 		lblErrorMessageFirstLastName.waitForVisibility();
 		return lblErrorMessageFirstLastName.getText();
+	}
+	
+	public BasePage search(String value) {
+		
+		txtSearch.enter(value);
+		return this;
+	}
+	
+	public BasePage reFreshPage() {
+		Utilities.refresh();
+		return this;
+	}
+	
+	public void waitForLoad() {
+		lblPagin.waitForVisibility();
 	}
 	
 }

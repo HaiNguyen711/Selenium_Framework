@@ -10,7 +10,9 @@
         "lblPerPageItem": "//div[@role='listbox']//mat-option[@ng-reflect-value='%s']",
         "lblErrorMessage": "//span[@class='mat-error ng-star-inserted']",
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
-      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
+      	"txtSearch": "//input[starts-with(@class,'input-search')]",
+      	"lblPagin" : "//div[contains(@class,'mat-mdc-paginator') and contains(text(),'1 – 10')]"
     },
     
     "linux":{
@@ -24,6 +26,8 @@
         "lblPerPageItem": "//div[@role='listbox']//mat-option[@ng-reflect-value='%s']",
         "lblErrorMessage": "//span[@class='mat-error ng-star-inserted']",
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
-      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
+      	"txtSearch": "//input[starts-with(@class,'input-search')]",
+      	"lblPagin" : "//div[contains(@class,'mat-mdc-paginator') and contains(text(),'1 – 10')]"
     }
 }

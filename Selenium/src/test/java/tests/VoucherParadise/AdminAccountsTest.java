@@ -43,7 +43,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -75,7 +75,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -113,7 +113,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -155,7 +155,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -211,7 +211,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -255,7 +255,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -299,7 +299,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -339,7 +339,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -379,7 +379,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -419,7 +419,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -459,7 +459,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -498,7 +498,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -538,7 +538,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -577,7 +577,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -625,7 +625,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -695,7 +695,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -749,7 +749,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -806,7 +806,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -863,7 +863,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -922,7 +922,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -982,7 +982,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -1042,7 +1042,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -1102,7 +1102,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -1144,7 +1144,6 @@ public class AdminAccountsTest extends BaseTest {
 		String sLastName = StringHelper.getRandomString();
 		String sUsername = sFirstName + "@vp.com";
 		String phone = StringHelper.getRandomNumberToString(10);
-		String sNewLastName = "Ad " + StringHelper.getRandomString();
 		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
 		
 		AssertHelper assertHelper = new AssertHelper();
@@ -1157,7 +1156,7 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Admin accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
@@ -1179,10 +1178,72 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("6. click Delete button");
 		Log.STEP("7. click Yes button");
 		accountPage = userAccountPopup.clickDeleteButton();
+		accountPage.waitForCartisNotPresent(sFirstName + " " + sLastName);
 		
 		Log.verify("user is deleted");
-		assertHelper.assertTrue(accountPage.isDisplayedNameInCart(sUsername),"user is deleted");
+		assertHelper.assertFalse(accountPage.isDisplayedNameInCart(sFirstName + " " + sLastName),"user is deleted");
 
 	}
 	
+	
+	/**
+	 * Test id:  AC28
+	 *  Verify that admin account search results are relevant to the search query.
+	 * 
+	 */
+	@Test
+	public void AC28() {
+		
+		Environment environment = new Environment();
+		String sNewAdminPopupTitle = environment.getValue("newAdminPopupTitle");
+		String sUpdateAdminTitle = environment.getValue("updateAdminTitle");
+		String sErrorMessage = "Last name " + environment.getValue("errorMessageFormat");
+		String sFirstName = "Ad" + StringHelper.getRandomString();
+		String sLastName = StringHelper.getRandomString();
+		String sUsername = sFirstName + "@vp.com";
+		String phone = StringHelper.getRandomNumberToString(10);
+		String sNewLastName = "Ad " + StringHelper.getRandomString();
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Login valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoadHomePage();
+		
+		Log.STEP("3. Go to Accounts page > Admin accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad(RoleName.ADMIN);
+		
+		Log.STEP("4. Invite new admin user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
+		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
+		accountPage.goTolastPage();
+		assertHelper.assertTrue(accountPage.isDisplayedNameInCart(sFirstName + " " + sLastName),"user is created successfully");
+		
+		Log.STEP("5. refresh page");
+		accountPage.reFreshPage();
+		accountPage.waitForLoad();
+		
+		Log.STEP("6. Search admin account with keyword as firstname of newly created admin account from step 5");
+		accountPage.search(sFirstName);
+		
+		Log.verify("Verify that the correct results are returned.");
+		assertHelper.assertTrue(accountPage.isDisplayedNameInCart(sFirstName + " " + sLastName),"Verify that the correct results are returned.");
+		
+		Log.STEP("Post - condition");
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		accountPage = userAccountPopup.clickDeleteButton();
+		
+		
+
+	}
 }
