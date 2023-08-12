@@ -3,6 +3,7 @@ package core.element.manager.base;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import core.driver.manager.manage.DriverManager;
 import org.openqa.selenium.By;
@@ -14,6 +15,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.google.common.base.Stopwatch;
 
 import core.element.manager.base.interfaces.ISideActionableControl;
 import core.element.manager.base.interfaces.IValidateControl;
@@ -419,7 +422,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	 */
 	@Override
 	public boolean isDisplayed() {
-		return isDisplayed(Constant.TIMEOUT);
+		return isDisplayed(Constant.SHORT_TIMEOUT);
 	}
 
 	/**
@@ -442,8 +445,8 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	public boolean isDisplayed(int timeOutInSeconds) {
 		try {
 			Log.info(String.format("Check if control %s is displayed", getLocator().toString()));
-			this.waitForDisplayed(timeOutInSeconds);
-			return true;
+			this.waitForDisplayed();
+			return getElement().isDisplayed();
 		} catch (TimeoutException timeOutEx) {
 			return false;
 		} catch (Exception e) {
@@ -462,22 +465,26 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 	@Override
 	public boolean isEnabled(int timeOutInSeconds) {
 		Log.info(String.format("Check if control %s is enabled", getLocator().toString()));
-		int i = 0;
-		while (i < Constant.SHORT_TIMEOUT) {
-			i++;
-			try {
-				this.waitForPresent(timeOutInSeconds);
-				return getElement().isEnabled();
-			} catch (StaleElementReferenceException staleEx) {
-				if (i == Constant.SHORT_TIMEOUT)
-					return false;
-				Log.error(String.format("Try to get value from control %s again", getLocator().toString()));
-			} catch (Exception e) {
-				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
-				return false;
-			}
+		boolean isEnabled = false;
+		if (timeOutInSeconds <= 0) {
+			Log.error("The time out is invalid. It must greater than 0");
+			return isEnabled;
 		}
-		return false;
+		Stopwatch sw = Stopwatch.createStarted();
+		try {
+			Log.info(String.format("Check if the control %s is enabled", getLocator().toString()));
+			isEnabled = getElement().isEnabled();
+		} catch (StaleElementReferenceException e) {
+			if (sw.elapsed(TimeUnit.SECONDS) < (long) timeOutInSeconds) {
+				Log.warn(String.format("Try to check if the control the control %s is enabled again",
+						getLocator().toString()));
+				return isEnabled(timeOutInSeconds - (int) sw.elapsed(TimeUnit.SECONDS));
+			}
+		} catch (Exception e) {
+			Log.warn(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+			throw e;
+		}
+		return isEnabled;
 	}
 
 	/**
@@ -503,8 +510,7 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		Log.info(
 				String.format("Check Selected status of %s in %s seconds", getLocator().toString(), timeOutInSeconds));
 		try {
-			this.waitForSelected(timeOutInSeconds);
-			return true;
+			return getElement().isSelected();
 		} catch (TimeoutException timeOutEx) {
 			return false;
 		} catch (Exception e) {

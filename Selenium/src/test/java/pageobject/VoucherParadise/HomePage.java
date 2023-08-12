@@ -15,7 +15,7 @@ public class HomePage extends BasePage {
 		return lblTitle.getText();
 	}
 	
-	public void waitForLoad() {
+	public void waitForLoadHomePage() {
 		lblTitle.waitForVisibility();
 	}
 }
