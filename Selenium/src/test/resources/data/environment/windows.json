@@ -10,5 +10,12 @@
 	"errorMessageImageSize": "Image's dimensions should be 1500x1500",
 	"errorMessageFormat": "invalid format",
 	"errorMessageRequired": "is required",
-	"updateAdminTitle": "Update Admin"
+	"updateAdminTitle": "Update Admin",
+	"sHighlandsCoffee": "Highlands Coffee",
+	"msgDelete": "Account have been deleted successfully",
+	"msgCreatePartnerMemberAccount": "Create account %s successful",
+	"msgUpdatePartnerMemberAccount": "Update account %s successful",
+	"msgCreateAdminAccount": "Create account successfully",
+	"msgUpdateAdminAccount": "Updated info account %s",
+	"sUniqlo": "Uniqlo"
 }
