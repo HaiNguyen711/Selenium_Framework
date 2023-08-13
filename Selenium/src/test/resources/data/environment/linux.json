@@ -15,5 +15,7 @@
 	"errorMessageFailureLogin": "Login fail",
 	"errorDescriptionFailureLogin": "Login credentials not valid",
 	"invalidUserName": "admin"
-	"emptyString": ""
+	"emptyString": "",
+	"notificationMessageForgotPassword": "Successful",
+	"notificationDescriptionForgotPassword": "Please check your mailbox for the instruction to reset your password."
 }

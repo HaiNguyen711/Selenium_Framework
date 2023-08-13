@@ -5,10 +5,10 @@
         "btnLogin": "//button[@class='btn-login btn btn-primary']",
         "lblLogin": "//div[@class='card login-card']//span[.='Log In']",
         "lblErrorMessageFailureLogin": "//div[contains(@class,'ant-notification-notice-message')]",
-        "lblerrorDescriptionFailureLogin": "//div[contains(@class,'ant-notification-notice-description')]",
+        "lblErrorDescriptionFailureLogin": "//div[contains(@class,'ant-notification-notice-description')]",
         "lblErrorMessageUserName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
-        "chkRememberMe": "//input[contains(@id,'mat-mdc-checkbox')]"
-        
+        "chkRememberMe": "//input[contains(@id,'mat-mdc-checkbox')]",
+        "lnkForgotPassword": "//a[@routerlink='../forgot-password']"
     },
     
     "linux":{
@@ -17,8 +17,9 @@
         "btnLogin": "//button[@class='btn-login btn btn-primary']",
         "lblLogin": "//div[@class='card login-card']//span[.='Log In']",
         "lblErrorMessageFailureLogin": "//div[contains(@class,'ant-notification-notice-message')]",
-        "lblerrorDescriptionFailureLogin": "//div[contains(@class,'ant-notification-notice-description')]",
+        "lblErrorDescriptionFailureLogin": "//div[contains(@class,'ant-notification-notice-description')]",
         "lblErrorMessageUserName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
-        "chkRememberMe": "//input[contains(@id,'mat-mdc-checkbox')]"
+        "chkRememberMe": "//input[contains(@id,'mat-mdc-checkbox')]",
+        "lnkForgotPassword": "//a[@routerlink='../forgot-password']"
     }
 }

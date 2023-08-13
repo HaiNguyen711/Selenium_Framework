@@ -168,5 +168,101 @@ public class LoginTest extends BaseTest {
 		Log.verify("Username and password are empty");
 		assertHelper.assertEquals(loginPage.getUserNameText(),sEmptyString, "Username and password are empty");
 		assertHelper.assertEquals(loginPage.getPasswordText(),sEmptyString, "Username and password are empty");
+		
+	}
+	
+	/**
+	 * Test id: LO06
+	 * Verify the Logout functionality.
+	 * 
+	 */
+	@Test
+	public void LO06() {
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		BasePage basePage;
+		Account acc = AccountHepler.getUser("Admin01");
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Log.STEP("3.Click on LogIn button");
+		
+		basePage = loginPage.login(acc);
+		Log.STEP("4.Click on Logout link");
+		basePage = basePage.clickLogoutButton();
+		
+		Log.verify("Verify that confirmation dialog is displayed after click on Logout link");
+		assertHelper.assertEquals(basePage.isLogoutComfirmNotificationExists(), true, "Verify that confirmation dialog is displayed after click on Logout link");
+		
+		Log.STEP("5.Click on Yes button");
+		loginPage = basePage.clickConfirmationYesButton();
+		
+		Log.verify("Verify that confirmation dialog is disappeared");
+		assertHelper.assertEquals(basePage.isLogoutComfirmNotificationExists(), false, "Verify that confirmation dialog is disappeared");
+		Log.verify("Login page is displayed");
+		assertHelper.assertEquals(loginPage.isPageExists(),true, "Login page is displayed");
+		
+	}
+	
+	/**
+	 * Test id: LO07
+	 * Verify that user is able to cancel Logout.
+	 * 
+	 */
+	@Test
+	public void LO07() {
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		BasePage basePage;
+		Account acc = AccountHepler.getUser("Admin01");
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Log.STEP("3.Click on LogIn button");
+		
+		basePage = loginPage.login(acc);
+		Log.STEP("4.Click on Logout link");
+		basePage = basePage.clickLogoutButton();
+		
+		Log.verify("Verify that confirmation dialog is displayed after click on Logout link");
+		assertHelper.assertEquals(basePage.isLogoutComfirmNotificationExists(), true, "Verify that confirmation dialog is displayed after click on Logout link");
+		
+		Log.STEP("5.Click on No button");
+		basePage = basePage.clickConfirmationNoButton();
+		
+		Log.verify("Verify that confirmation dialog is disappeared");
+		assertHelper.assertEquals(basePage.isLogoutComfirmNotificationExists(), false, "Verify that confirmation dialog is disappeared");
+		
+	}
+	
+	/**
+	 * Test id: LO08
+	 * Verify the Forgot Password functionality.
+	 * 
+	 */
+	@Test
+	public void LO08() {
+		Environment environment = new Environment();
+		String sNotificationMessageForgotPassword = environment.getValue("notificationMessageForgotPassword");
+		String sNotificationDescriptionForgotPassword = environment.getValue("notificationDescriptionForgotPassword");
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		ForgotPasswordPage forgotPasswordPage;
+		Account acc = AccountHepler.getUser("Admin01");
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Click on Forgot Password link");
+		forgotPasswordPage = loginPage.gotoForgotPasswordPage();
+		Log.STEP("3.Enter exists username");
+		Log.STEP("4.Click on Submit button");
+		forgotPasswordPage.submitForgotPassword(acc.getEmail());
+		
+		Log.verify("Message: Successful Please check your mailbox for the instruction to reset your password.");
+		assertHelper.assertEquals(forgotPasswordPage.getErrorMessageTopRight(), sNotificationMessageForgotPassword, 
+				"Message: Successful Please check your mailbox for the instruction to reset your password.");
+		assertHelper.assertEquals(forgotPasswordPage.getErrorDescriptionTopRight(), sNotificationDescriptionForgotPassword, 
+				"Message: Successful Please check your mailbox for the instruction to reset your password.");
+		
 	}
 }

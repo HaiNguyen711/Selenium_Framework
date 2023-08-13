@@ -11,7 +11,8 @@
         "lblErrorMessage": "//span[@class='mat-error ng-star-inserted']",
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
       	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
-      	"txtSearch": "//input[starts-with(@class,'input-search')]"
+      	"txtSearch": "//input[starts-with(@class,'input-search')]",
+      	"btnConfirmationNo": "//span[text()=' No ']/parent::button"
     },
     
     "linux":{
@@ -26,6 +27,7 @@
         "lblErrorMessage": "//span[@class='mat-error ng-star-inserted']",
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
       	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
-      	"txtSearch": "//input[starts-with(@class,'input-search')]"
+      	"txtSearch": "//input[starts-with(@class,'input-search')]",
+      	"btnConfirmationNo": "//span[text()=' No ']/parent::button"
     }
 }
