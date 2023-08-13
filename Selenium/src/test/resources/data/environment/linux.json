@@ -10,5 +10,10 @@
 	"errorMessageImageSize": "Image's dimensions should be 1500x1500",
 	"errorMessageFormat": "invalid format",
 	"errorMessageRequired": "is required",
-	"updateAdminTitle": "Update Admin"
+	"updateAdminTitle": "Update Admin",
+	"invalidPassword": "password12",
+	"errorMessageFailureLogin": "Login fail",
+	"errorDescriptionFailureLogin": "Login credentials not valid",
+	"invalidUserName": "admin"
+	"emptyString": ""
 }
