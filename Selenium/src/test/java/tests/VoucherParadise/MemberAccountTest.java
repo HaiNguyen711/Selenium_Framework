@@ -38,21 +38,21 @@ public class MemberAccountTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4.Select Member role");
 		accountPage.SelectRole(RoleName.MEMBER);
-		accountPage.waitForLoad(RoleName.MEMBER);
+		accountPage.waitForLoad();
 		
 		Log.verify("Member accounts page is displayed");
 		assertHelper.assertTrue(accountPage.isDisplayed(RoleName.MEMBER),"Member accounts page is displayed");
 		
 		Log.STEP("4.Logout");
-		loginPage = homePage.logout();
+		loginPage = accountPage.logout();
 	}
 	
 	/**
@@ -75,13 +75,13 @@ public class MemberAccountTest extends BaseTest {
 		Log.STEP("2.Enter valid username/password");
 		Account acc = AccountHepler.getUser(Users.ADMIN);
 		homePage = loginPage.login(acc);
-		homePage.waitForLoad();
+		homePage.waitForLoadHomePage();
 		
 		Log.STEP("3. Go to Accounts page > Member accounts");
 		accountPage = homePage.openTab(SideBar.ACCOUNTS);
-		accountPage.waitForLoad(RoleName.ADMIN);
+		accountPage.waitForLoad();
 		accountPage.SelectRole(RoleName.MEMBER);
-		accountPage.waitForLoad(RoleName.MEMBER);
+		accountPage.waitForLoad();
 		
 		Log.STEP("4. Click on Invite User button");
 		userAccountPopup = accountPage.clickInviteUser();

@@ -10,10 +10,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
+import core.driver.manager.manage.Driver;
 import core.driver.manager.manage.DriverManager;
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 
 import utils.constant.Constant;
 
@@ -77,17 +80,20 @@ public class Utilities {
 		StringSelection stringSelection = new StringSelection(string);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 	}
-
+  
 	public static String getDateNow(String format) {
 		SimpleDateFormat formatter = new SimpleDateFormat(format);
 		Date date = new Date();
 		
 		return formatter.format(date);
 	}
-
+	
 	public static String getDateNow() {
 		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-		Date date = new Date();
 		return Long.toString(timestamp.getTime());
+	}
+	
+	public static void refresh() {
+		DriverManager.getDriver().navigate().refresh();
 	}
 }

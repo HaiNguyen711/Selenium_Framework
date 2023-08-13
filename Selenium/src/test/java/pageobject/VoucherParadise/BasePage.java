@@ -4,10 +4,13 @@ import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.ComboBox;
 import core.element.manager.wrapper.Label;
 import core.element.manager.wrapper.Link;
+import core.element.manager.wrapper.TextBox;
 import dataObjects.enums.ControlType;
 import dataObjects.enums.SideBar;
 import utils.constant.Constant;
+import utils.helper.Environment;
 import utils.helper.LocatorHelper;
+import utils.helper.Utilities;
 
 public class BasePage {
 
@@ -19,10 +22,8 @@ public class BasePage {
 	private final Label lblLogoutComfirm = locator.getLocator(ControlType.LABEL, "lblLogoutComfirm");
 	private final Button btnLastPage = locator.getLocator(ControlType.BUTTON, "btnLastPage");
 	private final ComboBox slPerPage = locator.getLocator(ControlType.COMBOBOX, "slPerPage");
-	private final Label lblErrorMessage = locator.getLocator(ControlType.LABEL, "lblErrorMessage");
-	private final Label lblErrorMessageImage = locator.getLocator(ControlType.LABEL, "lblErrorMessageImage");
-	private final Label lblErrorMessageFirstLastName = locator.getLocator(ControlType.LABEL, "lblErrorMessageFirstLastName");
-
+	private final TextBox txtSearch = locator.getLocator(ControlType.TEXTBOX, "txtSearch");
+	
 	public <T extends BasePage> T openTab(SideBar sideBar) {
 		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", sideBar.getText());
 		lnkSidebarItem.click();
@@ -40,7 +41,7 @@ public class BasePage {
 
 	public LoginPage logout() {
 		btnLogout.click();
-		btnConfirmationYes.waitForVisibility();
+		btnConfirmationYes.waitForPresent();
 		btnConfirmationYes.click();
 		return new LoginPage();
 	}
@@ -67,19 +68,29 @@ public class BasePage {
 		return this;
 	}
 	
-	public String getErrorMessage() {
-		lblErrorMessage.waitForVisibility();
-		return lblErrorMessage.getText();
+	public BasePage search(String value) {
+		
+		txtSearch.enter(value);
+		return this;
 	}
 	
-	public String getErrorMessageImage() {
-		lblErrorMessageImage.waitForVisibility();
-		return lblErrorMessageImage.getText();
+	public BasePage reFreshPage() {
+		Utilities.refresh();
+		return this;
 	}
 	
-	public String getErrorMessageFirstLastName() {
-		lblErrorMessageFirstLastName.waitForVisibility();
-		return lblErrorMessageFirstLastName.getText();
+	private Label getXpathMessageSuccessful(String sMessage) {
+		return locator.getLocator(ControlType.LABEL, "lblMessageSuccessful", sMessage);
+	}
+	
+	public void waitForMessageIsNotDisplayed(String sMessage) {
+		getXpathMessageSuccessful(sMessage).waitForVisibility();
+		getXpathMessageSuccessful(sMessage).waitForNotPresent();
+	}
+	
+	public void waitForDeleteMessageIsNotDisplayed() {
+		String sMessage = new Environment().getValue("msgDelete");
+		getXpathMessageSuccessful(sMessage).waitForNotPresent();
 	}
 	
 }

@@ -8,8 +8,20 @@
         "btnLastPage": "//button[@aria-label='Last page']",
         "slPerPage": "//div[contains(@class,'paginator-page')]//div[contains(@class,'mdc-text-field')]", 
         "lblPerPageItem": "//div[@role='listbox']//mat-option[@ng-reflect-value='%s']",
-        "lblErrorMessage": "//span[@class='mat-error ng-star-inserted']",
-        "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
-      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
+      	"txtSearch": "//input[starts-with(@class,'input-search')]",
+      	"lblMessageSuccessful": "//div[.='%s']"
+    },
+    
+    "linux":{
+    	"dynSibarItemXpath": "//app-sidebar//div[@ng-reflect-router-link='/%s']",
+        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
+        "btnLogout": "//div[text()='Logout']",
+        "lnkLogo": "//div[@class='col logo-1']",
+        "lblLogoutComfirm": "//span[text()='Do you want to logout?']",
+        "btnLastPage": "//button[@aria-label='Last page']",
+        "slPerPage": "//div[contains(@class,'paginator-page')]//div[contains(@class,'mdc-text-field')]", 
+        "lblPerPageItem": "//div[@role='listbox']//mat-option[@ng-reflect-value='%s']",
+      	"txtSearch": "//input[starts-with(@class,'input-search')]",
+      	"lblMessageSuccessful": "//div[.='%s']"
     }
 }

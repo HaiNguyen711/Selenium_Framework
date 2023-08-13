@@ -4,5 +4,12 @@
         "txtPassword": "//input[@id='password']",
         "btnLogin": "//button[@class='btn-login btn btn-primary']",
         "lblLogin": "//div[@class='card login-card']//span[.='Log In']"
+    },
+    
+    "linux":{
+    	"txtEmail": "//input[@id='email']",
+        "txtPassword": "//input[@id='password']",
+        "btnLogin": "//button[@class='btn-login btn btn-primary']",
+        "lblLogin": "//div[@class='card login-card']//span[.='Log In']"
     }
 }

@@ -2,8 +2,28 @@
     "windows": {
         "txtInfo": "//input[@formcontrolname='%s']",
         "lbltitle": "//div[contains(text(),'%s')]",
-        "btnProfile": "//div[@class='btn-upload-file']",
+        "btnProfile": "//input[@id='profileImg']",
         "btnCancel": "//button[contains(@class,'btn btn-cancel')]",
-        "btnSave": "//button[contains(.,'Save')]"
+        "btnSave": "//button[contains(.,'Save')]",
+        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
+        "btnDelete": "//img[@mattooltip='Delete Account']",
+        "slPartner": "//input[@aria-label='Partner']",
+        "lblErrorMessage": "//mat-error//span[contains(@class,'ng-star-inserted')]",
+        "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
+    },
+    
+    "linux":{
+    	"txtInfo": "//input[@formcontrolname='%s']",
+        "lbltitle": "//div[contains(text(),'%s')]",
+        "btnProfile": "//input[@id='profileImg']",
+        "btnCancel": "//button[contains(@class,'btn btn-cancel')]",
+        "btnSave": "//button[contains(.,'Save')]",
+        "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
+        "btnDelete": "//img[@mattooltip='Delete Account']",
+        "slPartner": "//input[@aria-label='Partner']",
+        "lblErrorMessage": "//mat-error//span[contains(@class,'ng-star-inserted')]",
+        "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
     }
 }

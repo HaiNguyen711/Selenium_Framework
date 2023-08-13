@@ -14,6 +14,7 @@ public class AccountPage extends BasePage {
 	
 	private final ComboBox slRole = locator.getLocator(ControlType.COMBOBOX, "slRole");
 	private final Button btnInviteUser = locator.getLocator(ControlType.BUTTON, "btnInviteUser");
+	private final Label lblPagin = locator.getLocator(ControlType.LABEL, "lblPagin");
 	
 	public AccountPage SelectRole(RoleName role) {
 		slRole.selectWithoutSearch(role.getText());
@@ -22,10 +23,6 @@ public class AccountPage extends BasePage {
 	
 	public Label getXpathTitleRoleAccount(RoleName role) {
 		return locator.getLocator(ControlType.LABEL, "lblTitle", role.getText());
-	}
-	
-	public void waitForLoad(RoleName role) { 
-		getXpathTitleRoleAccount(role).waitForVisibility();
 	}
 	
 	public boolean isDisplayed(RoleName role) {
@@ -45,6 +42,14 @@ public class AccountPage extends BasePage {
 		return locator.getLocator(ControlType.LABEL, "lblphone", sPhone).isDisplayed();
 	}
 	
+	public void waitForPartnerCartIsDisappear(String sName) {
+		locator.getLocator(ControlType.LABEL, "lblName", sName).waitForNotPresent();
+	}
+	
+	public void waitForLoadPartnerAccountCartPage(String sName,String sBranch) {
+		locator.getLocator(ControlType.LABEL, "lblInfomation",sName, sBranch).waitForVisibility();
+	}
+	
 	public Label getXpathUserNameInCart(String sUsername) {
 		return locator.getLocator(ControlType.LABEL, "lblUsername", sUsername);
 	}
@@ -54,10 +59,9 @@ public class AccountPage extends BasePage {
 	}
 
 	public AccountPage moveMouseToCartWithUserName(String sUsername) {
+		
 		getXpathUserNameInCart(sUsername).scrollIntoView();
 		getXpathUserNameInCart(sUsername).waitForPositionNotChange();
-		getXpathUserNameInCart(sUsername).waitForVisibility();
-		getXpathUserNameInCart(sUsername).waitForClickable();
 		getXpathUserNameInCart(sUsername).moveToElement();
 		return this;
 	}
@@ -65,8 +69,15 @@ public class AccountPage extends BasePage {
 	public UserAccountPopup clickEditButton(String sUsername) {
 		Button btnEdit = locator.getLocator(ControlType.BUTTON, "btnEdit",sUsername);
 		btnEdit.waitForVisibility();
-		btnEdit.waitForClickable();
 		btnEdit.click();
 		return new UserAccountPopup();
+	}
+	
+	public void waitForCartisNotPresent(String sName) {
+		locator.getLocator(ControlType.LABEL, "lblName", sName).waitForNotPresent();
+	}
+	
+	public void waitForLoad() {
+		lblPagin.waitForVisibility();
 	}
 }
