@@ -832,4 +832,199 @@ public class PartnerAccountTest extends BaseTest {
 		accountPage = userAccountPopup.clickDeleteButton();
 	}
 	
+	/**
+	 * Test id: OT27
+	 *    Verify that user is unable to upload partner by firstname is invalid format
+	 * 
+	 */
+	@Test
+	public void OT30() {
+		Environment environment = new Environment();
+		String sNewPartnerPopupTitle = environment.getValue("newPartnerPopupTitle");
+		String sErrorMessage="First name " + environment.getValue("errorMessageFormat");
+		String sFirstName = "Ad" + StringHelper.getRandomString();
+		String sLastName = StringHelper.getRandomString();
+		String sUsername = sFirstName + "@vp.com";
+		String sPartner = environment.getValue("sUniqlo");
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		String sNewFirstname = "Ad " + StringHelper.getRandomString();
+		String sName = sFirstName + " " + sLastName;
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoadHomePage();
+		
+		Log.STEP("3. Go to Accounts page > Partner accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad();
+		accountPage.SelectRole(RoleName.PARTNER);
+		accountPage.waitForLoad();
+		
+		Log.STEP("4. Invite new partner user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewPartnerPopupTitle);
+		accountPage = userAccountPopup.inviteNewPartner(sFirstName, sLastName, sUsername, sPartner, filePath);
+		accountPage.waitForLoad();
+		accountPage.goTolastPage();
+		
+		Log.STEP("5. Select newly created partner user. Click on Edit button, Enter lastname is blank");
+		accountPage.waitForLoadPartnerAccountCartPage(sName, sPartner);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), sNewFirstname);
+		
+		Log.verify("message appear: First name invalid format");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageFirstLastName(),sErrorMessage, "message appear: First name invalid format");
+		
+		Log.STEP("Post-condition");
+		accountPage = userAccountPopup.clickDeleteButton();
+	}
+	
+	/**
+	 * Test id: OT31
+	 *    Verify that user is unable to upload partner by lastname is invalid format
+	 * 
+	 */
+	@Test
+	public void OT31() {
+		Environment environment = new Environment();
+		String sNewPartnerPopupTitle = environment.getValue("newPartnerPopupTitle");
+		String sErrorMessage="Last name " + environment.getValue("errorMessageFormat");
+		String sFirstName = "Ad" + StringHelper.getRandomString();
+		String sLastName = StringHelper.getRandomString();
+		String sUsername = sFirstName + "@vp.com";
+		String sPartner = environment.getValue("sUniqlo");
+		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
+		String sNewLastname = "Ad " + StringHelper.getRandomString();
+		String sName = sFirstName + " " + sLastName;
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoadHomePage();
+		
+		Log.STEP("3. Go to Accounts page > Partner accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad();
+		accountPage.SelectRole(RoleName.PARTNER);
+		accountPage.waitForLoad();
+		
+		Log.STEP("4. Invite new partner user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewPartnerPopupTitle);
+		accountPage = userAccountPopup.inviteNewPartner(sFirstName, sLastName, sUsername, sPartner, filePath);
+		accountPage.waitForLoad();
+		accountPage.goTolastPage();
+		
+		Log.STEP("5. Select newly created partner user. Click on Edit button, Enter lastname is blank");
+		accountPage.waitForLoadPartnerAccountCartPage(sName, sPartner);
+		accountPage.moveMouseToCartWithUserName(sUsername);
+		userAccountPopup = accountPage.clickEditButton(sUsername);
+		userAccountPopup.fillInfo(UserInfor.LASTNAME.getText(), sNewLastname);
+		
+		Log.verify("message appear: Last name invalid format");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageFirstLastName(),sErrorMessage, "message appear: Last name invalid format");
+		
+		Log.STEP("Post-condition");
+		accountPage = userAccountPopup.clickDeleteButton();
+	}
+	
+	/**
+	 * Test id: OT32
+	 *    Verify that user is unable to invite partner by firstname is invalid format
+	 * 
+	 */
+	@Test
+	public void OT32() {
+		Environment environment = new Environment();
+		String sNewPartnerPopupTitle = environment.getValue("newPartnerPopupTitle");
+		String sErrorMessage="First name " + environment.getValue("errorMessageFormat");
+		String sFirstName = "Ad " + StringHelper.getRandomString();
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoadHomePage();
+		
+		Log.STEP("3. Go to Accounts page > Partner accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad();
+		accountPage.SelectRole(RoleName.PARTNER);
+		accountPage.waitForLoad();
+		
+		Log.STEP("4. Invite new partner user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewPartnerPopupTitle);
+		
+		Log.STEP("5. Enter firstname is invalid format");
+		userAccountPopup.fillInfo(UserInfor.FIRSTNAME.getText(), sFirstName);
+		
+		Log.verify("message appear: First name invalid format");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageFirstLastName(),sErrorMessage, "message appear: First name invalid format");
+		
+	}
+	
+	/**
+	 * Test id: OT33
+	 *    Verify that user is unable to invite partner by lastname is invalid format
+	 * 
+	 */
+	@Test
+	public void OT33() {
+		Environment environment = new Environment();
+		String sNewPartnerPopupTitle = environment.getValue("newPartnerPopupTitle");
+		String sErrorMessage="Last name " + environment.getValue("errorMessageFormat");
+		String sLastname = "Ad " + StringHelper.getRandomString();
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		AccountPage accountPage;
+		HomePage homePage;
+		UserAccountPopup userAccountPopup;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Enter valid username/password");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
+		homePage = loginPage.login(acc);
+		homePage.waitForLoadHomePage();
+		
+		Log.STEP("3. Go to Accounts page > Partner accounts");
+		accountPage = homePage.openTab(SideBar.ACCOUNTS);
+		accountPage.waitForLoad();
+		accountPage.SelectRole(RoleName.PARTNER);
+		accountPage.waitForLoad();
+		
+		Log.STEP("4. Invite new partner user");
+		userAccountPopup = accountPage.clickInviteUser();
+		userAccountPopup.waitForPopupLoad(sNewPartnerPopupTitle);
+		
+		Log.STEP("5. Enter firstname is invalid format");
+		userAccountPopup.fillInfo(UserInfor.LASTNAME.getText(), sLastname);
+		
+		Log.verify("message appear: Last name invalid format");
+		assertHelper.assertEquals(userAccountPopup.getErrorMessageFirstLastName(),sErrorMessage, "message appear: Last name invalid format");
+		
+	}
 }
