@@ -5,6 +5,7 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
@@ -77,31 +78,16 @@ public class Utilities {
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 	}
 
-	/**
-	 * Imitate mouse events like ENTER, CTRL+C, CTRL+V to paste the data from
-	 * clipboard
-	 * 
-	 * @param fileLocation - file path
-	 */
-	public static void uploadFile(String fileLocation) {
-		try {
-			setClipboardData(fileLocation);
-			Robot robot = new Robot();
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_V);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_ENTER);
-			robot.keyRelease(KeyEvent.VK_ENTER);
-		} catch (Exception exp) {
-			exp.printStackTrace();
-		}
-	}
-
 	public static String getDateNow(String format) {
 		SimpleDateFormat formatter = new SimpleDateFormat(format);
 		Date date = new Date();
+		
 		return formatter.format(date);
 	}
 
+	public static String getDateNow() {
+		Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+		Date date = new Date();
+		return Long.toString(timestamp.getTime());
+	}
 }
