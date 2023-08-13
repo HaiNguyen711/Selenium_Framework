@@ -2,7 +2,7 @@ package dataObjects.enums;
 
 public enum UserInfor {
 	
-	FIRSTNAME("firstName"), LASTNAME("lastName"), USERNAME("username"), PHONE("phone");
+	FIRSTNAME("firstName"), LASTNAME("lastName"), USERNAME("username"), PHONE("phone"), BIRTHDAY("birthday");
 	
 	private final String text;
 	UserInfor(String text) {

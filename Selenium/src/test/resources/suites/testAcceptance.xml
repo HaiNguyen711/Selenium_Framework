@@ -10,7 +10,7 @@
 		<parameter name="driverConfig" value="chrome.local" />
 		<parameter name="platform" value="windows" />
 		<classes>
-			<class name="tests.VoucherParadise.AdminAccountsTest"></class>
+			<class name="tests.VoucherParadise.MemberAccountTest"></class>
 		</classes>
 	</test>
 

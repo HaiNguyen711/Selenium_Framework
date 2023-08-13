@@ -614,6 +614,8 @@ public class AdminAccountsTest extends BaseTest {
 		String sNewFirstName = "Ad" + StringHelper.getRandomString();
 		String sNewLastName = StringHelper.getRandomString();
 		String newPhone = StringHelper.getRandomNumberToString(10);
+		String sMessageUpdate = String.format(environment.getValue("msgUpdateAdminAccount"), sNewFirstName + " " + sNewLastName);
+		
 		
 		AssertHelper assertHelper = new AssertHelper();
 		LoginPage loginPage = new LoginPage();
@@ -651,10 +653,11 @@ public class AdminAccountsTest extends BaseTest {
 		
 		Log.STEP("8.Click on Save button");
 		accountPage = userAccountPopup.clickSaveButton();
+		accountPage.waitForMessageIsNotDisplayed(sMessageUpdate);
 		
 		Log.verify("Admin user data is updated");
-		assertHelper.assertTrue(accountPage.isDisplayedNameInCart(sFirstName+" "+sLastName),"Admin user data is updated");
-		assertHelper.assertTrue(accountPage.isDisplayedPhoneInCart(phone),"Admin user data is updated");
+		assertHelper.assertTrue(accountPage.isDisplayedNameInCart(sNewFirstName+" "+sNewLastName),"Admin user data is updated");
+		assertHelper.assertTrue(accountPage.isDisplayedPhoneInCart(newPhone),"Admin user data is updated");
 		
 		Log.STEP("Post-condition");
 		accountPage.moveMouseToCartWithUserName(sUsername);
@@ -680,9 +683,6 @@ public class AdminAccountsTest extends BaseTest {
 		String sUsername = sFirstName + "@vp.com";
 		String phone = StringHelper.getRandomNumberToString(10);
 		String filePath = Constant.IMAGE_DATA + "\\accTest.png";
-		String sNewFirstName = "Ad" + StringHelper.getRandomString();
-		String sNewLastName = StringHelper.getRandomString();
-		String newPhone = StringHelper.getRandomNumberToString(10);
 		
 		AssertHelper assertHelper = new AssertHelper();
 		LoginPage loginPage = new LoginPage();

@@ -71,5 +71,27 @@ public class StringHelper {
         Date datePlus = DateUtils.addDays(date, dayPlus);
         return dateFormat.format(datePlus);
     }
+    
+    @SuppressWarnings("deprecation")
+	public static String getNowTimeDayMinus(String format, int dayMinus) {
+        DateFormat dateFormat = new SimpleDateFormat(format);
+        Date date = new Date();
+		Date datePlus = DateUtils.setYears(date, date.getYear() + 1900 - dayMinus);
+        return dateFormat.format(datePlus);
+    }
+    
+    public static String format(String sDate, String oldFormat, String newFormat) {
+        if (sDate != null) {
+            try {
+                Date date = new SimpleDateFormat(oldFormat).parse(sDate);
+                DateFormat dateFormat = new SimpleDateFormat(newFormat);
+                return dateFormat.format(date);
+            } catch (Exception e) {
+                e.printStackTrace();
+                return null;
+            }
+        }
+        return null;
+    }
 
 }
