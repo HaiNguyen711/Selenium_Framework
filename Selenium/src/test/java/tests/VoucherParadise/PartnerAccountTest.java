@@ -203,7 +203,7 @@ public class PartnerAccountTest extends BaseTest {
 	public void AC12() {
 		Environment environment = new Environment();
 		String sNewPartnerPopupTitle = environment.getValue("newPartnerPopupTitle");
-		String sErrorMessage= environment.getValue("errorMessageImageSize");
+		String sErrorMessage= environment.getValue("errorMessageImageType");
 		String filePath = Constant.IMAGE_DATA + "\\accTestTypeFormat.jpeg";
 		
 		AssertHelper assertHelper = new AssertHelper();

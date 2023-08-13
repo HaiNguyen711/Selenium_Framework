@@ -87,7 +87,7 @@ public class UserAccountPopup extends BasePage {
 	}
 	
 	public UserAccountPopup uploadImage(String filePath) {
-		Utilities.uploadFile(InputProfileImage.getElement(),filePath);
+		InputProfileImage.uploadFile(filePath);
 		
 		return this;
 	}
