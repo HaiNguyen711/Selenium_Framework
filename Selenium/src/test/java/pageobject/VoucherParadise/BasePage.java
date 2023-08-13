@@ -8,6 +8,7 @@ import core.element.manager.wrapper.TextBox;
 import dataObjects.enums.ControlType;
 import dataObjects.enums.SideBar;
 import utils.constant.Constant;
+import utils.helper.Environment;
 import utils.helper.LocatorHelper;
 import utils.helper.Utilities;
 
@@ -21,9 +22,6 @@ public class BasePage {
 	private final Label lblLogoutComfirm = locator.getLocator(ControlType.LABEL, "lblLogoutComfirm");
 	private final Button btnLastPage = locator.getLocator(ControlType.BUTTON, "btnLastPage");
 	private final ComboBox slPerPage = locator.getLocator(ControlType.COMBOBOX, "slPerPage");
-	private final Label lblErrorMessage = locator.getLocator(ControlType.LABEL, "lblErrorMessage");
-	private final Label lblErrorMessageImage = locator.getLocator(ControlType.LABEL, "lblErrorMessageImage");
-	private final Label lblErrorMessageFirstLastName = locator.getLocator(ControlType.LABEL, "lblErrorMessageFirstLastName");
 	private final TextBox txtSearch = locator.getLocator(ControlType.TEXTBOX, "txtSearch");
 	private final Button btnConfirmationNo = locator.getLocator(ControlType.BUTTON, "btnConfirmationNo");
 	
@@ -90,20 +88,6 @@ public class BasePage {
 		return this;
 	}
 	
-	public String getErrorMessage() {
-		return lblErrorMessage.getText();
-	}
-	
-	public String getErrorMessageImage() {
-		lblErrorMessageImage.waitForVisibility();
-		return lblErrorMessageImage.getText();
-	}
-	
-	public String getErrorMessageFirstLastName() {
-		lblErrorMessageFirstLastName.waitForVisibility();
-		return lblErrorMessageFirstLastName.getText();
-	}
-	
 	public BasePage search(String value) {
 		
 		txtSearch.enter(value);
@@ -113,6 +97,20 @@ public class BasePage {
 	public BasePage reFreshPage() {
 		Utilities.refresh();
 		return this;
+	}
+	
+	private Label getXpathMessageSuccessful(String sMessage) {
+		return locator.getLocator(ControlType.LABEL, "lblMessageSuccessful", sMessage);
+	}
+	
+	public void waitForMessageIsNotDisplayed(String sMessage) {
+		getXpathMessageSuccessful(sMessage).waitForVisibility();
+		getXpathMessageSuccessful(sMessage).waitForNotPresent();
+	}
+	
+	public void waitForDeleteMessageIsNotDisplayed() {
+		String sMessage = new Environment().getValue("msgDelete");
+		getXpathMessageSuccessful(sMessage).waitForNotPresent();
 	}
 	
 }

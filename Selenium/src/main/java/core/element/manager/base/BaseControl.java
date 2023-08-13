@@ -538,5 +538,29 @@ public class BaseControl implements IWaitableControl, IValidateControl, ISideAct
 		}
 		return isClickable;
 	}
-
+	
+	/**
+	 * Upload file to element
+	 * 
+	 * @param value - value need enter
+	 */
+	public void uploadFile(String path) {
+		Log.info(String.format("Upload file %s to %s", path ,getLocator().toString()));
+		int i = 0;
+		while (i < Constant.LONG_TIMEOUT) {
+			i++;
+			try {
+				this.waitForPresent();
+				getElement().sendKeys(path);
+				return;
+			} catch (StaleElementReferenceException staleEx) {
+				if (i == Constant.LONG_TIMEOUT)
+					throw staleEx;
+				Log.error(String.format("Try to scroll to control %s again", getLocator().toString()));
+			} catch (Exception e) {
+				Log.error(String.format("Has error with control '%s': %s", getLocator().toString(), e.getMessage()));
+				throw e;
+			}
+		}
+	}
 }

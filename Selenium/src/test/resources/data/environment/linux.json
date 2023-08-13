@@ -18,4 +18,11 @@
 	"emptyString": "",
 	"notificationMessageForgotPassword": "Successful",
 	"notificationDescriptionForgotPassword": "Please check your mailbox for the instruction to reset your password."
+	"sHighlandsCoffee": "Highlands Coffee",
+	"msgDelete": "Account have been deleted successfully",
+	"msgCreatePartnerMemberAccount": "Create account %s successful",
+	"msgUpdatePartnerMemberAccount": "Update account %s successful",
+	"msgCreateAdminAccount": "Create account successfully",
+	"msgUpdateAdminAccount": "Updated info account %s",
+	"sUniqlo": "Uniqlo"
 }

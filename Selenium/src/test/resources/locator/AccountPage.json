@@ -7,7 +7,8 @@
         "lblUsername": "//div[contains(@class,'card-username') and contains(text(),'%s')]",
         "lblphone": "//div[contains(@class,'card-text') and contains(text(),'%s')]",
         "btnEdit": "//div[contains(text(),'%s')]/ancestor::div[@class='user-detail']//i[@class='fas fa-edit']",
-        "lblPagin" : "//div[contains(@class,'mat-mdc-paginator') and contains(text(),'1 – 10')]"
+        "lblPagin" : "//div[contains(@class,'mat-mdc-paginator') and contains(text(),'1 – 10')]",
+        "lblInfomation": "//div[contains(@class,'card-title') and contains(text(),'%s')]/ancestor::div[@class='user-detail-top']//div[contains(text(),'%s')]"
     },
     
     "linux":{
@@ -18,6 +19,7 @@
         "lblUsername": "//div[contains(@class,'card-username') and contains(text(),'%s')]",
         "lblphone": "//div[contains(@class,'card-text') and contains(text(),'%s')]",
         "btnEdit": "//div[contains(text(),'%s')]/ancestor::div[@class='user-detail']//i[@class='fas fa-edit']",
-        "lblPagin" : "//div[contains(@class,'mat-mdc-paginator') and contains(text(),'1 – 10')]"
+        "lblPagin" : "//div[contains(@class,'mat-mdc-paginator') and contains(text(),'1 – 10')]",
+        "lblInfomation": "//div[contains(@class,'card-title') and contains(text(),'%s')]/ancestor::div[@class='user-detail-top']//div[contains(text(),'%s')]"
     }
 }

@@ -80,33 +80,11 @@ public class Utilities {
 		StringSelection stringSelection = new StringSelection(string);
 		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection, null);
 	}
-
-	/**
-	 * Imitate mouse events like ENTER, CTRL+C, CTRL+V to paste the data from
-	 * clipboard
-	 * 
-	 * @param fileLocation - file path
-	 */
-	public static void uploadFile(WebElement element ,String fileLocation) {
-//		try {
-//			setClipboardData(fileLocation);
-//			Robot robot = new Robot();
-//			robot.keyPress(KeyEvent.VK_CONTROL);
-//			robot.keyPress(KeyEvent.VK_V);
-//			robot.keyRelease(KeyEvent.VK_V);
-//			robot.keyRelease(KeyEvent.VK_CONTROL);
-//			robot.keyPress(KeyEvent.VK_ENTER);
-//			robot.keyRelease(KeyEvent.VK_ENTER);
-//		} catch (Exception exp) {
-//			exp.printStackTrace();
-//		}
-		
-		element.sendKeys(fileLocation);
-	}
-
+  
 	public static String getDateNow(String format) {
 		SimpleDateFormat formatter = new SimpleDateFormat(format);
 		Date date = new Date();
+		
 		return formatter.format(date);
 	}
 	
@@ -118,5 +96,4 @@ public class Utilities {
 	public static void refresh() {
 		DriverManager.getDriver().navigate().refresh();
 	}
-
 }

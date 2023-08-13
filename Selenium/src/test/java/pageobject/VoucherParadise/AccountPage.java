@@ -42,6 +42,14 @@ public class AccountPage extends BasePage {
 		return locator.getLocator(ControlType.LABEL, "lblphone", sPhone).isDisplayed();
 	}
 	
+	public void waitForPartnerCartIsDisappear(String sName) {
+		locator.getLocator(ControlType.LABEL, "lblName", sName).waitForNotPresent();
+	}
+	
+	public void waitForLoadPartnerAccountCartPage(String sName,String sBranch) {
+		locator.getLocator(ControlType.LABEL, "lblInfomation",sName, sBranch).waitForVisibility();
+	}
+	
 	public Label getXpathUserNameInCart(String sUsername) {
 		return locator.getLocator(ControlType.LABEL, "lblUsername", sUsername);
 	}
@@ -51,6 +59,7 @@ public class AccountPage extends BasePage {
 	}
 
 	public AccountPage moveMouseToCartWithUserName(String sUsername) {
+		
 		getXpathUserNameInCart(sUsername).scrollIntoView();
 		getXpathUserNameInCart(sUsername).waitForPositionNotChange();
 		getXpathUserNameInCart(sUsername).moveToElement();
