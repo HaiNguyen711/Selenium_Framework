@@ -1,5 +1,7 @@
 package pageobject.VoucherParadise;
 
+import org.openqa.selenium.Keys;
+
 import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.Label;
 import core.element.manager.wrapper.TextBox;
@@ -15,6 +17,7 @@ public class ForgotPasswordPage extends BasePage {
 	private final Button btnSubmit = locator.getLocator(ControlType.BUTTON, "btnSubmit");
 	private final Label lblErrorMessageTopRight = locator.getLocator(ControlType.LABEL, "lblErrorMessageTopRight");
 	private final Label lblErrorDescriptionTopRight = locator.getLocator(ControlType.LABEL, "lblErrorDescriptionTopRight");
+	private final Label lblErrorMessageUserName = locator.getLocator(ControlType.LABEL, "lblErrorMessageUserName");
 
 	public ForgotPasswordPage submitForgotPassword(String sEmail) {
 		txtEmail.enter(sEmail);
@@ -28,5 +31,16 @@ public class ForgotPasswordPage extends BasePage {
 
 	public String getErrorDescriptionTopRight() {
 		return lblErrorDescriptionTopRight.getText();
+	}
+	
+	public String getErrorMessageUserName() {
+		lblErrorMessageUserName.waitForVisibility();
+		return lblErrorMessageUserName.getText();
+	}
+	
+	public ForgotPasswordPage enterUserName(String sUserName) {
+		txtEmail.enter(sUserName);
+		txtEmail.enter(Keys.TAB);
+		return this;
 	}
 }

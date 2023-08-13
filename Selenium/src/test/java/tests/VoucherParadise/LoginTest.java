@@ -61,7 +61,7 @@ public class LoginTest extends BaseTest {
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username and invalid password");
 		Log.STEP("3.Click on LogIn button");
-		Account acc = AccountHepler.getUser("Admin");
+		Account acc = AccountHepler.getUser(Users.ADMIN);
 		acc.setPassword(sInvalidPassword);
 		loginPage = loginPage.failureLogin(acc);
 		
@@ -104,8 +104,8 @@ public class LoginTest extends BaseTest {
 		
 		LoginPage loginPage = new LoginPage();
 		HomePage homePage;
-		Account acc1 = AccountHepler.getUser("Admin01");
-		Account acc2 = AccountHepler.getUser("Admin");
+		Account acc1 = AccountHepler.getUser(Users.ADMIN01);
+		Account acc2 = AccountHepler.getUser(Users.ADMIN);
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Turn on Remember Me checkbox");
@@ -144,7 +144,7 @@ public class LoginTest extends BaseTest {
 		String sEmptyString = environment.getValue("emptyString");
 		LoginPage loginPage = new LoginPage();
 		HomePage homePage;
-		Account acc = AccountHepler.getUser("Admin01");
+		Account acc = AccountHepler.getUser(Users.ADMIN01);
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Turn on Remember Me checkbox");
@@ -181,7 +181,7 @@ public class LoginTest extends BaseTest {
 		AssertHelper assertHelper = new AssertHelper();
 		LoginPage loginPage = new LoginPage();
 		BasePage basePage;
-		Account acc = AccountHepler.getUser("Admin01");
+		Account acc = AccountHepler.getUser(Users.ADMIN01);
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -214,7 +214,7 @@ public class LoginTest extends BaseTest {
 		AssertHelper assertHelper = new AssertHelper();
 		LoginPage loginPage = new LoginPage();
 		BasePage basePage;
-		Account acc = AccountHepler.getUser("Admin01");
+		Account acc = AccountHepler.getUser(Users.ADMIN01);
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Enter valid username/password");
@@ -248,7 +248,7 @@ public class LoginTest extends BaseTest {
 		AssertHelper assertHelper = new AssertHelper();
 		LoginPage loginPage = new LoginPage();
 		ForgotPasswordPage forgotPasswordPage;
-		Account acc = AccountHepler.getUser("Admin01");
+		Account acc = AccountHepler.getUser(Users.ADMIN01);
 		
 		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
 		Log.STEP("2.Click on Forgot Password link");
@@ -310,10 +310,10 @@ public class LoginTest extends BaseTest {
 		Log.STEP("2.Click on Forgot Password link");
 		forgotPasswordPage = loginPage.gotoForgotPasswordPage();
 		Log.STEP("3.Enter invalid format username");
-		forgotPasswordPage.submitForgotPassword(sInvalidUserName);
+		forgotPasswordPage.enterUserName(sInvalidUserName);
 		
 		Log.verify("Error message: Username invalid format");
-		assertHelper.assertEquals(forgotPasswordPage.getErrorMessageTopRight(), sErrorMessageUsername, "Error message: Username invalid format");
+		assertHelper.assertEquals(forgotPasswordPage.getErrorMessageUserName(), sErrorMessageUsername, "Error message: Username invalid format");
 		
 	}
 	
