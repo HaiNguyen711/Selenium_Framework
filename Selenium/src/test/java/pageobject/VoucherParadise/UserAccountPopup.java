@@ -24,6 +24,7 @@ public class UserAccountPopup extends BasePage {
 	private final Label lblErrorMessage = locator.getLocator(ControlType.LABEL, "lblErrorMessage");
 	private final Label lblErrorMessageImage = locator.getLocator(ControlType.LABEL, "lblErrorMessageImage");
 	private final Label lblErrorMessageFirstLastName = locator.getLocator(ControlType.LABEL, "lblErrorMessageFirstLastName");
+	private final TextBox txtAddress = locator.getLocator(ControlType.TEXTBOX, "txtAddress");
 			
 	public TextBox getXpathFillInfo(String svalue) {
 		return locator.getLocator(ControlType.TEXTBOX, "txtInfo", svalue);
@@ -75,14 +76,16 @@ public class UserAccountPopup extends BasePage {
 		fillInfo(UserInfor.FIRSTNAME.getText(), sFirstName);
 		fillInfo(UserInfor.LASTNAME.getText(), sLastName);
 		fillInfo(UserInfor.USERNAME.getText(), sUserName);
-		getXpathFillInfo(UserInfor.PHONE.getText()).enter(phone);
+		fillInfo(UserInfor.PHONE.getText(), phone);
 		uploadImage(filePath);
 		return this;
 	}
 	
 	public AccountPage inviteNewAdmin(String sFirstName, String sLastName, String sUserName, String phone,String filePath) {
+		Environment environment = new Environment();
 		fillAllinfoAdminPopup(sFirstName,sLastName,sUserName, phone,filePath);
 		clickSaveButton();
+		this.waitForMessageIsNotDisplayed(environment.getValue("msgCreateAdminAccount"));
 		return new AccountPage();
 	}
 	
@@ -144,5 +147,32 @@ public class UserAccountPopup extends BasePage {
 	public String getErrorMessageFirstLastName() {
 		lblErrorMessageFirstLastName.waitForVisibility();
 		return lblErrorMessageFirstLastName.getText();
+	}
+	
+	public UserAccountPopup enterAddressMember(CharSequence... sAddress) {
+		txtAddress.scrollIntoView();
+		txtAddress.waitForPositionNotChange();
+		txtAddress.enter(sAddress);
+		return this;
+	}
+	
+	public UserAccountPopup fillAllinfoMemberPopup(String sFirstName, String sLastName, String sUserName, String phone,String sAddress, String sbirthday, String filePath) {
+		fillInfo(UserInfor.FIRSTNAME.getText(), sFirstName);
+		fillInfo(UserInfor.LASTNAME.getText(), sLastName);
+		fillInfo(UserInfor.USERNAME.getText(), sUserName);
+		fillInfo(UserInfor.PHONE.getText(), phone);
+		fillInfo(UserInfor.BIRTHDAY.getText(), sbirthday);
+		enterAddressMember(sAddress);
+		uploadImage(filePath);
+		return this;
+	}
+	
+	public AccountPage inviteNewMember(String sFirstName, String sLastName, String sUserName, String phone,String sAddress, String sbirthday, String filePath) {
+		Environment environment = new Environment();
+		String sMessageCreated = String.format(environment.getValue("msgCreatePartnerMemberAccount"), sUserName);
+		fillAllinfoMemberPopup(sFirstName, sLastName, sUserName, phone, sAddress, sbirthday, filePath);
+		clickSaveButton();
+		this.waitForMessageIsNotDisplayed(sMessageCreated);
+		return new AccountPage();
 	}
 }

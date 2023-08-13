@@ -3,6 +3,7 @@ package pageobject.VoucherParadise;
 import core.element.manager.wrapper.Button;
 import core.element.manager.wrapper.ComboBox;
 import core.element.manager.wrapper.Label;
+import core.element.manager.wrapper.TextBox;
 import dataObjects.enums.ControlType;
 import dataObjects.enums.RoleName;
 import utils.constant.Constant;

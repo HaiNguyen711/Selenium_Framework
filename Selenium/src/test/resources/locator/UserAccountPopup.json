@@ -10,7 +10,8 @@
         "slPartner": "//input[@aria-label='Partner']",
         "lblErrorMessage": "//mat-error//span[contains(@class,'ng-star-inserted')]",
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
-      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
+      	"txtAddress": "//textarea[@formcontrolname='address']"
     },
     
     "linux":{
@@ -24,6 +25,7 @@
         "slPartner": "//input[@aria-label='Partner']",
         "lblErrorMessage": "//mat-error//span[contains(@class,'ng-star-inserted')]",
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
-      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
+      	"txtAddress": "//textarea[@formcontrolname='address']"
     }
 }
