@@ -245,7 +245,6 @@ public class LoginTest extends BaseTest {
 		Environment environment = new Environment();
 		String sNotificationMessageForgotPassword = environment.getValue("notificationMessageForgotPassword");
 		String sNotificationDescriptionForgotPassword = environment.getValue("notificationDescriptionForgotPassword");
-		
 		AssertHelper assertHelper = new AssertHelper();
 		LoginPage loginPage = new LoginPage();
 		ForgotPasswordPage forgotPasswordPage;
@@ -265,4 +264,57 @@ public class LoginTest extends BaseTest {
 				"Message: Successful Please check your mailbox for the instruction to reset your password.");
 		
 	}
+	
+	/**
+	 * Test id: LO09
+	 * Verify that user is unable to reset password with username is not exists.
+	 * 
+	 */
+	@Test
+	public void LO09() {
+		Environment environment = new Environment();
+		String sErrorMessageEmailNotExists = environment.getValue("errorMessageEmailNotExists");
+		String sNotExistsUserName = environment.getValue("notExistsUserName");
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		ForgotPasswordPage forgotPasswordPage;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Click on Forgot Password link");
+		forgotPasswordPage = loginPage.gotoForgotPasswordPage();
+		Log.STEP("3.Enter not exists username");
+		Log.STEP("4.Click on Submit button");
+		forgotPasswordPage.submitForgotPassword(sNotExistsUserName);
+		
+		Log.verify("Error message: email not existed");
+		assertHelper.assertEquals(forgotPasswordPage.getErrorMessageTopRight(), sErrorMessageEmailNotExists, "Error message: email not existed");
+		
+	}
+	
+	/**
+	 * Test id: LO10
+	 * Verify that user is unable to reset password with invalid format username.
+	 * 
+	 */
+	@Test
+	public void LO10() {
+		Environment environment = new Environment();
+		String sErrorMessageUsername = environment.getValue("errorMessageUsername");
+		String sInvalidUserName = environment.getValue("invalidUserName");
+		
+		AssertHelper assertHelper = new AssertHelper();
+		LoginPage loginPage = new LoginPage();
+		ForgotPasswordPage forgotPasswordPage;
+		
+		Log.STEP("1.Navigate to Voucher Paradise Admin Portal website");
+		Log.STEP("2.Click on Forgot Password link");
+		forgotPasswordPage = loginPage.gotoForgotPasswordPage();
+		Log.STEP("3.Enter invalid format username");
+		forgotPasswordPage.submitForgotPassword(sInvalidUserName);
+		
+		Log.verify("Error message: Username invalid format");
+		assertHelper.assertEquals(forgotPasswordPage.getErrorMessageTopRight(), sErrorMessageUsername, "Error message: Username invalid format");
+		
+	}
+	
 }

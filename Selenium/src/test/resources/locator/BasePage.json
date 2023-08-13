@@ -12,7 +12,7 @@
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
       	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
       	"txtSearch": "//input[starts-with(@class,'input-search')]",
-      	"btnConfirmationNo": "//span[text()=' No ']/parent::button"
+      	"btnConfirmationNo": "//span[text()=' No ']/parent::button",
       	"txtSearch": "//input[starts-with(@class,'input-search')]",
       	"lblMessageSuccessful": "//div[.='%s']"
     },
@@ -30,7 +30,7 @@
         "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
       	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error",
       	"txtSearch": "//input[starts-with(@class,'input-search')]",
-      	"btnConfirmationNo": "//span[text()=' No ']/parent::button"
+      	"btnConfirmationNo": "//span[text()=' No ']/parent::button",
       	"txtSearch": "//input[starts-with(@class,'input-search')]",
       	"lblMessageSuccessful": "//div[.='%s']"
     }

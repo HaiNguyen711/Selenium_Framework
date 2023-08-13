@@ -14,7 +14,7 @@ public class ForgotPasswordPage extends BasePage {
 	private final TextBox txtEmail = locator.getLocator(ControlType.TEXTBOX, "txtEmail");
 	private final Button btnSubmit = locator.getLocator(ControlType.BUTTON, "btnSubmit");
 	private final Label lblErrorMessageTopRight = locator.getLocator(ControlType.LABEL, "lblErrorMessageTopRight");
-	private final Label lblErrorDescriptionTopRight = locator.getLocator(ControlType.LABEL, "lblErrorMessageTopRight");
+	private final Label lblErrorDescriptionTopRight = locator.getLocator(ControlType.LABEL, "lblErrorDescriptionTopRight");
 
 	public ForgotPasswordPage submitForgotPassword(String sEmail) {
 		txtEmail.enter(sEmail);
