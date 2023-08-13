@@ -3,6 +3,7 @@ package core.element.manager.wrapper;
 import org.openqa.selenium.By;
 
 import core.element.manager.base.BaseControl;
+import core.element.manager.base.ClickableControl;
 import core.element.manager.base.EditableControl;
 import core.element.manager.base.type.ElementType;
 
@@ -46,10 +47,12 @@ public class ComboBox extends EditableControl {
 	public void select(String selectedText) {
 		String mainXpath = getElementXpathAsString();
         ComboBox mainElement = new ComboBox(mainXpath);
-        mainElement.waitForClickable();
+        mainElement.scrollIntoView();
+        mainElement.waitForPositionNotChange();
         mainElement.click();
         enter(selectedText);
-        clickOnItem(selectedText);
+        ClickableControl item = new ClickableControl("//mat-option[@ng-reflect-value='"+ selectedText +"']");
+        item.click();
     }
 
     public void selectWithoutSearch(String value) {

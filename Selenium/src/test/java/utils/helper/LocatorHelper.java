@@ -111,5 +111,43 @@ public class LocatorHelper {
 			return null;
 		}
 	}
+	
+	/**
+	 * Get Dynamic xpath from file json by control type and elementName
+	 * 
+	 * @param type: Control type: Button, TextBox.....
+	 * @param elementName - variable of this element
+	 * @Param value - dynamic multiple value.
+	 *  
+	 * @return - locator value of element
+	 *
+	 */
+	public <T extends BaseControl> T getLocator(ControlType type ,String elementName, String... value) {
+		
+		String currentPlatform = DriverManager.getDriverProperty().getPlatform().toString().toLowerCase();
+		
+		// Get locator from platform-driver key
+		JsonElement os = jsonObject.get(currentPlatform);
+		switch (type) {
+		case BUTTON:
+			return (T) new Button(os.getAsJsonObject().get(elementName).getAsString(),value);
+		case CHECKBOX:
+			return (T) new CheckBox(os.getAsJsonObject().get(elementName).getAsString(),value);
+		case COMBOBOX:
+			return (T) new ComboBox(os.getAsJsonObject().get(elementName).getAsString(),value);
+		case LABEL:
+			return (T) new Label(os.getAsJsonObject().get(elementName).getAsString(),value);
+		case LINK:
+			return (T) new Link(os.getAsJsonObject().get(elementName).getAsString(),value);
+		case RADIOBUTTON:
+			return (T) new RadioButton(os.getAsJsonObject().get(elementName).getAsString(),value);
+		case TAB:
+			return (T) new Tab(os.getAsJsonObject().get(elementName).getAsString(),value);
+		case TEXTBOX:
+			return (T) new TextBox(os.getAsJsonObject().get(elementName).getAsString(),value);
+		default:
+			return null;
+		}
+	}
 
 }

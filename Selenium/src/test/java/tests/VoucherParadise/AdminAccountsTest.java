@@ -1103,7 +1103,6 @@ public class AdminAccountsTest extends BaseTest {
 		Log.STEP("4. Invite new admin user");
 		userAccountPopup = accountPage.clickInviteUser();
 		userAccountPopup.waitForPopupLoad(sNewAdminPopupTitle);
-		accountPage = userAccountPopup.inviteNewAdmin(sFirstName, sLastName, sUsername, phone, filePath);
 		accountPage.waitForLoad();
 		
 		Log.STEP("5. Select newly created admin user. Click on Edit button");

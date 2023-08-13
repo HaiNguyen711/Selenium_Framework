@@ -6,7 +6,11 @@
         "btnCancel": "//button[contains(@class,'btn btn-cancel')]",
         "btnSave": "//button[contains(.,'Save')]",
         "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
-        "btnDelete": "//img[@mattooltip='Delete Account']"
+        "btnDelete": "//img[@mattooltip='Delete Account']",
+        "slPartner": "//input[@aria-label='Partner']",
+        "lblErrorMessage": "//mat-error//span[contains(@class,'ng-star-inserted')]",
+        "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
     },
     
     "linux":{
@@ -16,6 +20,10 @@
         "btnCancel": "//button[contains(@class,'btn btn-cancel')]",
         "btnSave": "//button[contains(.,'Save')]",
         "btnConfirmationYes": "//span[text()=' Yes ']/parent::button",
-        "btnDelete": "//img[@mattooltip='Delete Account']"
+        "btnDelete": "//img[@mattooltip='Delete Account']",
+        "slPartner": "//input[@aria-label='Partner']",
+        "lblErrorMessage": "//mat-error//span[contains(@class,'ng-star-inserted')]",
+        "lblErrorMessageImage": "//div[@class='file-error']//mat-error",
+      	"lblErrorMessageFirstLastName": "//div[contains(@class,'mat-mdc-form-field-error')]//mat-error"
     }
 }
