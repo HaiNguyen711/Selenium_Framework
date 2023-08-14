@@ -23,6 +23,7 @@ public class BasePage {
 	private final Button btnLastPage = locator.getLocator(ControlType.BUTTON, "btnLastPage");
 	private final ComboBox slPerPage = locator.getLocator(ControlType.COMBOBOX, "slPerPage");
 	private final TextBox txtSearch = locator.getLocator(ControlType.TEXTBOX, "txtSearch");
+	private final Button btnConfirmationNo = locator.getLocator(ControlType.BUTTON, "btnConfirmationNo");
 	
 	public <T extends BasePage> T openTab(SideBar sideBar) {
 		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", sideBar.getText());
@@ -46,6 +47,25 @@ public class BasePage {
 		return new LoginPage();
 	}
 	
+	public BasePage clickLogoutButton() {
+		btnLogout.click();
+		return this;
+	}
+	
+	public LoginPage clickConfirmationYesButton() {
+		btnConfirmationYes.click();
+		return new LoginPage();
+	}
+	
+	public BasePage clickConfirmationNoButton() {
+		btnConfirmationNo.click();
+		return this;
+	}
+	
+	public boolean isLogoutComfirmNotificationExists() {
+		return lblLogoutComfirm.isDisplayed();
+	}
+
 	public HomePage clickSiteLogo() {
 		lnkLogo.click();
 		return new HomePage();

@@ -34,5 +34,13 @@ public class CheckBox extends ClickableControl {
 	public CheckBox(String element, String[] string) {
 		super(element, string);
 	}
-
+	
+	public void set(boolean state) {
+		
+		this.waitForPresent();
+		
+		if (state!=this.getAttribute("class").contains("selected")) {
+			this.click();
+		}	
+    }
 }
