@@ -1,0 +1,39 @@
+{
+    "windows": {
+        "txtFirstName": "//input[@formcontrolname='firstName']",
+        "txtLastName": "//input[@formcontrolname='lastName']",
+        "txtPhone": "//input[@formcontrolname='phone']",
+        "btnSave": "//button[@type='submit']",
+        "lblMessageTopRight": "//div[contains(@class,'ant-notification-notice-message')]",
+        "lblDescriptionMessageTopRight": "//div[contains(@class,'ant-notification-notice-description')]",
+        "lblFirstNameErrorMessage": "//input[@formcontrolname='firstName']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblLastNameErrorMessage": "//input[@formcontrolname='lastName']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblPhoneErrorMessage": "//input[@formcontrolname='phone']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "txtCurrentPassword": "//input[@formcontrolname='currentPassword']",
+        "txtNewPassword": "//input[@formcontrolname='newPassword']",
+        "txtConfirmPassword": "//input[@formcontrolname='confirmPassword']",
+		"lblNewPasswordErrorMessage": "//input[@formcontrolname='newPassword']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblConfirmPasswordErrorMessage": "//input[@formcontrolname='confirmPassword']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblSelectProfile": "//label[@class='lblProfileImg']",
+        "lblUserProfileImageErrorMessage": "//div[@class='file-error']/mat-error"
+    },
+    
+    "linux":{
+    	"txtFirstName": "//input[@formcontrolname='firstName']",
+        "txtLastName": "//input[@formcontrolname='lastName']",
+        "txtPhone": "//input[@formcontrolname='phone']",
+        "btnSave": "//button[@type='submit']",
+        "lblMessageTopRight": "//div[contains(@class,'ant-notification-notice-message')]",
+        "lblDescriptionMessageTopRight": "//div[contains(@class,'ant-notification-notice-description')]",
+        "lblFirstNameErrorMessage": "//input[@formcontrolname='firstName']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblLastNameErrorMessage": "//input[@formcontrolname='lastName']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblPhoneErrorMessage": "//input[@formcontrolname='phone']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "txtCurrentPassword": "//input[@formcontrolname='currentPassword']",
+        "txtNewPassword": "//input[@formcontrolname='newPassword']",
+        "txtConfirmPassword": "//input[@formcontrolname='confirmPassword']",
+        "lblNewPasswordErrorMessage": "//input[@formcontrolname='newPassword']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblConfirmPasswordErrorMessage": "//input[@formcontrolname='confirmPassword']/ancestor::mat-form-field[contains(@class,'invalid')]//mat-error",
+        "lblSelectProfile": "//label[@class='lblProfileImg']",
+        "lblUserProfileImageErrorMessage": "//div[@class='file-error']/mat-error"
+    }
+}

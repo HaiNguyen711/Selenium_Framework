@@ -26,5 +26,16 @@
 	"msgUpdatePartnerMemberAccount": "Update account %s successful",
 	"msgCreateAdminAccount": "Create account successfully",
 	"msgUpdateAdminAccount": "Updated info account %s",
-	"sUniqlo": "Uniqlo"
+	"sUniqlo": "Uniqlo",
+	"sDefaultPassword": "password",
+	"sNewPassword": "password12",
+	"sInvalidLegthNewPassword": "1234",
+	"notificationMessageUpdateAdminUserInfo": "Update successful.",
+	"notificationDescriptionUpdateadminUserInfo": "Please check your mailbox for the instruction to reset your password.",
+	"msgErrorFirstName": "First name is required",
+	"msgErrorLastName": "Last name is required",
+	"msgErrorPhone": "Phone is required",
+	"msgErrorNewName": "New password min length 8 characters",
+	"msgErrorConfirmName": "Confirm password min length 8 characters",
+	"sInvalidPhone": "123456789invalid"
 }

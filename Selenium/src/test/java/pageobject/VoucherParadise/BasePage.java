@@ -39,7 +39,11 @@ public class BasePage {
 			return null;
 		}
 	}
-
+	public UserInfoPage gotoUserInfoPage() {
+		Link lnkSidebarItem = locator.getLocator(ControlType.LINK, "dynSibarItemXpath", SideBar.USERINFO.getText());
+		lnkSidebarItem.click();
+		return new UserInfoPage();
+	}
 	public LoginPage logout() {
 		btnLogout.click();
 		btnConfirmationYes.waitForPresent();
