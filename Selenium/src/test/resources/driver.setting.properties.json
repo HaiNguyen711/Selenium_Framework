@@ -5,7 +5,7 @@
     "platform": "Windows",
     "isHeadless": false,
     "driverType": "Chrome",
-    "driverExecutable": "src/test/resources/grid/driver/chromedriver.exe",
+    "driverExecutable": "/usr/local/bin/chromedriver",
     "pageTimeOut": 60,
     "elementTimeOut": 0
   },
@@ -15,7 +15,7 @@
     "platform": "Windows",
     "isHeadless": false,
     "driverType": "Firefox",
-    "driverExecutable": "src/test/resources/grid/driver/geckodriver.exe",
+    "driverExecutable": "/usr/local/bin/geckodriver",
     "pageTimeOut": 60,
     "elementTimeOut": 0
   },
@@ -24,8 +24,8 @@
     "platform": "Linux",
     "isHeadless": false,
     "driverType": "Chrome",
-    "remoteUrl": "http://3.15.140.248:4444",
-    "driverExecutable": "src/test/resources/grid/driver/chromedriver.exe",
+    "remoteUrl": "http://18.216.116.16:4444",
+    "driverExecutable": "/usr/local/bin/chromedriver",
     "pageTimeOut": 60,
     "elementTimeOut": 0
   },
@@ -34,8 +34,8 @@
     "platform": "Linux",
     "isHeadless": false,
     "driverType": "Firefox",
-    "remoteUrl": "http://3.15.140.248:4444",
-    "driverExecutable": "src/test/resources/grid/driver/geckodriver.exe",
+    "remoteUrl": "http://18.216.116.16:4444",
+    "driverExecutable": "/usr/local/bin/geckodriver",
     "pageTimeOut": 60,
     "elementTimeOut": 0
   }

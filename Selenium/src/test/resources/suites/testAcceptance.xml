@@ -7,10 +7,10 @@
 	</listeners>
 
 	<test name="Chrome">
-		<parameter name="driverConfig" value="chrome.local" />
-		<parameter name="platform" value="windows" />
+		<parameter name="driverConfig" value="firefox.remote" />
+		<parameter name="platform" value="linux" />
 		<classes>
-			<class name="tests.VoucherParadise.MemberAccountTest"></class>
+			<class name="tests.VoucherParadise.LoginTest"></class>
 		</classes>
 	</test>
 

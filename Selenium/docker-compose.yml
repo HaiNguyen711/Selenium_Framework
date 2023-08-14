@@ -1,18 +1,28 @@
 version: '3'
 services:
   selenium-hub:
-    image: selenium/hub:3.141.59-20210226
+    image: selenium/hub:latest
     container_name: selenium-hub
     ports:
+      - "4442:4442"
+      - "4443:4443" 
       - "4444:4444"
 
   chrome:
-    image: selenium/node-chrome:3.141.59-20210226
+    image: selenium/node-chrome:latest
     depends_on:
       - selenium-hub
     environment:
-      - HUB_HOST=selenium-hub
-    volumes:
-      - ./testng-suite:/app/testng-suite  # Mount the directory containing your TestNG suite
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
 
-  # Add more containers here for other browsers, if needed (e.g., Firefox, etc.).
+  firefox:
+    image: selenium/node-firefox:latest
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+
